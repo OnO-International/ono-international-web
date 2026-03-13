@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CONTACT" description="OnO INTERNATIONALへのお問い合わせ。動画制作・AI・フリーダイビング・水中映像についてお気軽にご相談ください。">
+  <section class="pt-40 pb-24 px-6">
+    <div class="max-w-2xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-14">
+        <p class="text-sky-400 text-sm font-medium tracking-widest mb-4">CONTACT</p>
+        <h1 class="text-5xl md:text-6xl font-black text-white mb-4">お問い合わせ</h1>
+        <p class="text-slate-400 leading-relaxed">
+          サービスのご相談・お見積りはお気軽にどうぞ。<br/>
+          通常2営業日以内にご返信いたします。
+        </p>
+      </div>
+
+      <!-- Form -->
+      <div class="glass rounded-3xl p-8 md:p-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-sky-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl"></div>
+
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          class="relative z-10 space-y-6"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+
+          <!-- Name -->
+          <div>
+            <label class="block text-slate-300 text-sm font-medium mb-2">
+              お名前 <span class="text-sky-400">*</span>
+            </label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="山田 太郎"
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 focus:bg-white/8 transition-all text-sm"
+            />
+          </div>
+
+          <!-- Company -->
+          <div>
+            <label class="block text-slate-300 text-sm font-medium mb-2">会社名・屋号</label>
+            <input
+              type="text"
+              name="company"
+              placeholder="株式会社〇〇"
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 transition-all text-sm"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label class="block text-slate-300 text-sm font-medium mb-2">
+              メールアドレス <span class="text-sky-400">*</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 transition-all text-sm"
+            />
+          </div>
+
+          <!-- Service -->
+          <div>
+            <label class="block text-slate-300 text-sm font-medium mb-2">
+              ご相談内容 <span class="text-sky-400">*</span>
+            </label>
+            <select
+              name="service"
+              required
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500/50 transition-all text-sm appearance-none cursor-pointer"
+            >
+              <option value="" disabled selected class="bg-[#0d0d20]">選択してください</option>
+              <option value="video" class="bg-[#0d0d20]">動画制作</option>
+              <option value="ai" class="bg-[#0d0d20]">AI構築・コンサルティング</option>
+              <option value="freediving" class="bg-[#0d0d20]">フリーダイビング講習</option>
+              <option value="underwater" class="bg-[#0d0d20]">水中映像・水中ドローン</option>
+              <option value="other" class="bg-[#0d0d20]">その他</option>
+            </select>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label class="block text-slate-300 text-sm font-medium mb-2">
+              メッセージ <span class="text-sky-400">*</span>
+            </label>
+            <textarea
+              name="message"
+              required
+              rows="5"
+              placeholder="ご相談内容をお聞かせください..."
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500/50 transition-all text-sm resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="w-full py-4 rounded-xl hero-gradient text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-[1.01] shadow-lg shadow-sky-500/20"
+          >
+            送信する →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'video',
+    icon: '🎬',
+    title: '動画制作',
+    color: 'from-sky-500 to-cyan-400',
+    tagColor: 'text-sky-400 bg-sky-500/10',
+    description: '企業のブランド価値を最大化する映像制作サービス。プロモーション動画からSNSリール、採用動画まで幅広く対応します。',
+    features: [
+      'プロモーション・ブランディング動画',
+      'SNS向けショート動画 (YouTube / Instagram / TikTok)',
+      '採用・会社紹介動画',
+      'イベント・セミナー収録・編集',
+      'モーショングラフィックス・アニメーション',
+    ],
+  },
+  {
+    id: 'ai',
+    icon: '🤖',
+    title: 'AI構築・コンサルティング',
+    color: 'from-purple-500 to-violet-400',
+    tagColor: 'text-purple-400 bg-purple-500/10',
+    description: '最新のAI技術を活用し、業務の自動化・効率化を実現します。ChatGPTをはじめとした生成AIの導入から独自AIシステムの構築まで対応。',
+    features: [
+      '生成AI（ChatGPT/Claude）導入支援',
+      'チャットボット・自動応答システム構築',
+      '業務自動化ワークフロー設計',
+      'AIコンサルティング・社内研修',
+      '独自AIシステム・APIインテグレーション',
+    ],
+  },
+  {
+    id: 'freediving',
+    icon: '🤿',
+    title: 'フリーダイビング講習',
+    color: 'from-teal-500 to-emerald-400',
+    tagColor: 'text-teal-400 bg-teal-500/10',
+    description: '安全で楽しいフリーダイビングの世界へようこそ。経験豊富なインストラクターが初心者から上級者まで丁寧にサポートします。',
+    features: [
+      '初心者向け体験ダイビング',
+      'AIDA / SSI フリーダイビングコース',
+      'プライベートレッスン',
+      'オープンウォーター講習',
+      'アドバンス・コンペティションコース',
+    ],
+  },
+  {
+    id: 'underwater',
+    icon: '🎥',
+    title: '水中映像・水中ドローン',
+    color: 'from-blue-500 to-sky-400',
+    tagColor: 'text-blue-400 bg-blue-500/10',
+    description: '水中ドローンや専用水中カメラを使用した幻想的な水中映像制作サービス。海中、プール、水族館など様々な環境に対応します。',
+    features: [
+      '水中ドローン撮影',
+      '水中カメラ映像制作',
+      '海洋・プール・ダムでの水中撮影',
+      '水中映像の編集・カラーグレーディング',
+      '水中撮影機材レンタル・オペレーター派遣',
+    ],
+  },
+];
+---
+
+<Layout title="SERVICES" description="OnO INTERNATIONALのサービス一覧。動画制作・AI構築・フリーダイビング講習・水中映像制作。">
+  <!-- Hero -->
+  <section class="relative pt-40 pb-20 px-6 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-sky-500/8 blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-purple-500/8 blur-3xl"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <p class="text-sky-400 text-sm font-medium tracking-widest mb-4">SERVICES</p>
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+        私たちの<span class="gradient-text">サービス</span>
+      </h1>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        映像制作・AI・水中テクノロジーを掛け合わせ、あなたのビジネスに唯一無二の価値を届けます。
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="pb-24 px-6">
+    <div class="max-w-5xl mx-auto space-y-8">
+      {services.map((s) => (
+        <div id={s.id} class="gradient-border rounded-3xl bg-[#0d0d20] p-10 md:p-12 scroll-mt-24">
+          <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class={`w-20 h-20 rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center text-4xl flex-shrink-0`}>
+              {s.icon}
+            </div>
+            <div class="flex-1">
+              <span class={`text-xs font-medium px-3 py-1 rounded-full ${s.tagColor} mb-3 inline-block`}>SERVICE</span>
+              <h2 class="text-3xl font-black text-white mb-4">{s.title}</h2>
+              <p class="text-slate-400 leading-relaxed mb-6">{s.description}</p>
+              <ul class="space-y-2">
+                {s.features.map((f) => (
+                  <li class="flex items-center gap-3 text-slate-300 text-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0"></span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="/contact" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full hero-gradient text-white text-sm font-semibold hover:opacity-90 transition-all hover:scale-105">
+                このサービスを相談する →
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-24 px-6">
+    <div class="max-w-4xl mx-auto text-center glass rounded-3xl p-12 relative overflow-hidden">
+      <div class="absolute inset-0 hero-gradient opacity-5"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">まずはお気軽にご相談ください</h2>
+        <p class="text-slate-400 mb-8">どのサービスが最適かわからない場合もお気軽にどうぞ。最適なプランをご提案します。</p>
+        <a href="/contact" class="inline-flex px-10 py-4 rounded-full hero-gradient text-white font-bold hover:opacity-90 transition-all hover:scale-105">
+          無料相談はこちら
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

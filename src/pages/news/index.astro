@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+const sorted = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const categories = ['ALL', ...new Set(sorted.map(p => p.data.category || 'NEWS'))];
+---
+
+<Layout title="NEWS & BLOG" description="OnO INTERNATIONALの最新ニュース・ブログ記事一覧。">
+  <!-- Hero -->
+  <section class="pt-40 pb-16 px-6 text-center">
+    <p class="text-sky-400 text-sm font-medium tracking-widest mb-4">NEWS & BLOG</p>
+    <h1 class="text-5xl md:text-6xl font-black text-white mb-4">最新情報</h1>
+    <p class="text-slate-400 max-w-xl mx-auto">サービス情報・お知らせ・AIや映像に関するブログを発信しています。</p>
+  </section>
+
+  <!-- Posts -->
+  <section class="pb-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      {sorted.length === 0 ? (
+        <div class="text-center py-24 text-slate-500">
+          <p class="text-5xl mb-4">📝</p>
+          <p>まだ記事がありません。</p>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sorted.map((post) => (
+            <a href={`/news/${post.id}`} class="group gradient-border rounded-2xl bg-[#0d0d20] overflow-hidden hover:scale-[1.02] transition-all duration-300 block">
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-xs text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full font-medium">
+                    {post.data.category || 'NEWS'}
+                  </span>
+                  <span class="text-xs text-slate-600">
+                    {new Date(post.data.date).toLocaleDateString('ja-JP')}
+                  </span>
+                </div>
+                <h2 class="text-white font-bold text-lg mb-3 group-hover:text-sky-400 transition-colors line-clamp-2 leading-snug">
+                  {post.data.title}
+                </h2>
+                <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed">
+                  {post.data.description}
+                </p>
+                <div class="mt-5 text-sky-400 text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                  続きを読む <span>→</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

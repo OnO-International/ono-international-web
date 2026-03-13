@@ -44,12 +44,21 @@ const services = [
 <Layout title="HOME">
   <!-- HERO -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-sky-500/10 blur-3xl animate-float"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl animate-float" style="animation-delay:2s"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-teal-500/5 blur-3xl"></div>
+
+    <!-- YouTube背景動画 -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <iframe
+        id="yt-bg"
+        src="https://www.youtube.com/embed/xWVsR2HLsZc?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_mode=3&modestbranding=1&playlist=xWVsR2HLsZc&playsinline=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1.5);width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;border:none;pointer-events:none;"
+      ></iframe>
+      <!-- 暗めのオーバーレイ：動画の上に文字を読みやすくする -->
+      <div class="absolute inset-0 bg-[#05050f]/70"></div>
+      <!-- グラデーションオーバーレイ（下部をなじませる） -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#05050f]/30 via-transparent to-[#05050f]"></div>
     </div>
-    <div class="absolute inset-0 opacity-[0.025]" style="background-image:linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px);background-size:50px 50px"></div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs text-sky-400 font-medium mb-8 border border-sky-500/20">

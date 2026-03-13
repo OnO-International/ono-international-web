@@ -118,11 +118,12 @@ import Layout from '../layouts/Layout.astro';
   const TEMPLATE_ID = '0h1ku6q';
   const PUBLIC_KEY  = 'Yfg5GlBJPdfw3ZvZY';
 
-  emailjs.init(PUBLIC_KEY);
+  // v4系の初期化方法
+  emailjs.init({ publicKey: PUBLIC_KEY });
 
-  const form       = document.getElementById('contact-form') as HTMLFormElement;
-  const submitBtn  = document.getElementById('submit-btn') as HTMLButtonElement;
-  const statusDiv  = document.getElementById('form-status') as HTMLDivElement;
+  const form      = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const statusDiv = document.getElementById('form-status') as HTMLDivElement;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -131,15 +132,27 @@ import Layout from '../layouts/Layout.astro';
     submitBtn.textContent = '送信中...';
     statusDiv.className = 'hidden';
 
+    // フォームデータを明示的に取得して送信
+    const formData = new FormData(form);
+    const templateParams = {
+      name:    formData.get('name')    as string,
+      company: formData.get('company') as string,
+      email:   formData.get('email')   as string,
+      service: formData.get('service') as string,
+      message: formData.get('message') as string,
+    };
+
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form);
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
 
       statusDiv.textContent = '✅ 送信が完了しました！2営業日以内にご返信いたします。';
       statusDiv.className = 'text-sm text-center py-3 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20';
       form.reset();
-    } catch (error) {
-      statusDiv.textContent = '❌ 送信に失敗しました。しばらく経ってから再度お試しください。';
+    } catch (err: any) {
+      const msg = err?.text || err?.message || JSON.stringify(err);
+      statusDiv.textContent = `❌ 送信エラー: ${msg}`;
       statusDiv.className = 'text-sm text-center py-3 rounded-xl bg-red-500/10 text-red-400 border border-red-500/20';
+      console.error('EmailJS error:', err);
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = '送信する →';

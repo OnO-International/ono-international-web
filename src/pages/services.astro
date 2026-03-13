@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 
 const services = [
   {
@@ -104,7 +105,7 @@ const services = [
                   </li>
                 ))}
               </ul>
-              <a href="/contact" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full hero-gradient text-white text-sm font-semibold hover:opacity-90 transition-all hover:scale-105">
+              <a href={`${base}contact`} class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full hero-gradient text-white text-sm font-semibold hover:opacity-90 transition-all hover:scale-105">
                 このサービスを相談する →
               </a>
             </div>
@@ -121,7 +122,7 @@ const services = [
       <div class="relative z-10">
         <h2 class="text-3xl md:text-4xl font-black text-white mb-4">まずはお気軽にご相談ください</h2>
         <p class="text-slate-400 mb-8">どのサービスが最適かわからない場合もお気軽にどうぞ。最適なプランをご提案します。</p>
-        <a href="/contact" class="inline-flex px-10 py-4 rounded-full hero-gradient text-white font-bold hover:opacity-90 transition-all hover:scale-105">
+        <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full hero-gradient text-white font-bold hover:opacity-90 transition-all hover:scale-105">
           無料相談はこちら
         </a>
       </div>

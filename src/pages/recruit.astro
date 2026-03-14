@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+
+const positions = [
+  {
+    id: 'ai-consultant',
+    icon: '🤖',
+    title: 'AIコンサルタント / AIエンジニア',
+    type: '正社員 / 業務委託',
+    color: 'from-purple-500 to-violet-400',
+    tagColor: 'text-purple-400 bg-purple-500/10',
+    description: 'AIで世界を変えたい人、大募集。飲食・美容・小売などのリアルなビジネスにAIを実装し、お店のあり方を根本から変えていく仕事です。',
+    requirements: [
+      'AIやテクノロジーへの強い好奇心と熱量',
+      'ChatGPT / Claude / Gemini 等の生成AIへの理解',
+      'クライアントと対話しながら課題を解決できるコミュニケーション力',
+      'プログラミング経験（Python / JavaScript 等）があれば尚可',
+      '業界経験よりも「変えたい」という熱意を重視します',
+    ],
+  },
+  {
+    id: 'videographer',
+    icon: '🎬',
+    title: '映像クリエイター / ビデオグラファー',
+    type: '正社員 / 業務委託',
+    color: 'from-sky-500 to-cyan-400',
+    tagColor: 'text-sky-400 bg-sky-500/10',
+    description: '映像が好きで好きでたまらない人へ。企業プロモーションからSNS動画まで、あなたの映像センスで世界中の人を動かしてください。',
+    requirements: [
+      '映像制作・編集への情熱（ポートフォリオ歓迎）',
+      'Adobe Premiere / Final Cut / DaVinci Resolve いずれかの経験',
+      'SNSトレンドへのアンテナの高さ',
+      'ディレクション・撮影・編集をワンストップで担える方歓迎',
+      '自分の作品に誇りを持っている人',
+    ],
+  },
+  {
+    id: 'drone-operator',
+    icon: '🚁',
+    title: 'ドローンオペレーター（空中・水中）',
+    type: '正社員 / 業務委託',
+    color: 'from-blue-500 to-sky-400',
+    tagColor: 'text-blue-400 bg-blue-500/10',
+    description: '空と海、両方を舞台に働く唯一無二の仕事。空中ドローンによる絶景空撮から、水中ドローンで誰も見たことのない映像を届けましょう。',
+    requirements: [
+      'ドローン操縦への強い興味・経験（国家資格者優遇）',
+      '撮影・映像編集の基礎知識',
+      'アウトドア・海・自然が好きな方',
+      '体力があり、フィールドワークを楽しめる方',
+      'フリーダイビングや水中環境への興味があれば尚可',
+    ],
+  },
+];
+
+const perks = [
+  {
+    icon: '🤿',
+    title: 'フリーダイビング体験',
+    desc: '福利厚生として、プロのインストラクターによるフリーダイビング講習を無料で受講できます。海の世界を仕事と遊びで満喫してください。',
+  },
+  {
+    icon: '🏕️',
+    title: 'キャンプ＆BBQ',
+    desc: 'チームで定期的にキャンプ・BBQを開催。自然の中でアイデアを出し合い、チームの絆を深めます。仕事もプライベートも全力で楽しむ文化です。',
+  },
+  {
+    icon: '🌍',
+    title: 'リモートワーク可',
+    desc: '場所にとらわれない働き方を推奨。アイデアとアウトプットで評価される環境です。',
+  },
+  {
+    icon: '🚀',
+    title: 'AIスキル習得支援',
+    desc: '最新のAIツール・技術をいち早く学べる環境。社内勉強会・外部研修の費用を会社が全額負担します。',
+  },
+  {
+    icon: '🎥',
+    title: '機材使用フリー',
+    desc: 'ドローン・カメラ・水中撮影機材を自分のプロジェクトにも使用可能。クリエイターとしてどんどん成長してください。',
+  },
+  {
+    icon: '💡',
+    title: '裁量の大きい環境',
+    desc: '小さなチームだからこそ、あなたのアイデアが直接会社を動かします。肩書きより成果とやりたいことを大切にする文化です。',
+  },
+];
+---
+
+<Layout title="採用情報" description="OnO INTERNATIONALの採用情報。AIで世界を変えたい人・映像クリエイター・ドローンオペレーター募集中。フリーダイビングやBBQなど福利厚生も充実。">
+
+  <!-- Hero -->
+  <section class="relative pt-40 pb-20 px-6 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-purple-500/8 blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-sky-500/8 blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 w-72 h-72 rounded-full bg-teal-500/5 blur-3xl"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <p class="text-sky-400 text-sm font-medium tracking-widest mb-4">RECRUIT</p>
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+        一緒に、<span class="gradient-text">世界を変えよう</span>。
+      </h1>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        AIで店舗の未来を変えたい人。映像で人を動かしたい人。<br class="hidden md:block"/>
+        ドローンで誰も見たことのない景色を届けたい人。<br class="hidden md:block"/>
+        OnO INTERNATIONALで、あなたの「好き」を仕事にしてください。
+      </p>
+    </div>
+  </section>
+
+  <!-- 募集ポジション -->
+  <section class="pb-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">OPEN POSITIONS</p>
+        <h2 class="text-4xl font-black text-white">募集ポジション</h2>
+      </div>
+      <div class="space-y-8">
+        {positions.map((p) => (
+          <div id={p.id} class="gradient-border rounded-3xl bg-[#0d0d20] p-10 md:p-12 scroll-mt-24">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div class={`w-20 h-20 rounded-2xl bg-gradient-to-br ${p.color} flex items-center justify-center text-4xl flex-shrink-0`}>
+                {p.icon}
+              </div>
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                  <span class={`text-xs font-medium px-3 py-1 rounded-full ${p.tagColor}`}>{p.type}</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-black text-white mb-4">{p.title}</h3>
+                <p class="text-slate-400 leading-relaxed mb-6">{p.description}</p>
+                <div class="mb-6">
+                  <p class="text-white font-semibold text-sm mb-3">求めるスキル・人物像</p>
+                  <ul class="space-y-2">
+                    {p.requirements.map((r) => (
+                      <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0 mt-1.5"></span>
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <a href={`${base}contact`} class="inline-flex items-center gap-2 px-6 py-3 rounded-full hero-gradient text-white text-sm font-semibold hover:opacity-90 transition-all hover:scale-105">
+                  このポジションに応募する →
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 福利厚生 -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">PERKS & CULTURE</p>
+        <h2 class="text-4xl font-black text-white mb-4">働く環境・福利厚生</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">仕事もプライベートも、全力で楽しむ。それがOnOのカルチャーです。</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {perks.map((perk) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-6 hover:scale-[1.02] transition-all duration-300">
+            <div class="text-4xl mb-4">{perk.icon}</div>
+            <h3 class="text-white font-bold text-lg mb-2">{perk.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{perk.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 会社カルチャー -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="glass rounded-3xl p-10 md:p-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10 text-center max-w-2xl mx-auto">
+          <p class="text-sky-400 text-sm font-medium tracking-widest mb-4">OUR CULTURE</p>
+          <h2 class="text-4xl font-black text-white mb-6 leading-tight">
+            「好き」が、<br/><span class="gradient-text">最強の武器</span>になる場所。
+          </h2>
+          <p class="text-slate-400 leading-relaxed mb-4">
+            OnO INTERNATIONALは、AIと映像と海を愛するメンバーが集まるチームです。
+            肩書きや学歴よりも、「やりたい」という熱量と「やり切る」という姿勢を大切にしています。
+          </p>
+          <p class="text-slate-400 leading-relaxed mb-8">
+            仕事の後は海でフリーダイビング、週末はみんなでキャンプ——
+            そんな自由でアクティブな文化の中で、あなたのスキルと情熱を爆発させてください。
+          </p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {['AI × 店舗DX', '映像制作', 'ドローン撮影', 'フリーダイビング', 'キャンプ・BBQ', 'リモートワーク', '裁量大'].map((tag) => (
+              <span class="px-4 py-2 rounded-full glass text-slate-300 text-sm border border-white/10">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="relative rounded-3xl overflow-hidden">
+        <div class="absolute inset-0 hero-gradient opacity-10"></div>
+        <div class="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none"></div>
+        <div class="relative z-10 p-16">
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
+            まずは、<br/><span class="gradient-text">話してみませんか？</span>
+          </h2>
+          <p class="text-slate-400 mb-10 max-w-xl mx-auto">
+            正式な応募でなくてもOK。「話を聞いてみたい」レベルでも大歓迎です。
+            カジュアル面談から始めましょう。
+          </p>
+          <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full hero-gradient text-white font-bold hover:opacity-90 transition-all hover:scale-105 shadow-xl shadow-sky-500/20">
+            カジュアル面談を申し込む →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

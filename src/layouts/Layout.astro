@@ -41,6 +41,7 @@ const base = import.meta.env.BASE_URL;
           <a href={base} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">HOME</a>
           <a href={`${base}services`} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">SERVICES</a>
           <a href={`${base}news`} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">NEWS</a>
+          <a href={`${base}recruit`} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">RECRUIT</a>
           <a href={`${base}contact`} class="ml-2 px-5 py-2 rounded-full text-sm font-medium text-white hero-gradient hover:opacity-90 transition-opacity">
             CONTACT
           </a>
@@ -60,6 +61,7 @@ const base = import.meta.env.BASE_URL;
           <a href={base} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">HOME</a>
           <a href={`${base}services`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">SERVICES</a>
           <a href={`${base}news`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">NEWS</a>
+          <a href={`${base}recruit`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">RECRUIT</a>
           <a href={`${base}contact`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">CONTACT</a>
         </nav>
       </div>
@@ -85,16 +87,17 @@ const base = import.meta.env.BASE_URL;
           <div>
             <h4 class="text-white font-semibold mb-4 text-sm tracking-widest">SERVICES</h4>
             <ul class="space-y-2 text-slate-500 text-sm">
-              <li><a href={`${base}services#video`} class="hover:text-sky-400 transition-colors">動画制作</a></li>
               <li><a href={`${base}services#ai`} class="hover:text-sky-400 transition-colors">AI構築・コンサルティング</a></li>
+              <li><a href={`${base}services#video`} class="hover:text-sky-400 transition-colors">動画制作</a></li>
+              <li><a href={`${base}services#drone`} class="hover:text-sky-400 transition-colors">空中・水中ドローン撮影</a></li>
               <li><a href={`${base}services#freediving`} class="hover:text-sky-400 transition-colors">フリーダイビング講習</a></li>
-              <li><a href={`${base}services#underwater`} class="hover:text-sky-400 transition-colors">水中映像・水中ドローン</a></li>
             </ul>
           </div>
           <div>
             <h4 class="text-white font-semibold mb-4 text-sm tracking-widest">LINKS</h4>
             <ul class="space-y-2 text-slate-500 text-sm">
               <li><a href={`${base}news`} class="hover:text-sky-400 transition-colors">News & Blog</a></li>
+              <li><a href={`${base}recruit`} class="hover:text-sky-400 transition-colors">採用情報</a></li>
               <li><a href={`${base}contact`} class="hover:text-sky-400 transition-colors">お問い合わせ</a></li>
             </ul>
           </div>

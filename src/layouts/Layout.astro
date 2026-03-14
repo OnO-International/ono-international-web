@@ -73,34 +73,65 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Footer -->
     <footer class="border-t border-white/5 mt-20">
-      <div class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          <div>
-            <div class="mb-5">
-              <img src={`${base}images/logo-full.svg`} alt="OnO International" class="h-20 w-auto" />
-            </div>
-            <p class="text-slate-500 text-sm leading-relaxed">お店の常識を、AIで塗り替える。<br/>飲食・美容・小売店向けのAI活用支援から<br/>映像制作・ドローン撮影まで。</p>
+      <div class="max-w-7xl mx-auto px-6 py-14">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+          <!-- ロゴ＋会社情報 -->
+          <div class="md:col-span-2">
+            <a href={base} class="flex items-center gap-3 mb-5 group">
+              <img src={`${base}favicon.svg`} alt="OnO International" class="h-12 w-12 rounded-xl" />
+              <span class="text-white font-bold text-xl tracking-wide">OnO <span class="gradient-text">INTERNATIONAL</span></span>
+            </a>
+            <p class="text-slate-500 text-sm leading-relaxed mb-5">
+              お店の常識を、AIで塗り替える。<br/>
+              飲食・美容・小売店向けのAI活用支援から<br/>
+              映像制作・ドローン撮影まで。
+            </p>
+            <dl class="space-y-1.5 text-xs text-slate-600">
+              <div class="flex gap-3">
+                <dt class="text-slate-500 w-16 flex-shrink-0">会社名</dt>
+                <dd class="text-slate-400">OnO International</dd>
+              </div>
+              <div class="flex gap-3">
+                <dt class="text-slate-500 w-16 flex-shrink-0">代表者</dt>
+                <dd class="text-slate-400">小野 秀太（Shuta Ono）</dd>
+              </div>
+              <div class="flex gap-3">
+                <dt class="text-slate-500 w-16 flex-shrink-0">所在地</dt>
+                <dd class="text-slate-400">日本</dd>
+              </div>
+              <div class="flex gap-3">
+                <dt class="text-slate-500 w-16 flex-shrink-0">事業内容</dt>
+                <dd class="text-slate-400">AI構築・映像制作・ドローン撮影・フリーダイビング講習</dd>
+              </div>
+            </dl>
           </div>
+
+          <!-- Services -->
           <div>
-            <h4 class="text-white font-semibold mb-4 text-sm tracking-widest">SERVICES</h4>
-            <ul class="space-y-2 text-slate-500 text-sm">
-              <li><a href={`${base}services#ai`} class="hover:text-sky-400 transition-colors">AI構築・コンサルティング</a></li>
-              <li><a href={`${base}services#video`} class="hover:text-sky-400 transition-colors">動画制作</a></li>
-              <li><a href={`${base}services#drone`} class="hover:text-sky-400 transition-colors">空中・水中ドローン撮影</a></li>
-              <li><a href={`${base}services#freediving`} class="hover:text-sky-400 transition-colors">フリーダイビング講習</a></li>
+            <h4 class="text-white font-semibold mb-4 text-xs tracking-widest">SERVICES</h4>
+            <ul class="space-y-2.5 text-slate-500 text-sm">
+              <li><a href={`${base}services/ai`} class="hover:text-sky-400 transition-colors">AI構築・コンサルティング</a></li>
+              <li><a href={`${base}services/video`} class="hover:text-sky-400 transition-colors">動画制作</a></li>
+              <li><a href={`${base}services/drone`} class="hover:text-sky-400 transition-colors">空中・水中ドローン撮影</a></li>
+              <li><a href={`${base}services/freediving`} class="hover:text-sky-400 transition-colors">フリーダイビング講習</a></li>
             </ul>
           </div>
+
+          <!-- Links -->
           <div>
-            <h4 class="text-white font-semibold mb-4 text-sm tracking-widest">LINKS</h4>
-            <ul class="space-y-2 text-slate-500 text-sm">
+            <h4 class="text-white font-semibold mb-4 text-xs tracking-widest">LINKS</h4>
+            <ul class="space-y-2.5 text-slate-500 text-sm">
+              <li><a href={`${base}about`} class="hover:text-sky-400 transition-colors">会社概要</a></li>
               <li><a href={`${base}news`} class="hover:text-sky-400 transition-colors">News & Blog</a></li>
               <li><a href={`${base}recruit`} class="hover:text-sky-400 transition-colors">採用情報</a></li>
               <li><a href={`${base}contact`} class="hover:text-sky-400 transition-colors">お問い合わせ</a></li>
             </ul>
           </div>
+
         </div>
         <div class="border-t border-white/5 pt-6 text-center text-slate-600 text-xs">
-          © 2025 OnO INTERNATIONAL. All rights reserved.
+          © 2011 OnO INTERNATIONAL. All rights reserved.
         </div>
       </div>
     </footer>

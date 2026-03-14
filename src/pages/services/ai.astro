@@ -1,0 +1,196 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="AI構築・コンサルティング" description="飲食・美容・小売店向けAI活用支援。集客・接客・売上管理をAIで自動化。ChatGPT導入から独自AIシステム構築まで対応。OnO INTERNATIONAL。">
+
+  <!-- Hero -->
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-purple-600/15 blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-violet-500/10 blur-[100px]"></div>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-32 pb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs text-purple-400 font-medium mb-8 border border-purple-500/20">
+        <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+        AI構築・コンサルティング
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+        <span class="text-white">お店の常識を、</span><br/>
+        <span style="background: linear-gradient(135deg, #a855f7, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AIで塗り替える</span><span class="text-white">。</span>
+      </h1>
+      <p class="text-slate-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        飲食・美容・小売。リアルなお店だからこそ、AIは最強の武器になる。<br class="hidden md:block"/>
+        集客・接客・売上管理——全部、変えられます。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href={`${base}contact`} class="px-8 py-4 rounded-full text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 shadow-lg" style="background: linear-gradient(135deg, #a855f7, #7c3aed);">
+          無料相談はこちら →
+        </a>
+        <a href="#what-we-do" class="px-8 py-4 rounded-full glass text-slate-300 font-semibold text-sm hover:text-white transition-all border border-white/10">
+          サービス内容を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 課題提起 -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-purple-400 text-sm font-medium tracking-widest mb-3">PROBLEM</p>
+        <h2 class="text-4xl font-black text-white mb-4">こんなお悩み、ありませんか？</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { icon: '😔', title: '集客が続かない', desc: 'SNSを頑張っても反応がない。広告費だけがかさむ。新規のお客様がなかなか来てくれない。' },
+          { icon: '⏰', title: '業務に追われる毎日', desc: '予約対応・在庫管理・スタッフシフト…やることが多すぎて経営に集中できない。' },
+          { icon: '😟', title: 'デジタル化に乗り遅れている', desc: '「AIを使いたいけど難しそう」「うちみたいな店には関係ない」と思っていませんか？' },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 text-center">
+            <div class="text-5xl mb-4">{item.icon}</div>
+            <h3 class="text-white font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <p class="text-2xl md:text-3xl font-black text-white">それ、全部 <span style="background: linear-gradient(135deg, #a855f7, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AIで解決</span> できます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 何をするか -->
+  <section id="what-we-do" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-purple-400 text-sm font-medium tracking-widest mb-3">WHAT WE DO</p>
+        <h2 class="text-4xl font-black text-white mb-4">OnOのAI支援、6つのアプローチ</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">難しい技術の話は不要。あなたのお店に必要なAIを、一緒に選んで実装します。</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { num: '01', title: 'AI集客・SNS自動化', desc: 'AIがあなたのお店のSNS投稿を自動生成。トレンドに合わせたコンテンツで継続的な集客を実現します。' },
+          { num: '02', title: 'チャットボット・自動応答', desc: '24時間対応のAIチャットボットで予約受付・FAQ対応を自動化。スタッフの負担を大幅に削減します。' },
+          { num: '03', title: 'ChatGPT / Claude 導入支援', desc: '生成AIをスタッフのアシスタントとして活用。メール文章・提案書・マニュアル作成を効率化します。' },
+          { num: '04', title: '売上・在庫管理AI', desc: 'データをAIが分析し、売れ筋商品の予測・在庫最適化・売上レポートを自動生成します。' },
+          { num: '05', title: '業務自動化ワークフロー', desc: '繰り返し作業をAIで自動化。シフト管理・発注業務・顧客フォローをまるごと効率化します。' },
+          { num: '06', title: '社内AI研修・コンサルティング', desc: 'スタッフ全員がAIを使いこなせるよう、わかりやすい研修を提供。継続的なサポートも行います。' },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 flex gap-5 items-start">
+            <div class="text-3xl font-black flex-shrink-0" style="background: linear-gradient(135deg, #a855f7, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">{item.num}</div>
+            <div>
+              <h3 class="text-white font-bold text-lg mb-2">{item.title}</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 対象業種 -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="glass rounded-3xl p-10 md:p-14">
+        <div class="text-center mb-10">
+          <p class="text-purple-400 text-sm font-medium tracking-widest mb-3">TARGET</p>
+          <h2 class="text-4xl font-black text-white mb-4">こんな業種・規模に対応しています</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { icon: '🍽️', label: '飲食店・カフェ・バー' },
+            { icon: '💇', label: '美容室・サロン・エステ' },
+            { icon: '🏪', label: '小売店・雑貨・アパレル' },
+            { icon: '🏨', label: 'ホテル・宿泊施設' },
+            { icon: '💪', label: 'ジム・フィットネス' },
+            { icon: '🧘', label: 'ヨガ・スタジオ' },
+            { icon: '🐾', label: 'ペットショップ・サロン' },
+            { icon: '🌸', label: 'その他店舗全般' },
+          ].map((item) => (
+            <div class="bg-white/5 rounded-2xl p-5 text-center hover:bg-purple-500/10 transition-colors">
+              <div class="text-3xl mb-2">{item.icon}</div>
+              <p class="text-slate-300 text-xs font-medium">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 進め方 -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-purple-400 text-sm font-medium tracking-widest mb-3">HOW IT WORKS</p>
+        <h2 class="text-4xl font-black text-white mb-4">導入の流れ</h2>
+        <p class="text-slate-500">難しいことは一切不要。OnOが全ステップをサポートします。</p>
+      </div>
+      <div class="space-y-6">
+        {[
+          { step: 'STEP 1', title: '無料ヒアリング', desc: 'お店の現状・課題・やりたいことをじっくりお聞きします。「何から始めればいいかわからない」でも大丈夫。', time: '約60分' },
+          { step: 'STEP 2', title: 'AIプラン提案', desc: 'ヒアリング内容をもとに、最適なAI活用プランと費用感をご提案します。', time: '1〜3日後' },
+          { step: 'STEP 3', title: '実装・テスト', desc: 'ご了承いただいたプランをもとに、AIシステムを構築・テストします。', time: '1〜4週間' },
+          { step: 'STEP 4', title: '運用開始・サポート', desc: 'スタッフへの使い方レクチャーを行い、運用開始。導入後も継続サポートします。', time: '継続対応' },
+        ].map((item, i) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="flex-shrink-0">
+              <span class="text-xs font-bold px-3 py-1 rounded-full border text-purple-400 border-purple-500/30">{item.step}</span>
+              <p class="text-slate-600 text-xs mt-2">{item.time}</p>
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-xl mb-2">{item.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- OnOを選ぶ理由 -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-purple-400 text-sm font-medium tracking-widest mb-3">WHY ONO</p>
+        <h2 class="text-4xl font-black text-white">OnOが選ばれる3つの理由</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { icon: '🏪', title: '店舗特化の知見', desc: '飲食・美容・小売のリアルな現場を知っているからこそ、的外れなAI提案をしません。' },
+          { icon: '🤝', title: '伴走型サポート', desc: '導入して終わりではありません。運用が定着するまで、継続的にサポートします。' },
+          { icon: '🌏', title: '国際的な視野', desc: '日韓のビジネス経験を持つチームが、グローバルな最新AI技術をいち早くお届けします。' },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 text-center">
+            <div class="text-5xl mb-5">{item.icon}</div>
+            <h3 class="text-white font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="relative rounded-3xl overflow-hidden">
+        <div class="absolute inset-0 opacity-15" style="background: linear-gradient(135deg, #a855f7, #7c3aed);"></div>
+        <div class="absolute inset-0 border border-purple-500/20 rounded-3xl pointer-events-none"></div>
+        <div class="relative z-10 p-14 md:p-20">
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
+            まず、話だけでも<br/><span style="background: linear-gradient(135deg, #a855f7, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">聞いてみませんか？</span>
+          </h2>
+          <p class="text-slate-400 mb-10 max-w-xl mx-auto">
+            相談は無料です。「うちのお店でAIって使えるの？」そのレベルで大丈夫。<br/>一緒に考えましょう。
+          </p>
+          <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full text-white font-bold hover:opacity-90 transition-all hover:scale-105 shadow-xl" style="background: linear-gradient(135deg, #a855f7, #7c3aed);">
+            無料相談はこちら →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

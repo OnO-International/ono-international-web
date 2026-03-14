@@ -14,28 +14,32 @@ const services = [
     icon: '🤖',
     title: 'AI構築・コンサルティング',
     desc: '飲食・美容・小売店向けのAI活用支援。集客・接客・売上管理を自動化し、お店の常識を塗り替えます。',
-    href: `${import.meta.env.BASE_URL}services#ai`,
+    lpHref: `${import.meta.env.BASE_URL}services/ai`,
+    contactHref: `${import.meta.env.BASE_URL}contact`,
     color: 'from-purple-500 to-violet-400',
   },
   {
     icon: '🎬',
     title: '動画制作',
     desc: 'プロモーション動画からSNSコンテンツまで、伝わる映像でブランドの魅力を最大化します。',
-    href: `${import.meta.env.BASE_URL}services#video`,
+    lpHref: `${import.meta.env.BASE_URL}services/video`,
+    contactHref: `${import.meta.env.BASE_URL}contact`,
     color: 'from-sky-500 to-cyan-400',
   },
   {
     icon: '🚁',
     title: '空中・水中ドローン撮影',
     desc: '空中ドローンによるダイナミックな空撮と、水中ドローンによる幻想的な映像。唯一無二のコンテンツを届けます。',
-    href: `${import.meta.env.BASE_URL}services#drone`,
+    lpHref: `${import.meta.env.BASE_URL}services/drone`,
+    contactHref: `${import.meta.env.BASE_URL}contact`,
     color: 'from-blue-500 to-sky-400',
   },
   {
     icon: '🤿',
     title: 'フリーダイビング講習',
     desc: '安全で楽しいフリーダイビングの世界へ。初心者から上級者まで、法人福利厚生としても対応。',
-    href: `${import.meta.env.BASE_URL}services#freediving`,
+    lpHref: `${import.meta.env.BASE_URL}services/freediving`,
+    contactHref: `${import.meta.env.BASE_URL}contact`,
     color: 'from-teal-500 to-emerald-400',
   },
 ];
@@ -102,16 +106,21 @@ const services = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map((s) => (
-          <a href={s.href} class="group gradient-border rounded-2xl p-8 bg-[#0d0d20] hover:scale-[1.02] transition-all duration-300 block">
-            <div class={`w-14 h-14 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+          <div class="gradient-border rounded-2xl p-8 bg-[#0d0d20] flex flex-col">
+            <div class={`w-14 h-14 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-2xl mb-6`}>
               {s.icon}
             </div>
             <h3 class="text-white text-xl font-bold mb-3">{s.title}</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
-            <div class="mt-6 text-sky-400 text-sm font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-              詳しく見る <span>→</span>
+            <p class="text-slate-500 text-sm leading-relaxed flex-1">{s.desc}</p>
+            <div class="mt-6 flex gap-3">
+              <a href={s.lpHref} class="flex-1 text-center px-4 py-2.5 rounded-full hero-gradient text-white text-xs font-semibold hover:opacity-90 transition-all hover:scale-105">
+                詳しく見る →
+              </a>
+              <a href={s.contactHref} class="flex-1 text-center px-4 py-2.5 rounded-full glass text-slate-300 text-xs font-medium hover:text-white transition-all border border-white/10 hover:border-white/20">
+                このサービスを相談する
+              </a>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>

@@ -1,0 +1,201 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="動画制作" description="企業プロモーション・SNSリール・採用動画・ブランディング映像制作。OnO INTERNATIONALの映像クリエイターチームがあなたのブランドを映像で最大化します。">
+
+  <!-- Hero -->
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-1/3 left-1/3 w-[500px] h-[500px] rounded-full bg-sky-600/15 blur-[100px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-[80px]"></div>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-32 pb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs text-sky-400 font-medium mb-8 border border-sky-500/20">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        動画制作サービス
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+        <span class="text-white">映像が、</span><br/>
+        <span class="gradient-text">ブランドを変える</span><span class="text-white">。</span>
+      </h1>
+      <p class="text-slate-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        見た人が動く映像を、私たちは作ります。<br class="hidden md:block"/>
+        プロモーション・SNS・採用・ブランディング——あなたのビジョンを映像で届けます。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href={`${base}contact`} class="px-8 py-4 rounded-full hero-gradient text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-sky-500/20">
+          制作を相談する →
+        </a>
+        <a href="#lineup" class="px-8 py-4 rounded-full glass text-slate-300 font-semibold text-sm hover:text-white transition-all border border-white/10">
+          制作ラインナップを見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- なぜ動画か -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="glass rounded-3xl p-10 md:p-14">
+        <div class="text-center mb-10">
+          <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">WHY VIDEO</p>
+          <h2 class="text-4xl font-black text-white mb-4">なぜ今、動画なのか</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          {[
+            { num: '93%', label: 'の消費者が購買前に動画を参考にする' },
+            { num: '2倍', label: 'テキストより動画のほうが記憶に残りやすい' },
+            { num: '49%', label: '動画マーケティングを使う企業の売上成長率' },
+          ].map((stat) => (
+            <div>
+              <div class="gradient-text text-5xl font-black mb-3">{stat.num}</div>
+              <p class="text-slate-400 text-sm">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-center text-slate-500 text-sm mt-8">動画は今や「あれば良い」ではなく「なければ遅れる」時代です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 制作ラインナップ -->
+  <section id="lineup" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">LINEUP</p>
+        <h2 class="text-4xl font-black text-white mb-4">制作ラインナップ</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">ブランドの目的に合わせた映像を、企画から納品まで一貫して制作します。</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          {
+            icon: '🎬',
+            title: 'プロモーション・ブランディング動画',
+            desc: '企業・商品・サービスの魅力を最大限に伝える映像。展示会・ウェブサイト・広告など幅広く活用できます。',
+            tags: ['企業VP', '商品紹介', 'CM・広告'],
+          },
+          {
+            icon: '📱',
+            title: 'SNS向けショート動画',
+            desc: 'YouTube・Instagram・TikTokに最適化した縦型・横型の短尺動画。バズるコンテンツを戦略的に制作します。',
+            tags: ['Reels', 'TikTok', 'YouTube Shorts'],
+          },
+          {
+            icon: '👥',
+            title: '採用・会社紹介動画',
+            desc: '求職者の心をつかむ採用動画。会社の雰囲気・文化・働く人の声を映像で伝え、優秀な人材を引き寄せます。',
+            tags: ['採用', '社員インタビュー', 'オフィス紹介'],
+          },
+          {
+            icon: '🎤',
+            title: 'イベント・セミナー収録・編集',
+            desc: '登壇映像・ライブ配信・アフタームービー。イベントの価値を映像で残し、アーカイブ・プロモーションに活用します。',
+            tags: ['イベント', 'セミナー', 'ライブ配信'],
+          },
+          {
+            icon: '✨',
+            title: 'モーショングラフィックス・アニメーション',
+            desc: 'データや概念をわかりやすく動かす説明動画。SaaS・サービス紹介・教育コンテンツに最適です。',
+            tags: ['アニメーション', '説明動画', 'インフォグラフィック'],
+          },
+          {
+            icon: '🛍️',
+            title: '店舗・商品PR動画',
+            desc: '飲食店・小売店・サロンなど実店舗の魅力を引き出すPR映像。Googleビジネス・MEO対策にも効果的です。',
+            tags: ['店舗PR', '商品撮影', 'MEO対策'],
+          },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8">
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="text-white font-bold text-xl mb-3">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">{item.desc}</p>
+            <div class="flex flex-wrap gap-2">
+              {item.tags.map((tag) => (
+                <span class="text-xs px-3 py-1 rounded-full text-sky-400 bg-sky-500/10">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 制作の流れ -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">PROCESS</p>
+        <h2 class="text-4xl font-black text-white mb-4">制作の流れ</h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-sky-500/50 to-transparent hidden md:block"></div>
+        <div class="space-y-8">
+          {[
+            { step: '01', title: 'ヒアリング・企画', desc: '目的・ターゲット・使用用途をヒアリングし、映像の方向性・コンセプトを企画します。' },
+            { step: '02', title: '構成・絵コンテ作成', desc: 'シナリオと絵コンテを作成し、映像の全体イメージをご確認いただきます。' },
+            { step: '03', title: '撮影', desc: '現場での撮影を実施。ロケ地選定・キャスティングも対応可能です。' },
+            { step: '04', title: '編集・カラーグレーディング', desc: '映像編集・色調整・テロップ・BGM・ナレーションを組み合わせ、完成度の高い映像に仕上げます。' },
+            { step: '05', title: '修正・納品', desc: '修正対応を経て、各プラットフォームに最適化したフォーマットで納品します。' },
+          ].map((item) => (
+            <div class="flex gap-8 items-start">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full hero-gradient flex items-center justify-center text-white font-black text-sm z-10">
+                {item.step}
+              </div>
+              <div class="gradient-border rounded-2xl bg-[#0d0d20] p-6 flex-1">
+                <h3 class="text-white font-bold text-lg mb-2">{item.title}</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OnOが選ばれる理由 -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">WHY ONO</p>
+        <h2 class="text-4xl font-black text-white">OnOの映像制作が選ばれる理由</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { icon: '🎯', title: '戦略から映像へ', desc: '「かっこいい映像」だけでなく、ビジネス目標に直結する戦略的な映像制作を行います。' },
+          { icon: '🌊', title: '陸・空・海、全対応', desc: '空中ドローン・水中撮影との組み合わせで、他社では真似できない映像体験を提供します。' },
+          { icon: '🤖', title: 'AI × 映像', desc: 'AI技術を活用した編集・字幕生成・翻訳で、制作スピードとクオリティを両立します。' },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 text-center">
+            <div class="text-5xl mb-5">{item.icon}</div>
+            <h3 class="text-white font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="relative rounded-3xl overflow-hidden">
+        <div class="absolute inset-0 hero-gradient opacity-10"></div>
+        <div class="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none"></div>
+        <div class="relative z-10 p-14 md:p-20">
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
+            あなたのブランドを、<br/><span class="gradient-text">映像で動かそう。</span>
+          </h2>
+          <p class="text-slate-400 mb-10 max-w-xl mx-auto">
+            まずはどんな動画が必要か、一緒に考えましょう。<br/>相談・お見積もりは無料です。
+          </p>
+          <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full hero-gradient text-white font-bold hover:opacity-90 transition-all hover:scale-105 shadow-xl shadow-sky-500/20">
+            制作を相談する →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="フリーダイビング講習 | Team Dragon" description="Team Dragonのフリーダイビング講習。初心者から上級者まで、法人福利厚生プログラムも対応。AIDA/SSI認定コース。OnO INTERNATIONAL。">
+
+  <!-- Hero -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full bg-teal-600/15 blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[100px]"></div>
+      <div class="absolute top-1/2 right-1/4 w-[300px] h-[300px] rounded-full bg-blue-600/10 blur-[80px]"></div>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-32 pb-20">
+      <!-- Team Dragon badge -->
+      <div class="inline-flex items-center gap-3 px-5 py-3 rounded-2xl glass border border-teal-500/30 mb-8">
+        <span class="text-2xl">🐉</span>
+        <div class="text-left">
+          <p class="text-teal-400 text-xs font-bold tracking-widest">TEAM DRAGON</p>
+          <p class="text-slate-400 text-xs">OnO International Freediving Team</p>
+        </div>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+        <span class="text-white">深く、静かに、</span><br/>
+        <span style="background: linear-gradient(135deg, #14b8a6, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">自由になる</span><span class="text-white">。</span>
+      </h1>
+      <p class="text-slate-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        息を止めて、海に潜る。<br class="hidden md:block"/>
+        Team Dragonが、フリーダイビングの素晴らしさをあなたに届けます。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href={`${base}contact`} class="px-8 py-4 rounded-full text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 shadow-lg" style="background: linear-gradient(135deg, #14b8a6, #10b981);">
+          体験・申込みはこちら →
+        </a>
+        <a href="#courses" class="px-8 py-4 rounded-full glass text-slate-300 font-semibold text-sm hover:text-white transition-all border border-white/10">
+          コース一覧を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Dragon紹介 -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="glass rounded-3xl p-10 md:p-14 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-5xl">🐉</span>
+              <div>
+                <h2 class="text-3xl font-black text-white">Team Dragon</h2>
+                <p class="text-teal-400 text-sm font-medium">OnO International Freediving Team</p>
+              </div>
+            </div>
+            <p class="text-slate-400 leading-relaxed mb-4">
+              Team Dragonは、OnO Internationalが運営するフリーダイビングチームです。
+              「龍のように深く、自由に海を泳ぐ」というビジョンのもと、
+              初心者から競技者まで幅広い層にフリーダイビングの魅力を伝えています。
+            </p>
+            <p class="text-slate-400 leading-relaxed">
+              代表の小野秀太をはじめ、経験豊富なインストラクター陣が
+              安全を最優先に、一人ひとりのペースに合わせた丁寧な指導を行います。
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { num: '30m+', label: '最大潜水深度' },
+              { num: 'AIDA', label: '国際認定コース' },
+              { num: 'SSI', label: '認定コース対応' },
+              { num: '安全', label: '最優先の指導方針' },
+            ].map((stat) => (
+              <div class="bg-white/5 rounded-2xl p-6 text-center">
+                <div class="text-2xl font-black mb-2" style="background: linear-gradient(135deg, #14b8a6, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">{stat.num}</div>
+                <div class="text-slate-500 text-xs">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フリーダイビングとは -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-teal-400 text-sm font-medium tracking-widest mb-3">ABOUT FREEDIVING</p>
+        <h2 class="text-4xl font-black text-white mb-4">フリーダイビングって何？</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {[
+          { icon: '🌊', title: '息を止めて潜る', desc: 'タンクなしで息を止めて潜る、シンプルで奥深いダイビングスタイル。自分の体だけで海と向き合います。' },
+          { icon: '🧘', title: '心と体が整う', desc: '呼吸法・リラクゼーション・集中力が高まります。日常のストレスから解放され、深い静けさを体感できます。' },
+          { icon: '🐬', title: '生き物に近づける', desc: 'タンクの音がないため、海洋生物との距離が縮まります。イルカ・クジラ・マンタとの感動的な出会いも。' },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 text-center">
+            <div class="text-5xl mb-5">{item.icon}</div>
+            <h3 class="text-white font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- コース一覧 -->
+  <section id="courses" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-teal-400 text-sm font-medium tracking-widest mb-3">COURSES</p>
+        <h2 class="text-4xl font-black text-white mb-4">コース一覧</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">初心者から競技者まで、あなたのレベルと目標に合ったコースをご用意しています。</p>
+      </div>
+      <div class="space-y-6">
+        {[
+          {
+            level: 'BEGINNER',
+            color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30',
+            icon: '🌱',
+            title: '体験フリーダイビング',
+            desc: '「フリーダイビングってどんなもの？」という方向けの体験コース。プールや浅い海で基本的な呼吸法と潜り方を学びます。泳げれば誰でも参加できます。',
+            includes: ['基本呼吸法', '水中リラクゼーション', 'インストラクター同伴での潜水'],
+          },
+          {
+            level: 'BEGINNER→INTERMEDIATE',
+            color: 'text-teal-400 bg-teal-500/10 border-teal-500/30',
+            icon: '🐟',
+            title: 'AIDA2 / SSI Level 1 コース',
+            desc: '国際認定資格を取得できるエントリーコース。深度20mまでの潜水技術・安全知識を習得します。世界中の海でフリーダイビングを楽しめる資格です。',
+            includes: ['深度目標 10〜20m', '水中安全知識', 'AIDA/SSI国際認定証', '救助・安全管理'],
+          },
+          {
+            level: 'INTERMEDIATE',
+            color: 'text-sky-400 bg-sky-500/10 border-sky-500/30',
+            icon: '🦈',
+            title: 'AIDA3 / SSI Level 2 コース',
+            desc: '深度30mを目指す中級コース。より高度な呼吸法・リカバリー技術・ディープダイビングの知識を習得します。',
+            includes: ['深度目標 20〜30m', '高度な呼吸法', '救助訓練', 'プールアプネア'],
+          },
+          {
+            level: 'ADVANCED',
+            color: 'text-blue-400 bg-blue-500/10 border-blue-500/30',
+            icon: '🐉',
+            title: 'アドバンス・競技コース',
+            desc: 'Team Dragon独自の競技志向プログラム。大会参加を目指す方、さらなる深度を追求する方向けの特別コースです。',
+            includes: ['個別パフォーマンス分析', '競技対策トレーニング', 'Team Dragon特別サポート', '大会帯同サポート'],
+          },
+          {
+            level: 'CORPORATE',
+            color: 'text-purple-400 bg-purple-500/10 border-purple-500/30',
+            icon: '🏢',
+            title: '法人福利厚生プログラム',
+            desc: '企業向けのチームビルディング・福利厚生として提供。社員の心身リフレッシュ・チームの絆強化に最適です。OnO社員も福利厚生として楽しんでいます。',
+            includes: ['グループ体験プログラム', 'チームビルディング企画', '安全管理スタッフ完備', '法人契約対応'],
+          },
+        ].map((course) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 md:p-10">
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="text-5xl flex-shrink-0">{course.icon}</div>
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                  <span class={`text-xs font-bold px-3 py-1 rounded-full border ${course.color}`}>{course.level}</span>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-3">{course.title}</h3>
+                <p class="text-slate-400 leading-relaxed mb-5">{course.desc}</p>
+                <div class="flex flex-wrap gap-2">
+                  {course.includes.map((item) => (
+                    <span class="text-xs px-3 py-1.5 rounded-full bg-white/5 text-slate-300 border border-white/10">{item}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 安全へのこだわり -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-teal-400 text-sm font-medium tracking-widest mb-3">SAFETY FIRST</p>
+        <h2 class="text-4xl font-black text-white mb-4">安全への絶対的なこだわり</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">フリーダイビングを「危険なスポーツ」と思わせない。それがTeam Dragonの使命です。</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { icon: '👥', title: '必ず2人以上', desc: '「Never Dive Alone」の原則を徹底。常にバディと一緒に安全を確認します。' },
+          { icon: '📚', title: '知識から始める', desc: '水中生理学・ブラックアウト予防など、必要な知識を十分に学んでから水中へ。' },
+          { icon: '🩺', title: '健康確認', desc: '参加前の健康チェックを実施。持病がある方も事前相談で対応します。' },
+          { icon: '🛟', title: '救助訓練完備', desc: 'インストラクター全員が救助技術を習得。緊急時の対応体制を常に整えています。' },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-6 text-center">
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="text-white font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="relative rounded-3xl overflow-hidden">
+        <div class="absolute inset-0 opacity-15" style="background: linear-gradient(135deg, #14b8a6, #10b981);"></div>
+        <div class="absolute inset-0 border border-teal-500/20 rounded-3xl pointer-events-none"></div>
+        <div class="relative z-10 p-14 md:p-20">
+          <div class="text-6xl mb-6">🐉</div>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
+            Team Dragonと、<br/><span style="background: linear-gradient(135deg, #14b8a6, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">海へ飛び込もう。</span>
+          </h2>
+          <p class="text-slate-400 mb-10 max-w-xl mx-auto">
+            「泳げるけど潜ったことがない」でも大丈夫。<br/>
+            まずは体験コースから。あなたの海が、ここから始まります。
+          </p>
+          <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full text-white font-bold hover:opacity-90 transition-all hover:scale-105 shadow-xl" style="background: linear-gradient(135deg, #14b8a6, #10b981);">
+            体験・申込みはこちら →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

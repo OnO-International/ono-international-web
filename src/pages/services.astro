@@ -9,6 +9,7 @@ const services = [
     title: 'AI構築・コンサルティング',
     color: 'from-purple-500 to-violet-400',
     tagColor: 'text-purple-400 bg-purple-500/10',
+    lpHref: `${base}services/ai`,
     description: '飲食・美容・小売など店舗ビジネスのためのAI活用支援。集客・接客・売上管理をAIで自動化し、お店の常識を塗り替えます。ChatGPTをはじめとした生成AIの導入から独自AIシステムの構築まで対応。',
     features: [
       '店舗向けAI集客・マーケティング支援',
@@ -25,6 +26,7 @@ const services = [
     title: '動画制作',
     color: 'from-sky-500 to-cyan-400',
     tagColor: 'text-sky-400 bg-sky-500/10',
+    lpHref: `${base}services/video`,
     description: '企業のブランド価値を最大化する映像制作サービス。プロモーション動画からSNSリール、採用動画まで幅広く対応します。',
     features: [
       'プロモーション・ブランディング動画',
@@ -40,6 +42,7 @@ const services = [
     title: '空中・水中ドローン撮影',
     color: 'from-blue-500 to-sky-400',
     tagColor: 'text-blue-400 bg-blue-500/10',
+    lpHref: `${base}services/drone`,
     description: '空中ドローンによるダイナミックな空撮映像と、水中ドローン・専用カメラを使った幻想的な水中映像制作。唯一無二のアングルで、あなたのコンテンツを圧倒的に差別化します。',
     features: [
       '空中ドローン（4K空撮）撮影・編集',
@@ -56,6 +59,7 @@ const services = [
     title: 'フリーダイビング講習',
     color: 'from-teal-500 to-emerald-400',
     tagColor: 'text-teal-400 bg-teal-500/10',
+    lpHref: `${base}services/freediving`,
     description: '安全で楽しいフリーダイビングの世界へようこそ。経験豊富なインストラクターが初心者から上級者まで丁寧にサポートします。法人の福利厚生プログラムとしてもご活用いただけます。',
     features: [
       '初心者向け体験ダイビング',
@@ -108,9 +112,14 @@ const services = [
                   </li>
                 ))}
               </ul>
-              <a href={`${base}contact`} class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full hero-gradient text-white text-sm font-semibold hover:opacity-90 transition-all hover:scale-105">
-                このサービスを相談する →
-              </a>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a href={s.lpHref} class="inline-flex items-center gap-2 px-6 py-3 rounded-full hero-gradient text-white text-sm font-semibold hover:opacity-90 transition-all hover:scale-105">
+                  詳しく見る →
+                </a>
+                <a href={`${base}contact`} class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-slate-300 text-sm font-medium hover:text-white transition-all border border-white/10 hover:border-white/20">
+                  このサービスを相談する
+                </a>
+              </div>
             </div>
           </div>
         </div>

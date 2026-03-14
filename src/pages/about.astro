@@ -25,18 +25,15 @@ const connections = [
       <p class="text-sky-400 text-sm font-medium tracking-widest mb-8">ABOUT US</p>
 
       <!-- ロゴ大きく表示 -->
-      <div class="mb-10">
+      <div class="mb-4 overflow-hidden w-[480px] md:w-[600px] h-[280px] md:h-[350px]">
         <img
-          src={`${base}favicon.svg`}
+          src={`${base}logo.png`}
           alt="OnO International"
-          class="w-40 h-40 md:w-56 md:h-56 rounded-3xl shadow-2xl shadow-black/60"
+          class="w-full h-full object-cover object-center"
         />
       </div>
 
-      <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-        O<span class="gradient-text">と</span>Oを<br/>
-        N<span class="gradient-text">で</span>結ぶ。
-      </h1>
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-tight self-stretch text-center">　O<span class="gradient-text">と</span>OをN<span class="gradient-text">で</span>結ぶ。</h1>
       <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
         OnO INTERNATIONALは、人と人、国と国、<br class="hidden md:block"/>
         価値と価値をつなぐことを使命とする企業です。
@@ -146,7 +143,7 @@ const connections = [
             <div class="text-center mt-4">
               <p class="text-white font-bold text-lg">小野 秀太</p>
               <p class="text-sky-400 text-sm">Shuta Ono</p>
-              <p class="text-slate-500 text-xs mt-1">代表取締役</p>
+              <p class="text-slate-500 text-xs mt-1">代表</p>
             </div>
           </div>
 
@@ -218,9 +215,9 @@ const connections = [
         <table class="w-full">
           <tbody>
             {[
-              { label: '会社名', value: 'OnO International（オノ・インターナショナル）' },
+              { label: '会社名', value: 'OnO International（オーエヌオー・インターナショナル）' },
               { label: '代表者', value: '小野 秀太（Shuta Ono）' },
-              { label: '所在地', value: '日本' },
+              { label: '所在地', value: '福岡県福岡市南区長丘４−６−３' },
               { label: '事業内容', value: 'AI構築・コンサルティング／動画制作／空中・水中ドローン撮影／フリーダイビング講習' },
               { label: 'ミッション', value: '人と人、国と国、価値と価値をつなぐ' },
               { label: 'ビジョン', value: '国境や文化の違いを超え、世界中の人々がそれぞれの幸せを実現できる社会をつくる' },

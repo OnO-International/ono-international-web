@@ -111,7 +111,7 @@ const services = [
   </section>
 
   <!-- SERVICES -->
-  <section class="py-24 px-6">
+  <section class="py-12 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">SERVICES</p>
@@ -141,7 +141,7 @@ const services = [
   </section>
 
   <!-- ABOUT -->
-  <section class="py-24 px-6">
+  <section class="py-12 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="glass rounded-3xl p-10 md:p-16 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -180,9 +180,35 @@ const services = [
     </div>
   </section>
 
+  <!-- VIDEO -->
+  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <iframe
+        src="https://www.youtube.com/embed/h1cbDz1J8aQ?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_mode=3&modestbranding=1&playlist=h1cbDz1J8aQ&playsinline=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1.5);width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;border:none;pointer-events:none;"
+      ></iframe>
+      <div class="absolute inset-0 bg-[#05050f]/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#05050f] via-transparent to-[#05050f]"></div>
+    </div>
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <p class="text-sky-400 text-sm font-medium tracking-widest mb-4">OUR WORK</p>
+      <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+        映像で伝える、<br/><span class="gradient-text">OnOのクリエイティブ</span>
+      </h2>
+      <p class="text-slate-400 text-lg mb-8">
+        空中・水中・AI——テクノロジーとクリエイティビティが交わる映像の世界。
+      </p>
+      <a href={`${base}services/video`} class="inline-flex items-center gap-2 px-8 py-4 rounded-full hero-gradient text-white font-semibold hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-sky-500/20">
+        動画制作を見る →
+      </a>
+    </div>
+  </section>
+
   <!-- NEWS -->
   {latestPosts.length > 0 && (
-    <section class="py-24 px-6">
+    <section class="py-12 px-6">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-end justify-between mb-12">
           <div>
@@ -210,7 +236,7 @@ const services = [
   )}
 
   <!-- CTA -->
-  <section class="py-24 px-6">
+  <section class="py-12 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <div class="relative rounded-3xl overflow-hidden">
         <div class="absolute inset-0 hero-gradient opacity-10"></div>

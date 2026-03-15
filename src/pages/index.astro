@@ -191,7 +191,9 @@ const services = [
   </section>
 
   <!-- VIDEO WINDOW（透明の窓：固定背景動画が見える） -->
-  <div class="h-[50vh]"></div>
+  <div class="relative h-[56.25vw] md:h-[50vh]">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#05050f]/70 via-transparent to-[#05050f]/70 pointer-events-none"></div>
+  </div>
 
   <!-- NEWS -->
   {latestPosts.length > 0 && (

@@ -4,10 +4,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #05050f;
   }
 
   body {
-    background-color: #05050f;
+    background-color: transparent;
     color: #f1f5f9;
     font-family: 'Noto Sans JP', 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;

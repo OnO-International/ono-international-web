@@ -95,44 +95,15 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Footer -->
     <footer class="border-t border-white/5 bg-[#05050f]">
-      <div class="max-w-7xl mx-auto px-6 py-14">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 items-start">
+      <div class="max-w-7xl mx-auto px-6 py-16">
 
-          <!-- ロゴ＋会社情報 -->
-          <div class="md:col-span-2">
-            <a href={base} class="flex items-center gap-3 mb-5 group">
-              <img src={`${base}logo.png`} alt="OnO International" class="h-12 w-12 rounded-xl" />
-              <span class="text-white font-bold text-xl tracking-wide">OnO <span class="gradient-text">INTERNATIONAL</span></span>
-            </a>
-            <p class="text-slate-500 text-sm leading-relaxed mb-5">
-              お店の常識を、AIで塗り替える。<br/>
-              飲食・美容・小売店向けのAI活用支援から<br/>
-              映像制作・ドローン撮影まで。
-            </p>
-            <dl class="space-y-1.5 text-xs text-slate-600">
-              <div class="flex gap-3">
-                <dt class="text-slate-500 w-16 flex-shrink-0">会社名</dt>
-                <dd class="text-slate-400">OnO International</dd>
-              </div>
-              <div class="flex gap-3">
-                <dt class="text-slate-500 w-16 flex-shrink-0">代表者</dt>
-                <dd class="text-slate-400">小野 秀太（Shuta Ono）</dd>
-              </div>
-              <div class="flex gap-3">
-                <dt class="text-slate-500 w-16 flex-shrink-0">所在地</dt>
-                <dd class="text-slate-400">福岡県福岡市南区長丘４−６−３</dd>
-              </div>
-              <div class="flex gap-3">
-                <dt class="text-slate-500 w-16 flex-shrink-0">事業内容</dt>
-                <dd class="text-slate-400">AI構築・映像制作・ドローン撮影・フリーダイビング講習</dd>
-              </div>
-            </dl>
-          </div>
+        <!-- 3カラム: SERVICES | ロゴ | LINKS -->
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 mb-12">
 
-          <!-- Services -->
-          <div>
-            <h4 class="text-white font-semibold mb-4 text-xs tracking-widest">SERVICES</h4>
-            <ul class="space-y-2.5 text-slate-500 text-sm">
+          <!-- SERVICES -->
+          <div class="text-center md:text-left md:w-1/4">
+            <h4 class="text-white font-semibold mb-5 text-xs tracking-widest">SERVICES</h4>
+            <ul class="space-y-3 text-slate-500 text-sm">
               <li><a href={`${base}services/ai`} class="hover:text-sky-400 transition-colors">AI構築・コンサルティング</a></li>
               <li><a href={`${base}services/video`} class="hover:text-sky-400 transition-colors">動画制作</a></li>
               <li><a href={`${base}services/drone`} class="hover:text-sky-400 transition-colors">空中・水中ドローン撮影</a></li>
@@ -140,10 +111,19 @@ const base = import.meta.env.BASE_URL;
             </ul>
           </div>
 
-          <!-- Links -->
-          <div>
-            <h4 class="text-white font-semibold mb-4 text-xs tracking-widest">LINKS</h4>
-            <ul class="space-y-2.5 text-slate-500 text-sm">
+          <!-- 中央ロゴ -->
+          <div class="flex flex-col items-center md:w-1/2 order-3 md:order-2">
+            <a href={base} class="group">
+              <img src={`${base}logo.png`} alt="OnO International" class="h-44 w-44 -mb-8" />
+            </a>
+            <a href={base} class="text-white font-bold text-2xl tracking-wide mb-2">OnO <span class="gradient-text">INTERNATIONAL</span></a>
+            <p class="text-slate-600 text-xs">お店の常識を、AIで塗り替える。</p>
+          </div>
+
+          <!-- LINKS -->
+          <div class="text-center md:text-right md:w-1/4 order-2 md:order-3">
+            <h4 class="text-white font-semibold mb-5 text-xs tracking-widest">LINKS</h4>
+            <ul class="space-y-3 text-slate-500 text-sm">
               <li><a href={`${base}about`} class="hover:text-sky-400 transition-colors">会社概要</a></li>
               <li><a href={`${base}news`} class="hover:text-sky-400 transition-colors">News & Blog</a></li>
               <li><a href={`${base}recruit`} class="hover:text-sky-400 transition-colors">採用情報</a></li>
@@ -152,6 +132,7 @@ const base = import.meta.env.BASE_URL;
           </div>
 
         </div>
+
         <div class="border-t border-white/5 pt-6 text-center text-slate-600 text-xs">
           © 2011 OnO INTERNATIONAL. All rights reserved.
         </div>

@@ -59,10 +59,14 @@ const services = [
   <!-- HERO -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#05050f]">
 
-    <!-- Hero背景動画 -->
+    <!-- Hero背景動画（クロスフェードループ） -->
     <div class="absolute inset-0 z-0 overflow-hidden">
-      <video autoplay muted loop playsinline preload="auto"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;">
+      <video id="hero-vid-a" autoplay muted playsinline preload="auto"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;transition:opacity 1s ease-in-out;">
+        <source src={`${base}hero_bg.mp4`} type="video/mp4" />
+      </video>
+      <video id="hero-vid-b" muted playsinline preload="auto"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;opacity:0;transition:opacity 1s ease-in-out;">
         <source src={`${base}hero_bg.mp4`} type="video/mp4" />
       </video>
       <!-- 暗めのオーバーレイ：動画の上に文字を読みやすくする -->
@@ -243,3 +247,32 @@ const services = [
     </div>
   </section>
 </Layout>
+
+<script>
+  // Hero動画クロスフェードループ
+  const vidA = document.getElementById('hero-vid-a') as HTMLVideoElement;
+  const vidB = document.getElementById('hero-vid-b') as HTMLVideoElement;
+  if (vidA && vidB) {
+    let active = vidA, standby = vidB, fading = false;
+    const FADE_BEFORE = 1.2; // 終了何秒前にフェード開始するか
+
+    function onTimeUpdate() {
+      if (fading || !active.duration) return;
+      if (active.currentTime >= active.duration - FADE_BEFORE) {
+        fading = true;
+        standby.currentTime = 0;
+        standby.play().catch(() => {});
+        standby.style.opacity = '1';
+        active.style.opacity = '0';
+        setTimeout(() => {
+          active.pause();
+          [active, standby] = [standby, active];
+          fading = false;
+        }, 1400);
+      }
+    }
+
+    vidA.addEventListener('timeupdate', onTimeUpdate);
+    vidB.addEventListener('timeupdate', onTimeUpdate);
+  }
+</script>

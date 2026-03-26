@@ -9,10 +9,6 @@ export default defineConfig({
   site: 'https://ono-international.com',
   base: '/',
   output: 'static',
-  
-  redirects: {
-    '/lp-teamdragon': '/',
-  },
 
   redirects: {
     '/lp-teamdragon': '/',

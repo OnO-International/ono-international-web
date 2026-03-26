@@ -14,6 +14,10 @@ export default defineConfig({
     '/lp-teamdragon': '/',
   },
 
+  redirects: {
+    '/lp-teamdragon': '/',
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },

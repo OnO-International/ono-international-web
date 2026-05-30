@@ -1,0 +1,316 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="飲食店Web集客支援パッケージ | OnO INTERNATIONAL"
+  description="ホームページ制作・SEO・MEO・Google口コミ対策をまるごとサポート。月額8万円で飲食店の集客をデジタルで変える。OnO INTERNATIONAL。"
+>
+
+  <!-- Hero -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-1/4 left-1/4 w-[700px] h-[700px] rounded-full bg-emerald-600/10 blur-[140px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-purple-600/10 blur-[120px]"></div>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-36 pb-24">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs text-emerald-400 font-medium mb-8 border border-emerald-500/20">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        飲食店 Web集客支援パッケージ
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+        <span class="text-white">選ばれる店舗は、</span><br/>
+        <span style="background: linear-gradient(135deg, #10b981, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Webから変わっている。</span>
+      </h1>
+      <p class="text-slate-400 text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
+        ホームページ制作・SEO・MEO・Google口コミ対策を<br class="hidden md:block"/>
+        まるごとサポート。月額<strong class="text-white">8万円</strong>、ドメイン・更新費用込み。
+      </p>
+      <p class="text-slate-500 text-sm mb-12">
+        ※ 知り合い・ご紹介の方は特別価格でご対応しています。まずはご相談ください。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href={`${base}contact`} class="px-8 py-4 rounded-full text-white font-bold text-sm hover:opacity-90 transition-all hover:scale-105 shadow-lg" style="background: linear-gradient(135deg, #10b981, #059669);">
+          無料相談はこちら →
+        </a>
+        <a href="#services" class="px-8 py-4 rounded-full glass text-slate-300 font-semibold text-sm hover:text-white transition-all border border-white/10">
+          サービス内容を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 課題提起 -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-emerald-400 text-sm font-medium tracking-widest mb-3">PROBLEM</p>
+        <h2 class="text-4xl font-black text-white mb-4">こんなお悩み、ありませんか？</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { icon: '😔', title: 'ホームページが古い\nor ない', desc: 'お客様が検索しても何も出てこない。あっても数年前のまま放置されている。' },
+          { icon: '📍', title: 'Googleマップで\n競合に負けている', desc: '近くの競合店の方が口コミが多くて上位に出てしまう。インバウンドのお客様が来ない。' },
+          { icon: '📊', title: 'Webの効果が\nまったく見えない', desc: 'サイトを持っていても、何人見に来ているか・何が効いているか全くわからない。' },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 text-center">
+            <div class="text-5xl mb-4">{item.icon}</div>
+            <h3 class="text-white font-bold text-lg mb-3 whitespace-pre-line">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <p class="text-2xl md:text-3xl font-black text-white">それ、<span style="background: linear-gradient(135deg, #10b981, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">月8万円</span>でまるごと解決します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- サービス内容 -->
+  <section id="services" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-emerald-400 text-sm font-medium tracking-widest mb-3">WHAT'S INCLUDED</p>
+        <h2 class="text-4xl font-black text-white mb-4">月額8万円に含まれるもの、全部。</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">別途費用は一切なし。ドメイン・サーバー・更新・コンサルまですべて込みです。</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          {
+            num: '01',
+            icon: '🌐',
+            title: 'ホームページ制作・リニューアル',
+            desc: 'スマートフォン対応・予約/電話ボタン最適配置・SEOを意識した設計。ドメイン取得から弊社が対応。制作費・ドメイン・サーバー費用はすべて込みです。',
+            tag: '制作費込み',
+          },
+          {
+            num: '02',
+            icon: '🔍',
+            title: 'SEO / AEO 対策',
+            desc: '「エリア名＋居酒屋」で検索上位を狙うSEO対策。さらにChatGPT・Perplexityなど AI検索に紹介されるAEO対策も実施。次世代の集客経路を先取りします。',
+            tag: '次世代集客',
+          },
+          {
+            num: '03',
+            icon: '📍',
+            title: 'MEO対策（Googleマップ最適化）',
+            desc: 'Googleマップでの上位表示と口コミ獲得を戦略的にサポート。インバウンドのお客様はほぼ100%Googleマップで探します。口コミ月間100件超えを目標に伴走します。',
+            tag: 'インバウンド対策',
+          },
+          {
+            num: '04',
+            icon: '✍️',
+            title: 'ブログ・ページの継続更新',
+            desc: '季節メニュー・イベント情報・スタッフ紹介など、ホームページの更新はすべてこちらで行います。更新頻度が高いほどGoogleからの評価が上がります。',
+            tag: '運用込み',
+          },
+          {
+            num: '05',
+            icon: '📊',
+            title: 'KPIダッシュボード（専用アプリ）',
+            desc: 'GA4・Google検索・Googleマップのデータをまとめて毎日確認できる専用アプリをご提供。スマホでいつでも数字を把握できます。',
+            tag: 'アプリ付き',
+          },
+          {
+            num: '06',
+            icon: '💬',
+            title: '月次オンラインミーティング',
+            desc: '毎月1回、KPIデータをもとに現状報告と翌月の戦略を共有。「クリック数が増えた理由」「口コミが伸びている施策」を一緒に分析します。',
+            tag: 'コンサル込み',
+          },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8">
+            <div class="flex items-start gap-4 mb-4">
+              <span class="text-3xl">{item.icon}</span>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-xs font-bold text-slate-600">{item.num}</span>
+                  <span class="text-xs px-2 py-0.5 rounded-full text-emerald-400 border border-emerald-500/30">{item.tag}</span>
+                </div>
+                <h3 class="text-white font-bold text-lg">{item.title}</h3>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Google口コミ強調 -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="relative rounded-3xl overflow-hidden p-10 md:p-16 text-center gradient-border bg-[#0d0d20]">
+        <div class="absolute inset-0 opacity-5" style="background: linear-gradient(135deg, #10b981, #a855f7);"></div>
+        <div class="relative z-10">
+          <div class="text-6xl mb-6">⭐</div>
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-6">
+            口コミが<span style="background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1,000件</span>を超えると、<br/>景色が変わります。
+          </h2>
+          <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+            口コミ件数が多い店舗ほどGoogleマップの上位に表示され、インバウンド（訪日外国人）を含む新規客が<strong class="text-white">「選ぶ理由」</strong>になります。<br/><br/>
+            特に外国人観光客にとって、Google口コミは来店判断の最重要指標。1,000件超えは「信頼の証」として機能します。月間100件以上の口コミ獲得を目標に、戦略的に取り組みます。
+          </p>
+          <a
+            href="https://google-review-kpi-demo.vercel.app"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-slate-300 font-semibold text-sm hover:text-white transition-all border border-white/10"
+          >
+            📊 口コミKPIデモを見る →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- デモアプリ -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-emerald-400 text-sm font-medium tracking-widest mb-3">LIVE DEMO</p>
+        <h2 class="text-4xl font-black text-white mb-4">実際のダッシュボードを見てください</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">架空の居酒屋チェーン「大衆酒場のれん」のデモデータで動いています。導入後はこのような形でリアルタイムに数字を確認できます。</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a
+          href="https://site-kpi-demo.vercel.app"
+          target="_blank"
+          rel="noopener"
+          class="gradient-border rounded-2xl bg-[#0d0d20] p-8 hover:bg-[#111130] transition-colors group"
+        >
+          <div class="text-4xl mb-4">📈</div>
+          <h3 class="text-white font-bold text-xl mb-3 group-hover:text-emerald-400 transition-colors">
+            サイトKPIダッシュボード
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            GA4・Google検索・Googleマップのデータを1画面で確認。PV・クリック数・平均順位・AI流入数などを店舗別・月別で可視化。
+          </p>
+          <span class="text-emerald-400 text-sm font-medium">デモを見る →</span>
+        </a>
+        <a
+          href="https://google-review-kpi-demo.vercel.app"
+          target="_blank"
+          rel="noopener"
+          class="gradient-border rounded-2xl bg-[#0d0d20] p-8 hover:bg-[#111130] transition-colors group"
+        >
+          <div class="text-4xl mb-4">⭐</div>
+          <h3 class="text-white font-bold text-xl mb-3 group-hover:text-emerald-400 transition-colors">
+            Google口コミKPIダッシュボード
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            口コミ件数・評価の推移を月次・日次で管理。1,000件達成を目指すための進捗をリアルタイムで確認できます。
+          </p>
+          <span class="text-emerald-400 text-sm font-medium">デモを見る →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 制作サンプル -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-14">
+        <p class="text-emerald-400 text-sm font-medium tracking-widest mb-3">SAMPLE SITE</p>
+        <h2 class="text-4xl font-black text-white mb-4">制作サンプル</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">実際に制作・運用しているサイトをご覧ください。スマートフォンで見ると違いがよくわかります。</p>
+      </div>
+      <a
+        href="https://yakiniku-bunta.com/"
+        target="_blank"
+        rel="noopener"
+        class="gradient-border rounded-2xl bg-[#0d0d20] p-8 md:p-12 block hover:bg-[#111130] transition-colors group max-w-2xl mx-auto"
+      >
+        <div class="text-5xl mb-4">🔥</div>
+        <h3 class="text-white font-bold text-2xl mb-2 group-hover:text-emerald-400 transition-colors">大衆焼肉 ぶんた</h3>
+        <p class="text-slate-500 text-sm mb-4">yakiniku-bunta.com</p>
+        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+          SEO・スマートフォン対応・予約導線を最適化したサイト。Googleマップとの連携も徹底しています。
+        </p>
+        <span class="text-emerald-400 text-sm font-medium">サイトを見る →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 料金 -->
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-emerald-400 text-sm font-medium tracking-widest mb-3">PRICING</p>
+        <h2 class="text-4xl font-black text-white mb-4">シンプルな料金体系</h2>
+        <p class="text-slate-500">隠れた費用は一切ありません。</p>
+      </div>
+      <div class="gradient-border rounded-3xl bg-[#0d0d20] p-10 md:p-14 text-center">
+        <p class="text-slate-400 text-sm mb-2">月額（税別）</p>
+        <p class="text-7xl font-black text-white mb-2">¥80,000</p>
+        <p class="text-slate-500 text-sm mb-10">/ 店舗</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-left max-w-2xl mx-auto mb-10">
+          {[
+            '✅ ホームページ制作',
+            '✅ ドメイン・サーバー費用',
+            '✅ SEO / AEO 対策',
+            '✅ MEO / 口コミ対策',
+            '✅ ブログ・ページ更新',
+            '✅ KPIダッシュボード',
+            '✅ 月次コンサルティング',
+            '✅ 複数店舗割引あり',
+            '✅ 初月無料キャンペーン中',
+          ].map((item) => (
+            <div class="text-slate-300 text-sm">{item}</div>
+          ))}
+        </div>
+        <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full text-white font-bold hover:opacity-90 transition-all hover:scale-105 shadow-xl text-sm" style="background: linear-gradient(135deg, #10b981, #059669);">
+          まずは無料相談 →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why OnO -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-emerald-400 text-sm font-medium tracking-widest mb-3">WHY ONO</p>
+        <h2 class="text-4xl font-black text-white">選ばれる理由</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { icon: '🏪', title: '飲食店に特化した知見', desc: '飲食店の集客・口コミ・検索行動を熟知。的外れな提案は一切しません。' },
+          { icon: '📊', title: '数字で見える成果', desc: 'KPIダッシュボードで毎日・毎月の成果を可視化。「なんとなく効いてる気がする」ではなく、数字で確認できます。' },
+          { icon: '🤝', title: '作って終わりにしない', desc: '制作後も継続的に更新・改善・コンサルを行います。一緒に成長していくパートナーです。' },
+        ].map((item) => (
+          <div class="gradient-border rounded-2xl bg-[#0d0d20] p-8 text-center">
+            <div class="text-5xl mb-5">{item.icon}</div>
+            <h3 class="text-white font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="relative rounded-3xl overflow-hidden">
+        <div class="absolute inset-0 opacity-15" style="background: linear-gradient(135deg, #10b981, #a855f7);"></div>
+        <div class="absolute inset-0 border border-emerald-500/20 rounded-3xl pointer-events-none"></div>
+        <div class="relative z-10 p-10 md:p-20">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-4">
+            まず、話だけでも<br/>
+            <span style="background: linear-gradient(135deg, #10b981, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">聞いてみませんか？</span>
+          </h2>
+          <p class="text-slate-400 mb-10 max-w-xl mx-auto">
+            相談は無料です。「うちのお店に合うか？」そのレベルで大丈夫。<br/>一緒に考えましょう。
+          </p>
+          <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full text-white font-bold hover:opacity-90 transition-all hover:scale-105 shadow-xl" style="background: linear-gradient(135deg, #10b981, #059669);">
+            無料相談はこちら →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

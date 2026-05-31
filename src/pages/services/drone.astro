@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL;
         空中・水中ドローン撮影
       </div>
       <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-        <span class="text-white">誰も見たことのない</span><br/>
+        <span class="text-white">誰も見たことのない</span><br class="hidden md:block"/>
         <span class="gradient-text">アングル</span><span class="text-white">を届ける。</span>
       </h1>
       <p class="text-slate-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -190,10 +190,10 @@ const base = import.meta.env.BASE_URL;
         <div class="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none"></div>
         <div class="relative z-10 p-6 md:p-20">
           <h2 class="text-2xl md:text-5xl font-black text-white mb-4">
-            空から海へ。<br/><span class="gradient-text">その映像で、<br class="md:hidden"/>世界を驚かせよう。</span>
+            空から海へ。<br class="hidden md:block"/><span class="gradient-text">その映像で、世界を驚かせよう。</span>
           </h2>
           <p class="text-slate-400 mb-10 max-w-xl mx-auto">
-            撮影場所・内容・予算など、まずはお気軽にご相談ください。<br/>
+            撮影場所・内容・予算など、まずはお気軽にご相談ください。
             航空法申請など面倒な手続きもすべてお任せください。
           </p>
           <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full hero-gradient text-white font-bold hover:opacity-90 transition-all hover:scale-105 shadow-xl shadow-sky-500/20">

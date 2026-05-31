@@ -25,7 +25,7 @@ const connections = [
       <p class="text-sky-400 text-sm font-medium tracking-widest mb-8">ABOUT US</p>
 
       <!-- ロゴ大きく表示 -->
-      <div class="mb-4 overflow-hidden w-[480px] md:w-[600px] h-[280px] md:h-[350px]">
+      <div class="mb-4 overflow-hidden w-[260px] md:w-[600px] h-[160px] md:h-[350px]">
         <img
           src={`${base}logo.png`}
           alt="OnO International"
@@ -33,7 +33,7 @@ const connections = [
         />
       </div>
 
-      <h1 class="w-full text-5xl md:text-6xl font-black text-white mb-6 leading-tight text-center">O<span class="gradient-text">と</span>OをN<span class="gradient-text">で</span>結ぶ</h1>
+      <h1 class="w-full text-3xl md:text-6xl font-black text-white mb-6 leading-tight text-center">O<span class="gradient-text">と</span>OをN<span class="gradient-text">で</span>結ぶ</h1>
       <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
         OnO INTERNATIONALは、人と人、国と国、<br class="hidden md:block"/>
         価値と価値をつなぐことを使命とする企業です。
@@ -50,7 +50,7 @@ const connections = [
         <div class="relative z-10">
           <p class="text-sky-400 text-sm font-medium tracking-widest mb-4 text-center">THE NAME</p>
           <h2 class="text-3xl md:text-4xl font-black text-white mb-6 text-center">
-            OnOという名前の意味
+            OnOという<br class="md:hidden"/>名前の意味
           </h2>
           <p class="text-slate-400 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
             OとOをNで結ぶ——それがOnOという名前に込められた想いです。
@@ -70,7 +70,7 @@ const connections = [
           <!-- つながり一覧 -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             {connections.map((c) => (
-              <div class="bg-white/5 rounded-2xl p-5 text-center border border-white/5">
+              <div class="bg-white/5 rounded-2xl p-5 text-center border border-white/5 flex flex-col items-center justify-center">
                 <div class="flex items-center justify-center gap-2 mb-1">
                   <span class="text-white font-bold text-lg">{c.a}</span>
                   <span class="text-sky-400 text-sm">と</span>
@@ -241,7 +241,7 @@ const connections = [
         <div class="absolute inset-0 hero-gradient opacity-10"></div>
         <div class="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none"></div>
         <div class="relative z-10 p-6 md:p-16">
-          <h2 class="text-3xl md:text-5xl font-black text-white mb-4">
+          <h2 class="text-2xl md:text-5xl font-black text-white mb-4">
             <span class="block">一緒に、</span><span class="gradient-text">新しい価値を創ろう</span>。
           </h2>
           <p class="text-slate-400 mb-10 max-w-xl mx-auto">

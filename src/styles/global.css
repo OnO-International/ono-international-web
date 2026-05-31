@@ -14,6 +14,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* 日本語見出しの改行を読点・句点位置に制限 */
+  h1, h2, h3, h4 {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
   ::selection {
     background-color: rgba(168, 85, 247, 0.3);
     color: #f1f5f9;

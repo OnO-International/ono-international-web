@@ -139,7 +139,44 @@ const base = import.meta.env.BASE_URL;
       </div>
     </footer>
 
+    <!-- 飲食店Web集客支援 固定バナー -->
+    <div id="restaurant-banner" class="fixed bottom-6 right-6 z-50 transition-all duration-500">
+      <a
+        href={`${base}services/restaurant-web`}
+        class="group flex items-center gap-3 rounded-2xl px-5 py-4 shadow-2xl hover:scale-105 transition-all duration-300"
+        style="background: linear-gradient(135deg, #064e3b, #0d1b2a); border: 1px solid rgba(16,185,129,0.4); box-shadow: 0 0 30px rgba(16,185,129,0.2), 0 8px 32px rgba(0,0,0,0.5);"
+      >
+        <!-- 閉じるボタン -->
+        <button
+          id="banner-close"
+          onclick="event.preventDefault(); document.getElementById('restaurant-banner').style.display='none'; sessionStorage.setItem('bannerClosed','1');"
+          class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-700 border border-white/10 text-slate-400 hover:text-white flex items-center justify-center text-xs leading-none transition-colors"
+          aria-label="閉じる"
+        >✕</button>
+
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background: linear-gradient(135deg, #10b981, #059669);">
+          🍽️
+        </div>
+        <div class="max-w-[180px] md:max-w-[220px]">
+          <div class="flex items-center gap-1.5 mb-0.5">
+            <span class="text-[10px] font-bold text-emerald-400 tracking-wider">🆕 NEW SERVICE</span>
+          </div>
+          <p class="text-white font-bold text-sm leading-tight">飲食店 Web集客支援</p>
+          <p class="text-slate-400 text-xs mt-0.5">月額8万円・まるごとお任せ</p>
+        </div>
+        <div class="flex-shrink-0 ml-1">
+          <span class="text-emerald-400 text-lg group-hover:translate-x-1 inline-block transition-transform">→</span>
+        </div>
+      </a>
+    </div>
+
     <script>
+      // Banner: セッション中に閉じた場合は非表示
+      if (sessionStorage.getItem('bannerClosed') === '1') {
+        const b = document.getElementById('restaurant-banner');
+        if (b) b.style.display = 'none';
+      }
+
       // Header scroll effect
       const header = document.getElementById('header');
       window.addEventListener('scroll', () => {

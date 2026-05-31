@@ -16,9 +16,7 @@
 
   /* 日本語見出しの自然な改行 */
   h1, h2, h3, h4 {
-    word-break: auto-phrase; /* 日本語の文節単位で改行（Chrome 119+） */
-    text-wrap: balance;      /* 各行を均等な長さに自動調整 */
-    overflow-wrap: anywhere; /* どうしても収まらない場合は任意の位置で改行 */
+    overflow-wrap: anywhere;
   }
 
   ::selection {

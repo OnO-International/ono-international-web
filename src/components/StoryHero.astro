@@ -76,6 +76,8 @@ const chapters = [
   const next = document.getElementById('story-next') as HTMLButtonElement;
   const currentLabel = document.querySelector('#story-current b');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobile = window.matchMedia('(max-width: 767px)');
+  let mobileIndex = 0;
   let current = -1;
   let frame = 0;
 
@@ -83,7 +85,7 @@ const chapters = [
     frame = 0;
     if (!hero || !scene) return;
     const distance = hero.offsetHeight - scene.offsetHeight;
-    const progress = Math.max(0, Math.min(1, -hero.getBoundingClientRect().top / Math.max(1, distance)));
+    const progress = mobile.matches ? mobileIndex / (cards.length - 1) : Math.max(0, Math.min(1, -hero.getBoundingClientRect().top / Math.max(1, distance)));
     const index = Math.min(cards.length - 1, Math.round(progress * (cards.length - 1)));
     hero.style.setProperty('--story-progress', String(progress));
     if (index === current) return;
@@ -104,10 +106,40 @@ const chapters = [
   function go(delta: number) {
     if (!hero || !scene) return;
     const target = Math.max(0, Math.min(cards.length - 1, current + delta));
+    if (mobile.matches) {
+      mobileIndex = target;
+      render();
+      return;
+    }
     window.scrollTo({ top: window.scrollY + hero.getBoundingClientRect().top + target * (hero.offsetHeight - scene.offsetHeight) / (cards.length - 1), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
   }
   previous?.addEventListener('click', () => go(-1));
   next?.addEventListener('click', () => go(1));
+  // Keep the document still while swiping cards on phones. A fresh swipe
+  // after the last card resumes native scrolling, including browser chrome.
+  let touchStart: { x: number; y: number; index: number } | null = null;
+  let consumed = false;
+  hero?.addEventListener('touchstart', (event) => {
+    touchStart = mobile.matches && event.touches.length === 1 && Math.abs(hero.getBoundingClientRect().top) < 2
+      ? { x: event.touches[0].clientX, y: event.touches[0].clientY, index: current } : null;
+    consumed = false;
+  }, { passive: true });
+  hero?.addEventListener('touchmove', (event) => {
+    if (!touchStart || event.touches.length !== 1) return;
+    const dy = touchStart.y - event.touches[0].clientY;
+    const dx = touchStart.x - event.touches[0].clientX;
+    if (!consumed && Math.abs(dx) > Math.abs(dy)) return;
+    const canTurn = dy > 0 ? touchStart.index < cards.length - 1 : touchStart.index > 0;
+    if (!consumed && !canTurn) return;
+    if (event.cancelable) event.preventDefault();
+    if (!consumed && Math.abs(dy) >= 40) {
+      go(dy > 0 ? 1 : -1);
+      consumed = true;
+    }
+  }, { passive: false });
+  const endTouch = () => { touchStart = null; consumed = false; };
+  hero?.addEventListener('touchend', endTouch);
+  hero?.addEventListener('touchcancel', endTouch);
   hero?.addEventListener('keydown', (event) => {
     if (event.target instanceof HTMLElement && event.target.closest('a, button, input, textarea, select')) return;
     if (['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft'].includes(event.key)) {

@@ -1,4 +1,4 @@
-/* Native scrolling drives the paper stack, including touch and trackpads. */
+/* Desktop uses sticky scroll; phones turn cards without moving the document. */
 .story-hero {
   height:412svh;
   position:relative;
@@ -759,10 +759,11 @@
 
 @media(max-width:767px) {
   .story-hero {
-    height:412svh;
+    height:100svh;
   }
   .story-scene {
-    min-height:590px;
+    min-height:0;
+    position:relative;
   }
   .story-stripes {
     top:80px;

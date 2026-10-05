@@ -19,45 +19,45 @@ const { Content } = await render(post);
   <article class="pt-36 pb-24 px-6">
     <div class="max-w-3xl mx-auto">
       <!-- Back -->
-      <a href={`${base}news`} class="inline-flex items-center gap-2 text-slate-500 hover:text-sky-400 transition-colors text-sm mb-10">
+      <a href={`${base}news`} class="inline-flex items-center gap-2 text-muted hover:text-blue transition-colors text-sm mb-10">
         ← ニュース一覧に戻る
       </a>
 
       <!-- Meta -->
       <div class="flex items-center gap-3 mb-6">
-        <span class="text-xs text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full font-medium">
+        <span class="text-xs text-blue bg-sand px-3 py-1 rounded-full font-medium">
           {post.data.category || 'NEWS'}
         </span>
-        <span class="text-xs text-slate-600">
+        <span class="text-xs text-muted">
           {new Date(post.data.date).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
         </span>
       </div>
 
       <!-- Title -->
-      <h1 class="text-3xl md:text-4xl font-black text-white mb-10 leading-tight">
+      <h1 class="text-3xl md:text-4xl font-black text-ink mb-10 leading-tight">
         {post.data.title}
       </h1>
 
       <!-- Divider -->
-      <div class="h-px bg-gradient-to-r from-sky-500/50 via-purple-500/50 to-transparent mb-10"></div>
+      <div class="h-px bg-sand mb-10"></div>
 
       <!-- Content -->
-      <div class="prose prose-invert prose-slate max-w-none
-        prose-headings:font-black prose-headings:text-white
+      <div class="prose prose-slate max-w-none
+        prose-headings:font-black prose-headings:text-ink
         prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
         prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-        prose-p:text-slate-400 prose-p:leading-relaxed prose-p:mb-4
-        prose-a:text-sky-400 prose-a:no-underline hover:prose-a:text-sky-300
-        prose-strong:text-white
-        prose-li:text-slate-400
+        prose-p:text-muted prose-p:leading-relaxed prose-p:mb-4
+        prose-a:text-blue prose-a:no-underline hover:prose-a:text-blue
+        prose-strong:text-ink
+        prose-li:text-muted
         prose-ul:space-y-1
-        prose-hr:border-white/10">
+        prose-hr:border-line">
         <Content />
       </div>
 
       <!-- Footer -->
-      <div class="mt-16 pt-8 border-t border-white/5">
-        <a href={`${base}news`} class="inline-flex items-center gap-2 text-slate-500 hover:text-sky-400 transition-colors text-sm">
+      <div class="mt-16 pt-8 border-t border-line">
+        <a href={`${base}news`} class="inline-flex items-center gap-2 text-muted hover:text-blue transition-colors text-sm">
           ← ニュース一覧に戻る
         </a>
       </div>

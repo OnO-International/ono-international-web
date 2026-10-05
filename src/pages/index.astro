@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StoryHero from '../components/StoryHero.astro';
+import '../styles/home.css';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('blog').catch(() => []);
+const posts = await getCollection('blog', ({ data }) => !data.draft).catch(() => []);
 const latestPosts = posts
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
@@ -11,268 +13,57 @@ const base = import.meta.env.BASE_URL;
 
 const services = [
   {
-    icon: '🤖',
     title: 'AI構築・コンサルティング',
     desc: '飲食・美容・小売店向けのAI活用支援。集客・接客・売上管理を自動化し、お店の常識を塗り替えます。',
     lpHref: `${import.meta.env.BASE_URL}services/ai`,
     contactHref: `${import.meta.env.BASE_URL}contact`,
-    color: 'from-purple-500 to-violet-400',
   },
   {
-    icon: '🎬',
     title: '動画制作',
     desc: 'プロモーション動画からSNSコンテンツまで、伝わる映像でブランドの魅力を最大化します。',
     lpHref: `${import.meta.env.BASE_URL}services/video`,
     contactHref: `${import.meta.env.BASE_URL}contact`,
-    color: 'from-sky-500 to-cyan-400',
   },
   {
-    icon: '🚁',
     title: '空中・水中ドローン撮影',
     desc: '空中ドローンによるダイナミックな空撮と、水中ドローンによる幻想的な映像。唯一無二のコンテンツを届けます。',
     lpHref: `${import.meta.env.BASE_URL}services/drone`,
     contactHref: `${import.meta.env.BASE_URL}contact`,
-    color: 'from-blue-500 to-sky-400',
   },
   {
-    icon: '🤿',
     title: 'フリーダイビング講習',
     desc: '安全で楽しいフリーダイビングの世界へ。初心者から上級者まで、法人福利厚生としても対応。',
     lpHref: `${import.meta.env.BASE_URL}services/freediving`,
     contactHref: `${import.meta.env.BASE_URL}contact`,
-    color: 'from-teal-500 to-emerald-400',
   },
 ];
 ---
 
 <Layout title="HOME">
+  <StoryHero />
 
-  <!-- 固定背景動画 -->
-  <div class="fixed inset-0 overflow-hidden" style="z-index:-1">
-    <iframe
-      src="https://www.youtube.com/embed/h1cbDz1J8aQ?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_mode=3&modestbranding=1&playlist=h1cbDz1J8aQ&playsinline=1"
-      allow="autoplay; encrypted-media"
-      style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(1.5);width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;border:none;pointer-events:none;"
-    ></iframe>
-  </div>
-
-  <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#05050f]">
-
-    <!-- Hero背景動画（クロスフェードループ） -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
-      <video id="hero-vid-a" autoplay muted playsinline preload="auto"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;transition:opacity 1s ease-in-out;">
-        <source src={`${base}hero_bg.mp4`} type="video/mp4" />
-      </video>
-      <video id="hero-vid-b" muted playsinline preload="auto"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;opacity:0;transition:opacity 1s ease-in-out;">
-        <source src={`${base}hero_bg.mp4`} type="video/mp4" />
-      </video>
-      <!-- 暗めのオーバーレイ：動画の上に文字を読みやすくする -->
-      <div class="absolute inset-0 bg-[#05050f]/70"></div>
-      <!-- グラデーションオーバーレイ（下部をなじませる） -->
-      <div class="absolute inset-0 bg-gradient-to-b from-[#05050f]/30 via-transparent to-[#05050f]"></div>
-    </div>
-
-    <div class="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-24">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs text-sky-400 font-medium mb-8 border border-sky-500/20">
-        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-        飲食・美容・小売店のためのAIソリューション
-      </div>
-
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight tracking-tight text-center">
-        <span class="block text-white">お店の常識を</span>
-        <span class="block"><span class="gradient-text">AIで塗り替える</span></span>
-      </h1>
-
-      <p class="text-slate-400 text-sm md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-        集客・接客・売上管理——全部、変えられます。
-        OnO INTERNATIONALがあなたのお店の次の一手を、一緒に考えます。
-      </p>
-
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href={`${base}services`} class="px-8 py-4 rounded-full hero-gradient text-white font-semibold text-sm hover:opacity-90 transition-all hover:scale-105 shadow-lg shadow-sky-500/20">
-          サービスを見る →
-        </a>
-        <a href={`${base}contact`} class="px-8 py-4 rounded-full glass text-slate-300 font-semibold text-sm hover:text-white transition-all border border-white/10 hover:border-white/20">
-          お問い合わせ
-        </a>
-      </div>
-
-      <div class="flex flex-col items-center gap-1 mt-8 text-slate-500 text-xs tracking-widest">
-        <span>SCROLL</span>
-        <div class="scroll-arrow">
-          <svg width="13" height="13" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="scroll-arrow" style="opacity:0.6">
-          <svg width="13" height="13" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="scroll-arrow" style="opacity:0.3">
-          <svg width="13" height="13" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
+  <section id="services" class="home-section services-section">
+    <div class="section-heading"><div><p class="eyebrow">01 — WHAT WE DO</p><h2>SERVICE<span>私たちにできること</span></h2></div><p>テクノロジーとクリエイティビティを融合させ、<br class="hidden md:block"/>あなたのビジネスに新しい価値を提供します。</p></div>
+    <a href={`${base}services/restaurant-web`} class="store-feature">
+      <div><span class="eyebrow">FOR LOCAL BUSINESSES</span><h3>お店の「困った」を、<br/>まるごと、お任せ。</h3></div>
+      <div><p>実店舗 Web集客支援パッケージ</p><p>ホームページ制作・SEO・MEO・Google口コミ対策。<br/>月額8万円、制作費・ドメイン・更新費用込み。</p><span class="text-link">詳しく見る ↗</span></div><span class="feature-arrow" aria-hidden="true">↗</span>
+    </a>
+    <div class="service-list">
+      {services.map((service, i) => <article class="service-row"><span class="service-no">0{i + 1}</span><div><h3>{service.title}</h3><p>{service.desc}</p></div><div class="service-row-links"><a href={service.lpHref} aria-label={`${service.title}を詳しく見る`}>詳しく見る <span>↗</span></a><a href={service.contactHref}>このサービスを相談する ↗</a></div></article>)}
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="py-12 px-6 bg-[#05050f]">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">SERVICES</p>
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-4">私たちにできること</h2>
-        <p class="text-slate-500 max-w-xl mx-auto">テクノロジーとクリエイティビティを融合させ、<br class="hidden sm:block"/>あなたのビジネスに新しい価値を提供します。</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {services.map((s) => (
-          <div class="gradient-border rounded-2xl p-8 bg-[#0d0d20] flex flex-col">
-            <div class={`w-14 h-14 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-2xl mb-6`}>
-              {s.icon}
-            </div>
-            <h3 class="text-white text-xl font-bold mb-3">{s.title}</h3>
-            <p class="text-slate-500 text-sm leading-relaxed flex-1">{s.desc}</p>
-            <div class="mt-6 flex gap-3">
-              <a href={s.lpHref} class="flex-1 flex items-center justify-center px-4 py-2.5 rounded-full hero-gradient text-white text-xs font-semibold hover:opacity-90 transition-all hover:scale-105">
-                詳しく見る →
-              </a>
-              <a href={s.contactHref} class="flex-1 flex items-center justify-center text-center px-4 py-2.5 rounded-full glass text-slate-300 text-xs font-medium hover:text-white transition-all border border-white/10 hover:border-white/20">
-                このサービスを相談する
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+  <section class="home-section about-section">
+    <div class="about-heading"><p class="eyebrow">02 — WHO WE ARE</p><h2>足りないなら<br/><span>一緒に作ればいい。</span></h2><div class="about-wordmark" aria-hidden="true">O<span>n</span>O</div></div>
+    <div class="about-copy"><p>OnO INTERNATIONALは、ビジネスに必要なデジタルインフラをまるごと提供するパートナーです。</p><p>ホームページ・DXシステム・AI構築——まだ揃っていなくても大丈夫。何が必要かを一緒に整理して、ゼロから実装まで伴走します。コンサルで終わらず、勝ちに行くための仕組みを、一緒に作りにいきます。</p><a href={`${base}about`} class="text-link">私たちについて ↗</a><a href={`${base}services`} class="text-link">サービス一覧 ↗</a><div class="about-stats">{[{num:'100+', label:'プロジェクト実績'}, {num:'DX', label:'インフラ構築支援'}, {num:'AI',label:'最新技術導入'}, {num:'∞',label:'クリエイティビティ'}].map(stat => <div><strong>{stat.num}</strong><span>{stat.label}</span></div>)}</div></div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="py-12 px-6 bg-[#05050f]">
-    <div class="max-w-7xl mx-auto">
-      <div class="glass rounded-3xl p-6 md:p-16 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl"></div>
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">ABOUT US</p>
-            <h2 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
-              <span class="block">足りないなら</span><span class="gradient-text">一緒に作ればいい。</span>
-            </h2>
-            <p class="text-slate-400 leading-relaxed mb-4">
-              OnO INTERNATIONALは、ビジネスに必要なデジタルインフラをまるごと提供するパートナーです。
-            </p>
-            <p class="text-slate-400 leading-relaxed mb-8">
-              ホームページ・DXシステム・AI構築——まだ揃っていなくても大丈夫。何が必要かを一緒に整理して、ゼロから実装まで伴走します。コンサルで終わらず、勝ちに行くための仕組みを、一緒に作りにいきます。
-            </p>
-            <a href={`${base}services`} class="inline-flex items-center gap-2 text-sky-400 font-medium hover:gap-3 transition-all">
-              サービス一覧 →
-            </a>
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            {[
-              { num: '100+', label: 'プロジェクト実績' },
-              { num: 'DX', label: 'インフラ構築支援' },
-              { num: 'AI', label: '最新技術導入' },
-              { num: '∞', label: 'クリエイティビティ' },
-            ].map((stat) => (
-              <div class="bg-white/5 rounded-2xl p-6 text-center">
-                <div class="gradient-text text-3xl font-black mb-2">{stat.num}</div>
-                <div class="text-slate-500 text-xs">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+  <section class="home-section film-section" aria-label="OnOの映像">
+    <div class="film-caption"><p class="eyebrow">A DIFFERENT PERSPECTIVE</p><span>映像がひらく、新しい視点。</span></div>
+    <div class="film-frame"><iframe title="OnO INTERNATIONAL 紹介映像" src="https://www.youtube.com/embed/29EyujAPy4g?autoplay=1&mute=1&rel=0&playsinline=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </section>
 
-  <!-- VIDEO WINDOW（透明の窓：固定背景動画が見える） -->
-  <div class="relative h-[70vw] md:h-[65vh]">
-    <div class="absolute inset-x-0 top-0 h-[5%] bg-gradient-to-b from-[#05050f] to-transparent pointer-events-none"></div>
-    <div class="absolute inset-x-0 bottom-0 h-[5%] bg-gradient-to-t from-[#05050f] to-transparent pointer-events-none"></div>
-  </div>
+  {latestPosts.length > 0 && <section class="home-section news-section"><div class="section-heading"><div><p class="eyebrow">03 — JOURNAL</p><h2>NEWS<span>最新情報</span></h2></div><a class="text-link" href={`${base}news`}>すべて見る ↗</a></div><div class="news-list">{latestPosts.map(post => <a href={`${base}news/${post.id}`}><time datetime={new Date(post.data.date).toISOString()}>{new Date(post.data.date).toLocaleDateString('ja-JP')}</time><span class="news-category">{post.data.category || 'NEWS'}</span><div><h3>{post.data.title}</h3><p>{post.data.description}</p></div><span aria-hidden="true">↗</span></a>)}</div></section>}
 
-  <!-- NEWS -->
-  {latestPosts.length > 0 && (
-    <section class="py-12 px-6 bg-[#05050f]">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex items-end justify-between mb-12">
-          <div>
-            <p class="text-sky-400 text-sm font-medium tracking-widest mb-3">NEWS & BLOG</p>
-            <h2 class="text-4xl font-black text-white">最新情報</h2>
-          </div>
-          <a href={`${base}news`} class="text-sky-400 text-sm font-medium hover:text-sky-300 transition-colors">すべて見る →</a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {latestPosts.map((post) => (
-            <a href={`${base}news/${post.id}`} class="group gradient-border rounded-2xl bg-[#0d0d20] overflow-hidden hover:scale-[1.02] transition-all duration-300 block">
-              <div class="p-6">
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="text-xs text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full">{post.data.category || 'NEWS'}</span>
-                  <span class="text-xs text-slate-600">{new Date(post.data.date).toLocaleDateString('ja-JP')}</span>
-                </div>
-                <h3 class="text-white font-bold mb-2 group-hover:text-sky-400 transition-colors line-clamp-2">{post.data.title}</h3>
-                <p class="text-slate-500 text-sm line-clamp-3">{post.data.description}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- CTA -->
-  <section class="py-12 px-6 bg-[#05050f]">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="relative rounded-3xl overflow-hidden">
-        <div class="absolute inset-0 hero-gradient opacity-10"></div>
-        <div class="absolute inset-0 border border-white/10 rounded-3xl pointer-events-none"></div>
-        <div class="relative z-10 p-8 md:p-16">
-          <h2 class="text-2xl md:text-5xl font-black text-white mb-4">
-            <span class="block">プロジェクトを</span><span class="gradient-text">一緒に始めましょう</span>
-          </h2>
-          <p class="text-slate-400 mb-10 max-w-xl mx-auto">
-            お気軽にお問い合わせください。あなたのビジョンを形にするお手伝いをします。
-          </p>
-          <a href={`${base}contact`} class="inline-flex px-10 py-4 rounded-full hero-gradient text-white font-bold hover:opacity-90 transition-all hover:scale-105 shadow-xl shadow-sky-500/20">
-            無料相談はこちら →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="home-section home-contact"><p class="eyebrow">OUR NEXT CHAPTER</p><h2>プロジェクトを<br/>一緒に始めましょう<span>。</span></h2><p>お気軽にお問い合わせください。<br/>あなたのビジョンを形にするお手伝いをします。</p><a href={`${base}contact`} class="button-primary">無料相談はこちら <span>↗</span></a></section>
 </Layout>
-
-<script>
-  // Hero動画クロスフェードループ
-  const vidA = document.getElementById('hero-vid-a') as HTMLVideoElement;
-  const vidB = document.getElementById('hero-vid-b') as HTMLVideoElement;
-  if (vidA && vidB) {
-    let active = vidA, standby = vidB, fading = false;
-    const FADE_BEFORE = 1.2; // 終了何秒前にフェード開始するか
-
-    function onTimeUpdate() {
-      if (fading || !active.duration) return;
-      if (active.currentTime >= active.duration - FADE_BEFORE) {
-        fading = true;
-        standby.currentTime = 0;
-        standby.play().catch(() => {});
-        standby.style.opacity = '1';
-        active.style.opacity = '0';
-        setTimeout(() => {
-          active.pause();
-          [active, standby] = [standby, active];
-          fading = false;
-        }, 1400);
-      }
-    }
-
-    vidA.addEventListener('timeupdate', onTimeUpdate);
-    vidB.addEventListener('timeupdate', onTimeUpdate);
-  }
-</script>

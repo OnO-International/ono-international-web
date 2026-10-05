@@ -1,0 +1,122 @@
+---
+const base = import.meta.env.BASE_URL;
+const chapters = [
+  { num: '01', jp: ['小さなお店には', '関係ないと', '思われていました。'], en: "At first, we were told AI wasn't for small shops.", label: 'EVERY POSSIBILITY STARTS SMALL.' },
+  { num: '02', jp: ['それでも、', '「自分たちにできることは', '何か」を考え続けてきました。'], en: 'Still, we kept asking ourselves what we could do.', label: 'A QUESTION THAT MOVES US.' },
+  { num: '03', jp: ['小さな実店舗を、支えたい。', '小さい私たちだからできる、', 'まるごとのサポート。'], en: 'A small team, fully by your side. Complete support for local businesses.', detail: '小規模で実店舗を営む会社さんの力になりたい。その想いで、一店一店に向き合ってきました。', label: 'SMALL TEAM. FULL SUPPORT.' },
+  { num: '04', jp: ['私たちは、', 'どんなときも', 'この信念を貫いてきました。'], en: "Through it all, we've stayed true to this belief.", label: 'ALWAYS, BY YOUR SIDE.' },
+  { num: '05', jp: ['お店の常識を、', '一緒に', '塗り替えませんか。'], en: "Let's redefine what's possible for your business.", label: 'OUR NEXT CHAPTER, TOGETHER.' },
+];
+---
+
+<section id="story-hero" class="story-hero" aria-label="OnOのブランドストーリー">
+  <div class="story-scene">
+    <div class="story-grid" aria-hidden="true"></div>
+    <div class="story-stripes" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="story-side">
+      <p class="eyebrow">ONE &amp; ONLY PARTNER</p>
+      <p class="story-manifesto">小さなお店の、<br/>大きな可能性。</p>
+      <div class="connection-mark" aria-hidden="true"><span>O</span><em>n</em><span>O</span></div>
+      <p class="story-side-note">人と人。想いと未来。<br/>そのあいだに、OnO。</p>
+    </div>
+
+    <div id="story-stack" class="story-stack" tabindex="0" role="region" aria-label="ブランドストーリー。上下左右の矢印キーでも操作できます。">
+      {chapters.map((chapter, i) => (
+        <article class:list={['story-card', { 'is-active': i === 0 }]} data-index={i} aria-hidden={i !== 0} inert={i !== 0} style={`--offset: ${i}; z-index: ${chapters.length - i};`}>
+          <div class="story-card-top"><span>OnO INTERNATIONAL</span><span>OUR STORY / {chapter.num}</span></div>
+          <div class="story-card-body">
+            <div class="story-number"><span>BRAND STORY</span><strong>{chapter.num}<small>.</small></strong></div>
+            <div class="story-copy">
+              {i === 0 ? <h1>{chapter.jp.map(line => <span>{line}</span>)}</h1> : <h2>{chapter.jp.map(line => <span>{line}</span>)}</h2>}
+              {chapter.detail && <p class="story-detail">{chapter.detail}</p>}
+              <p class="story-english">{chapter.en}</p>
+            </div>
+          </div>
+          <div class="story-art" aria-hidden="true">
+            <svg viewBox="0 0 480 205" fill="none">
+              <path d="M10 183H474" stroke="currentColor"/>
+              <path d="M116 180V67H336V180" fill="var(--paper)" stroke="currentColor" stroke-width="2"/>
+              <path d="M105 69L125 30H327L347 69H105Z" fill="var(--orange)" stroke="currentColor" stroke-width="2"/>
+              <path d="M105 69V82Q125 103 145 82Q165 103 185 82Q205 103 225 82Q245 103 265 82Q285 103 305 82Q326 103 347 82V69" fill="var(--paper)" stroke="currentColor" stroke-width="2"/>
+              <path d="M145 68L158 31M185 68L191 31M225 68V31M265 68L259 31M305 68L292 31" stroke="var(--paper)" stroke-width="15"/>
+              <path d="M139 110H231V158H139Z" fill="var(--blue)" fill-opacity=".12" stroke="currentColor" stroke-width="2"/>
+              <path d="M253 108H312V181H253Z" fill="var(--blue)" stroke="currentColor" stroke-width="2"/>
+              <path d="M186 110V158M139 145H231M300 143V152" stroke="var(--paper)" stroke-width="2"/>
+              <path d="M376 182V152M367 164Q348 126 369 123Q389 125 377 156Q396 126 404 143Q409 157 376 166" stroke="currentColor" stroke-width="2"/>
+              <path d="M360 165H392L388 183H364L360 165Z" fill="var(--orange)" stroke="currentColor" stroke-width="2"/>
+              <path d="M54 86L61 68M71 92L86 80M49 111H29M397 47L405 29M417 57L435 47" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M70 183L77 135H101L109 183M75 153H104" stroke="currentColor" stroke-width="2"/>
+              <text x="165" y="131" fill="currentColor" font-size="12" font-family="sans-serif" letter-spacing="2">OPEN</text>
+              <circle cx="425" cy="102" r="22" fill="var(--paper)" stroke="currentColor"/>
+              <path d="M416 102L422 108L435 94" stroke="var(--blue)" stroke-width="2"/>
+            </svg>
+            <span>{chapter.label}</span>
+          </div>
+          {i === 4 && <div class="story-actions"><a class="button-primary" href={`${base}services`}>サービスを見る <span>↗</span></a><a class="text-link" href={`${base}contact`}>お問い合わせ ↗</a></div>}
+          <div class="story-card-bottom"><span>IDEAS INTO EVERYDAY.</span><span>0{i + 1} — 05</span></div>
+        </article>
+      ))}
+    </div>
+
+    <div class="story-controls">
+      <span class="story-scroll-label">SCROLL</span>
+      <span id="story-current" aria-live="polite" aria-atomic="true"><b>01</b><span class="sr-only"> / 05</span></span>
+      <span class="story-progress"><i></i></span><span class="story-total">05</span>
+      <div class="story-control-buttons"><button id="story-prev" aria-label="前のストーリー" disabled>↑</button><button id="story-next" aria-label="次のストーリー">↓</button></div>
+    </div>
+    <div class="story-bottom"><span>SCROLL TO DISCOVER <span aria-hidden="true">↓</span></span><a href="#services" id="story-skip">サービス紹介へ進む ↗</a></div>
+  </div>
+</section>
+
+<script>
+  const hero = document.getElementById('story-hero');
+  const scene = hero?.querySelector<HTMLElement>('.story-scene');
+  const cards = Array.from(hero?.querySelectorAll<HTMLElement>('.story-card') || []);
+  const previous = document.getElementById('story-prev') as HTMLButtonElement;
+  const next = document.getElementById('story-next') as HTMLButtonElement;
+  const currentLabel = document.querySelector('#story-current b');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let current = -1;
+  let frame = 0;
+
+  function render() {
+    frame = 0;
+    if (!hero || !scene) return;
+    const distance = hero.offsetHeight - scene.offsetHeight;
+    const progress = Math.max(0, Math.min(1, -hero.getBoundingClientRect().top / Math.max(1, distance)));
+    const index = Math.min(cards.length - 1, Math.round(progress * (cards.length - 1)));
+    hero.style.setProperty('--story-progress', String(progress));
+    if (index === current) return;
+    current = index;
+    cards.forEach((card, i) => {
+      const offset = i - current;
+      card.classList.toggle('is-active', offset === 0);
+      card.classList.toggle('is-past', offset < 0);
+      card.style.setProperty('--offset', String(Math.max(0, offset)));
+      card.style.zIndex = String(cards.length - i);
+      card.setAttribute('aria-hidden', String(offset !== 0));
+      card.inert = offset !== 0;
+    });
+    if (currentLabel) currentLabel.textContent = String(current + 1).padStart(2, '0');
+    previous.disabled = current === 0;
+    next.disabled = current === cards.length - 1;
+  }
+  function go(delta: number) {
+    if (!hero || !scene) return;
+    const target = Math.max(0, Math.min(cards.length - 1, current + delta));
+    window.scrollTo({ top: window.scrollY + hero.getBoundingClientRect().top + target * (hero.offsetHeight - scene.offsetHeight) / (cards.length - 1), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+  }
+  previous?.addEventListener('click', () => go(-1));
+  next?.addEventListener('click', () => go(1));
+  hero?.addEventListener('keydown', (event) => {
+    if (event.target instanceof HTMLElement && event.target.closest('a, button, input, textarea, select')) return;
+    if (['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft'].includes(event.key)) {
+      event.preventDefault();
+      go(event.key === 'ArrowDown' || event.key === 'ArrowRight' ? 1 : -1);
+    }
+  });
+  function scheduleRender() { if (!frame) frame = requestAnimationFrame(render); }
+  window.addEventListener('scroll', scheduleRender, { passive: true });
+  window.addEventListener('resize', scheduleRender);
+  render();
+</script>

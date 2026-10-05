@@ -46,154 +46,55 @@ const base = import.meta.env.BASE_URL;
       gtag('config', 'G-GLW20WQESK');
     </script>
   </head>
-  <body>
-    <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <!-- Logo -->
-        <a href={base} class="flex items-center gap-3 group">
-          <img src={`${base}logo.png`} alt="OnO International" class="h-10 w-auto" />
-          <span class="text-white font-bold text-lg tracking-wide">OnO <span class="gradient-text">INTERNATIONAL</span></span>
-        </a>
-
-        <!-- Nav Desktop -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href={base} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">HOME</a>
-          <a href={`${base}services`} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">SERVICES</a>
-          <a href={`${base}about`} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">ABOUT</a>
-          <a href={`${base}news`} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">NEWS</a>
-          <a href={`${base}recruit`} class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">RECRUIT</a>
-          <a href={`${base}contact`} class="ml-2 px-5 py-2 rounded-full text-sm font-medium text-white hero-gradient hover:opacity-90 transition-opacity">
-            CONTACT
-          </a>
-        </nav>
-
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-slate-400 hover:text-white transition-colors" aria-label="メニュー">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/5">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-          <a href={base} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">HOME</a>
-          <a href={`${base}services`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">SERVICES</a>
-          <a href={`${base}about`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">ABOUT</a>
-          <a href={`${base}news`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">NEWS</a>
-          <a href={`${base}recruit`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">RECRUIT</a>
-          <a href={`${base}contact`} class="text-slate-300 hover:text-white transition-colors py-2 text-sm font-medium">CONTACT</a>
-        </nav>
-      </div>
+  <body class:list={[{ 'home-page': Astro.url.pathname === base, 'interior-page': Astro.url.pathname !== base }]}>
+    <a class="skip-link" href="#main-content">本文へスキップ</a>
+    <header id="header" class="site-header">
+      <a href={base} class="site-brand" aria-label="OnO INTERNATIONAL ホーム"><img src={`${base}logo.png`} alt=""/><span>OnO<small>INTERNATIONAL</small></span></a>
+      <span class="header-note">ONE &amp; ONLY PARTNER.<br/><span>FUKUOKA, JAPAN</span></span>
+      <div class="header-actions"><a href={`${base}contact`} class="header-contact">お問い合わせ ↗</a><button id="menu-btn" aria-label="メニューを開く" aria-controls="fullmenu" aria-expanded="false"><span>MENU</span><i aria-hidden="true"></i></button></div>
     </header>
+    <dialog id="fullmenu" class="fullmenu" aria-label="サイトメニュー">
+      <div class="menu-top"><span class="eyebrow">OnO INTERNATIONAL</span><button id="fullmenu-close" aria-label="メニューを閉じる">CLOSE <span aria-hidden="true">×</span></button></div>
+      <div class="menu-body"><p class="menu-message">人と人。<br/>想いと未来。<br/><span>そのあいだに、OnO。</span></p><nav aria-label="メインナビゲーション">
+        {[
+          {href:base, en:'HOME', jp:'トップページ'}, {href:`${base}services`,en:'SERVICE',jp:'サービス'}, {href:`${base}about`,en:'ABOUT',jp:'会社概要'}, {href:`${base}news`,en:'NEWS',jp:'最新情報'}, {href:`${base}recruit`,en:'RECRUIT',jp:'採用情報'}, {href:`${base}contact`,en:'CONTACT',jp:'お問い合わせ'},
+        ].map((item,i) => <a href={item.href}><small>0{i+1}</small><strong>{item.en}</strong><span>{item.jp}</span><span aria-hidden="true">↗</span></a>)}
+      </nav></div><p class="menu-bottom">© 2011 OnO INTERNATIONAL. All rights reserved.</p>
+    </dialog>
 
-    <main>
-      <slot />
-    </main>
+    <main id="main-content"><slot /></main>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/5 bg-[#05050f]">
-      <div class="max-w-7xl mx-auto px-6 py-16">
-
-        <!-- 3カラム: SERVICES | ロゴ | LINKS -->
-        <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 mb-12">
-
-          <!-- SERVICES -->
-          <div class="text-center md:text-left md:w-1/4">
-            <h4 class="text-white font-semibold mb-5 text-xs tracking-widest">SERVICES</h4>
-            <ul class="space-y-3 text-slate-500 text-sm">
-              <li><a href={`${base}services/ai`} class="hover:text-sky-400 transition-colors">AI構築・コンサルティング</a></li>
-              <li><a href={`${base}services/video`} class="hover:text-sky-400 transition-colors">動画制作</a></li>
-              <li><a href={`${base}services/drone`} class="hover:text-sky-400 transition-colors">空中・水中ドローン撮影</a></li>
-              <li><a href={`${base}services/freediving`} class="hover:text-sky-400 transition-colors">フリーダイビング講習</a></li>
-            </ul>
-          </div>
-
-          <!-- 中央ロゴ -->
-          <div class="flex flex-col items-center md:w-1/2 order-3 md:order-2">
-            <a href={base} class="group">
-              <img src={`${base}logo.png`} alt="OnO International" class="h-44 w-44 -mb-8" />
-            </a>
-            <a href={base} class="text-white font-bold text-2xl tracking-wide mb-2">OnO <span class="gradient-text">INTERNATIONAL</span></a>
-            <p class="text-slate-600 text-xs">お店の常識を、AIで塗り替える。</p>
-          </div>
-
-          <!-- LINKS -->
-          <div class="text-center md:text-right md:w-1/4 order-2 md:order-3">
-            <h4 class="text-white font-semibold mb-5 text-xs tracking-widest">LINKS</h4>
-            <ul class="space-y-3 text-slate-500 text-sm">
-              <li><a href={`${base}about`} class="hover:text-sky-400 transition-colors">会社概要</a></li>
-              <li><a href={`${base}news`} class="hover:text-sky-400 transition-colors">News & Blog</a></li>
-              <li><a href={`${base}recruit`} class="hover:text-sky-400 transition-colors">採用情報</a></li>
-              <li><a href={`${base}contact`} class="hover:text-sky-400 transition-colors">お問い合わせ</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="border-t border-white/5 pt-6 text-center text-slate-600 text-xs">
-          © 2011 OnO INTERNATIONAL. All rights reserved.
-        </div>
-      </div>
+    <footer class="site-footer">
+      <div class="footer-top"><a href={`${base}contact`} class="footer-hello">LET’S TALK<span>↗</span></a><p>お店の常識を、AIで塗り替える。</p></div>
+      <div class="footer-links"><a href={base} class="site-brand"><img src={`${base}logo.png`} alt=""/><span>OnO<small>INTERNATIONAL</small></span></a><div><p class="eyebrow">SERVICES</p><a href={`${base}services/restaurant-web`}>実店舗 Web集客支援</a><a href={`${base}services/ai`}>AI構築・コンサルティング</a><a href={`${base}services/video`}>動画制作</a><a href={`${base}services/drone`}>空中・水中ドローン撮影</a><a href={`${base}services/freediving`}>フリーダイビング講習</a></div><div><p class="eyebrow">INFORMATION</p><a href={`${base}about`}>会社概要</a><a href={`${base}news`}>News &amp; Blog</a><a href={`${base}recruit`}>採用情報</a><a href={`${base}contact`}>お問い合わせ</a></div></div>
+      <div class="footer-bottom"><span>© 2011 OnO INTERNATIONAL. All rights reserved.</span><a href="#main-content">BACK TO TOP ↑</a></div>
     </footer>
 
-    <!-- 飲食店Web集客支援 固定バナー -->
-    <div id="restaurant-banner" class="fixed bottom-6 right-6 z-50 transition-all duration-500">
-      <a
-        href={`${base}services/restaurant-web`}
-        class="group flex items-center gap-3 rounded-2xl px-5 py-4 shadow-2xl hover:scale-105 transition-all duration-300"
-        style="background: linear-gradient(135deg, #064e3b, #0d1b2a); border: 1px solid rgba(16,185,129,0.4); box-shadow: 0 0 30px rgba(16,185,129,0.2), 0 8px 32px rgba(0,0,0,0.5);"
-      >
-        <!-- 閉じるボタン -->
-        <button
-          id="banner-close"
-          onclick="event.preventDefault(); document.getElementById('restaurant-banner').style.display='none'; sessionStorage.setItem('bannerClosed','1');"
-          class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-slate-700 border border-white/10 text-slate-400 hover:text-white flex items-center justify-center text-xs leading-none transition-colors"
-          aria-label="閉じる"
-        >✕</button>
-
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background: linear-gradient(135deg, #10b981, #059669);">
-          🍽️
-        </div>
-        <div class="max-w-[180px] md:max-w-[220px]">
-          <div class="flex items-center gap-1.5 mb-0.5">
-            <span class="text-[10px] font-bold text-emerald-400 tracking-wider">🆕 NEW SERVICE</span>
-          </div>
-          <p class="text-white font-bold text-sm leading-tight">実店舗を持つ全ての方へ</p>
-          <p class="text-slate-400 text-xs mt-0.5">Web集客支援・月額8万円・まるごとお任せ</p>
-        </div>
-        <div class="flex-shrink-0 ml-1">
-          <span class="text-emerald-400 text-lg group-hover:translate-x-1 inline-block transition-transform">→</span>
-        </div>
-      </a>
-    </div>
+    <aside id="restaurant-banner" class="restaurant-banner is-suppressed" hidden={Astro.url.pathname.replace(/\/$/, '').endsWith('/contact') || Astro.url.pathname.replace(/\/$/, '').endsWith('/services/restaurant-web')} aria-label="実店舗向けサービス">
+      <a href={`${base}services/restaurant-web`}><span class="banner-symbol" aria-hidden="true">↗</span><span><small>FOR LOCAL BUSINESSES</small><strong>実店舗を持つ全ての方へ</strong><span>Web集客支援・月額8万円・まるごとお任せ</span></span></a><button id="banner-close" aria-label="サービスの案内を閉じる">×</button>
+    </aside>
 
     <script>
-      // Banner: セッション中に閉じた場合は非表示
-      if (sessionStorage.getItem('bannerClosed') === '1') {
-        const b = document.getElementById('restaurant-banner');
-        if (b) b.style.display = 'none';
-      }
+      const menuButton = document.getElementById('menu-btn');
+      const menu = document.getElementById('fullmenu') as HTMLDialogElement;
+      const closeButton = document.getElementById('fullmenu-close');
+      menuButton?.addEventListener('click', () => { menu.showModal(); menuButton.setAttribute('aria-expanded','true'); document.body.style.overflow = 'hidden'; });
+      closeButton?.addEventListener('click', () => menu.close());
+      menu?.addEventListener('close', () => { menuButton?.setAttribute('aria-expanded','false'); document.body.style.overflow = ''; menuButton?.focus(); });
+      menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.close()));
 
-      // Header scroll effect
-      const header = document.getElementById('header');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header?.classList.add('glass');
-          header?.classList.add('border-b', 'border-white/5');
-        } else {
-          header?.classList.remove('glass', 'border-b', 'border-white/5');
-        }
-      });
-
-      // Mobile menu
-      const menuBtn = document.getElementById('menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      menuBtn?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
-      });
+      const banner = document.getElementById('restaurant-banner');
+      let bannerClosed = false;
+      try { bannerClosed = sessionStorage.getItem('bannerClosed') === '1'; } catch {}
+      if (bannerClosed) banner?.setAttribute('hidden','');
+      document.getElementById('banner-close')?.addEventListener('click', () => { bannerClosed = true; banner?.setAttribute('hidden',''); try { sessionStorage.setItem('bannerClosed','1'); } catch {} });
+      const hero = document.querySelector('main > section:first-child, main > article:first-child');
+      const footer = document.querySelector('.site-footer');
+      let heroVisible = true;
+      let footerVisible = false;
+      const updateBanner = () => banner?.classList.toggle('is-suppressed', heroVisible || footerVisible);
+      if (hero) new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; updateBanner(); }).observe(hero);
+      if (footer) new IntersectionObserver(([entry]) => { footerVisible = entry.isIntersecting; updateBanner(); }).observe(footer);
     </script>
   </body>
 </html>

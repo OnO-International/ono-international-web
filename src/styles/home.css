@@ -1241,3 +1241,7 @@
 @media(max-width:767px) {
   .story-introduction-logo { width:64vw;height:33vw;margin:34px 0 24px; }
 }
+@media(max-width:767px) {
+  .is-introducing .story-logo-circles { animation-name:mobile-logo-reveal; }
+  @keyframes mobile-logo-reveal { from { opacity:0;transform:scale(.9); } to { opacity:1;transform:scale(1); } }
+}

@@ -101,7 +101,9 @@ const chapters = [
   const fragments = hero?.querySelector<HTMLElement>('.story-fragments');
   const stack = hero?.querySelector<HTMLElement>('.story-stack');
   const lastStage = cards.length;
+  let particleFrame = 0;
   function createFragments() {
+    cancelAnimationFrame(particleFrame);
     if (!fragments || !stack || !scene || reducedMotion.matches) return;
     fragments.replaceChildren();
     const origin = scene.getBoundingClientRect();
@@ -115,6 +117,7 @@ const chapters = [
     const length = trace.getTotalLength();
     const sources = [cards[cards.length - 1], hero?.querySelector<HTMLElement>('.story-side')].filter(Boolean) as HTMLElement[];
     const random = (n: number) => { const v = Math.sin(n * 127.1 + 311.7) * 43758.5453; return v - Math.floor(v); };
+    const dots: { x: number; y: number; tx: number; ty: number; sx: number; sy: number; size: number; delay: number; color: string }[] = [];
     sources.forEach((source, sourceIndex) => {
       const box = source.getBoundingClientRect();
       const letters = (source.textContent || 'OnO').replace(/\s/g, '');
@@ -131,6 +134,10 @@ const chapters = [
         const targetY = point.y - origin.top;
         const spreadX = 20 + random(seed + 4) * (origin.width - 40) - x;
         const spreadY = 100 + random(seed + 5) * (origin.height - 140) - y;
+        if (mobile.matches) {
+          dots.push({ x, y, tx: targetX, ty: targetY, sx: x + spreadX, sy: y + spreadY, size, delay: along * 1500, color: ['#f8f4e9','#315b83','#a8a39a','#b94b50','#d8bd7e'][i % 5] });
+          continue;
+        }
         const piece = document.createElement('span');
         piece.className = 'story-fragment' + (i % 4 === 0 ? ' is-letter' : i % 3 === 0 ? ' is-spark' : '');
         if (i % 4 === 0) piece.textContent = letters[i % letters.length];
@@ -138,6 +145,40 @@ const chapters = [
         fragments.append(piece);
       }
     });
+    if (dots.length) {
+      // One bitmap surface instead of hundreds of animated, clipped DOM layers.
+      const canvas = document.createElement('canvas');
+      const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+      canvas.width = Math.round(origin.width * ratio);
+      canvas.height = Math.round(origin.height * ratio);
+      canvas.style.cssText = 'width:100%;height:100%;display:block';
+      fragments.append(canvas);
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.scale(ratio, ratio);
+      let start = 0;
+      const draw = (now: number) => {
+        if (!hero?.classList.contains('is-introducing')) return;
+        if (!start) start = now;
+        const elapsed = now - start;
+        ctx.clearRect(0, 0, origin.width, origin.height);
+        for (const dot of dots) {
+          const t = (elapsed - dot.delay) / 2450;
+          if (t < 0 || t >= 1) continue;
+          // A continuous quadratic path spreads outward and bends into the N.
+          const u = 1 - t;
+          const x = u*u*dot.x + 2*u*t*dot.sx + t*t*dot.tx;
+          const y = u*u*dot.y + 2*u*t*dot.sy + t*t*dot.ty;
+          const size = dot.size * (1 - .9*t);
+          ctx.globalAlpha = Math.min(1, t*12, (1-t)*10);
+          ctx.fillStyle = dot.color;
+          ctx.fillRect(x-size/2, y-size/2, size, size);
+        }
+        if (elapsed < 4000) particleFrame = requestAnimationFrame(draw);
+        else ctx.clearRect(0, 0, origin.width, origin.height);
+      };
+      particleFrame = requestAnimationFrame(draw);
+    }
   }
 
   let stageIndex = 0;
@@ -151,6 +192,7 @@ const chapters = [
     const index = stageIndex;
     hero.style.setProperty('--story-progress', String(progress));
     if (index === current) return;
+    if (index !== lastStage) cancelAnimationFrame(particleFrame);
     if (index === lastStage) createFragments();
     hero.classList.toggle('is-introducing', index === lastStage);
     introduction?.setAttribute('aria-hidden', String(index !== lastStage));

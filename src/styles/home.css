@@ -1225,6 +1225,13 @@
 }
 
 /* All input methods page through the same stationary scene. */
+/* Avoid braking at the scatter waypoint on phones; keep N/O timing intact. */
+@media(max-width:767px) {
+  .is-introducing .story-fragment { animation-timing-function:linear; }
+  .story-fragment:nth-child(7n) { filter:none; }
+  .story-fragment.is-spark { box-shadow:none;background:radial-gradient(circle,#fff8dd 0 20%,#d8bd7e 45%,transparent 75%); }
+  .is-introducing .story-logo-assembly { animation:none; }
+}
 .story-hero { height:100svh; }
 .story-scene { position:relative;min-height:0; }
 .story-introduction-logo { width:64vw;height:min(33vw,40svh);margin:34px 0 12px;left:-.7%; }

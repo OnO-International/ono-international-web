@@ -118,7 +118,8 @@ const chapters = [
     sources.forEach((source, sourceIndex) => {
       const box = source.getBoundingClientRect();
       const letters = (source.textContent || 'OnO').replace(/\s/g, '');
-      const count = sourceIndex === 0 ? 360 : 120;
+      // Keep the same path and arrival timing with fewer composited layers on phones.
+      const count = mobile.matches ? (sourceIndex === 0 ? 240 : 80) : (sourceIndex === 0 ? 360 : 120);
       for (let i = 0; i < count; i++) {
         const seed = i + sourceIndex * 173;
         const x = box.left - origin.left + random(seed + 1) * box.width;

@@ -58,6 +58,26 @@ const chapters = [
       ))}
     </div>
 
+    <div class="story-fragments" aria-hidden="true" inert></div>
+    <section class="story-introduction" aria-label="OnO INTERNATIONALについて" aria-hidden="true" inert>
+      <p class="eyebrow">ABOUT US / OnO INTERNATIONAL</p>
+      <div class="story-introduction-logo">
+        <svg class="story-logo-assembly" viewBox="130 470 1340 690" role="img" aria-label="OnO International">
+          <defs>
+            <clipPath id="story-n-silhouette"><path d="M280 922 C520 890 610 774 666 596 C694 501 705 486 730 488 C768 490 783 569 807 689 L887 970 C970 780 1100 670 1325 710 C1130 720 1020 851 950 1052 C908 1178 857 1182 828 1078 L720 670 C658 834 519 960 280 922Z"/></clipPath>
+            <mask id="story-n-draw" maskUnits="userSpaceOnUse" x="0" y="470" width="1600" height="690">
+              <path class="story-n-trace" d="M280 922 C560 947 637 773 718 569 C750 510 815 1090 878 1080 C929 1070 966 712 1325 710" fill="none" stroke="white" stroke-width="165" stroke-linecap="round" pathLength="1"/>
+            </mask>
+          </defs>
+          <image class="story-logo-circles" href={`${base}logo.png`} x="0" y="0" width="1600" height="1600"/>
+          <image href={`${base}logo.png`} x="0" y="0" width="1600" height="1600" clip-path="url(#story-n-silhouette)" mask="url(#story-n-draw)"/>
+        </svg>
+      </div>
+      <h2>O<span>と</span>OをN<span>で</span>結ぶ</h2>
+      <p class="story-introduction-copy">OnO INTERNATIONALは、人と人、国と国、価値と価値を<br class="md:hidden"/>つなぐことを使命とする企業です。</p>
+      <a class="text-link" href={`${base}about`}>私たちについて ↗</a>
+      <a class="story-introduction-scroll" href="#services">SCROLL TO EXPLORE <span>↓</span></a>
+    </section>
     <div class="story-controls">
       <span class="story-scroll-label">SCROLL</span>
       <span id="story-current" aria-live="polite" aria-atomic="true"><b>01</b><span class="sr-only"> / 05</span></span>
@@ -77,18 +97,64 @@ const chapters = [
   const currentLabel = document.querySelector('#story-current b');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const mobile = window.matchMedia('(max-width: 767px)');
-  let mobileIndex = 0;
+  const introduction = hero?.querySelector<HTMLElement>('.story-introduction');
+  const fragments = hero?.querySelector<HTMLElement>('.story-fragments');
+  const stack = hero?.querySelector<HTMLElement>('.story-stack');
+  const lastStage = cards.length;
+  function createFragments() {
+    if (!fragments || !stack || !scene || reducedMotion.matches) return;
+    fragments.replaceChildren();
+    const origin = scene.getBoundingClientRect();
+    const logo = introduction?.querySelector('.story-introduction-logo')?.getBoundingClientRect();
+    if (!logo) return;
+    // The N sits at the centre of the original OnO mark. Measure it in the
+    // scene so the same convergence point works on phones and desktop.
+    const trace = introduction?.querySelector<SVGPathElement>('.story-n-trace');
+    const matrix = trace?.getScreenCTM();
+    if (!trace || !matrix) return;
+    const length = trace.getTotalLength();
+    const sources = [cards[cards.length - 1], hero?.querySelector<HTMLElement>('.story-side')].filter(Boolean) as HTMLElement[];
+    const random = (n: number) => { const v = Math.sin(n * 127.1 + 311.7) * 43758.5453; return v - Math.floor(v); };
+    sources.forEach((source, sourceIndex) => {
+      const box = source.getBoundingClientRect();
+      const letters = (source.textContent || 'OnO').replace(/\s/g, '');
+      const count = sourceIndex === 0 ? 360 : 120;
+      for (let i = 0; i < count; i++) {
+        const seed = i + sourceIndex * 173;
+        const x = box.left - origin.left + random(seed + 1) * box.width;
+        const y = box.top - origin.top + random(seed + 2) * box.height;
+        const size = 3 + random(seed + 3) * 10;
+        const along = i / (count - 1);
+        const point = trace.getPointAtLength(length * along).matrixTransform(matrix);
+        const targetX = point.x - origin.left;
+        const targetY = point.y - origin.top;
+        const spreadX = 20 + random(seed + 4) * (origin.width - 40) - x;
+        const spreadY = 100 + random(seed + 5) * (origin.height - 140) - y;
+        const piece = document.createElement('span');
+        piece.className = 'story-fragment' + (i % 4 === 0 ? ' is-letter' : i % 3 === 0 ? ' is-spark' : '');
+        if (i % 4 === 0) piece.textContent = letters[i % letters.length];
+        piece.style.cssText = `left:${x}px;top:${y}px;width:${size}px;height:${size}px;--fly-x:${spreadX}px;--fly-y:${spreadY}px;--land-x:${targetX-x-size/2}px;--land-y:${targetY-y-size/2}px;--spin:${random(seed+6)*720-360}deg;--delay:${along*1500}ms;--piece-color:${['#f8f4e9','#315b83','#a8a39a','#b94b50','#252921'][i%5]};`;
+        fragments.append(piece);
+      }
+    });
+  }
+
+  let stageIndex = 0;
   let current = -1;
   let frame = 0;
 
   function render() {
     frame = 0;
     if (!hero || !scene) return;
-    const distance = hero.offsetHeight - scene.offsetHeight;
-    const progress = mobile.matches ? mobileIndex / (cards.length - 1) : Math.max(0, Math.min(1, -hero.getBoundingClientRect().top / Math.max(1, distance)));
-    const index = Math.min(cards.length - 1, Math.round(progress * (cards.length - 1)));
+    const progress = stageIndex / lastStage;
+    const index = stageIndex;
     hero.style.setProperty('--story-progress', String(progress));
     if (index === current) return;
+    if (index === lastStage) createFragments();
+    hero.classList.toggle('is-introducing', index === lastStage);
+    introduction?.setAttribute('aria-hidden', String(index !== lastStage));
+    if (introduction) introduction.inert = index !== lastStage;
+    if (stack) stack.inert = index === lastStage;
     current = index;
     cards.forEach((card, i) => {
       const offset = i - current;
@@ -99,24 +165,38 @@ const chapters = [
       card.setAttribute('aria-hidden', String(offset !== 0));
       card.inert = offset !== 0;
     });
-    if (currentLabel) currentLabel.textContent = String(current + 1).padStart(2, '0');
+    if (currentLabel) currentLabel.textContent = current === lastStage ? 'ABOUT' : String(current + 1).padStart(2, '0');
+    const countSuffix = hero.querySelector<HTMLElement>('#story-current .sr-only');
+    if (countSuffix) countSuffix.textContent = current === lastStage ? ' 会社紹介' : ' / 05';
     previous.disabled = current === 0;
-    next.disabled = current === cards.length - 1;
+    next.disabled = current === lastStage;
   }
   function go(delta: number) {
     if (!hero || !scene) return;
-    const target = Math.max(0, Math.min(cards.length - 1, current + delta));
-    if (mobile.matches) {
-      mobileIndex = target;
-      render();
-      return;
-    }
-    window.scrollTo({ top: window.scrollY + hero.getBoundingClientRect().top + target * (hero.offsetHeight - scene.offsetHeight) / (cards.length - 1), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    const target = Math.max(0, Math.min(lastStage, current + delta));
+    stageIndex = target;
+    render();
   }
   previous?.addEventListener('click', () => go(-1));
   next?.addEventListener('click', () => go(1));
+  // One wheel gesture turns one card; ignore its momentum until it settles.
+  let wheelLast = -Infinity;
+  let wheelTurn = -Infinity;
+  hero?.addEventListener('wheel', (event) => {
+    if (event.ctrlKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(hero.getBoundingClientRect().top) > 2) return;
+    const now = performance.now();
+    const fresh = now - wheelLast > 180 && now - wheelTurn > 450;
+    wheelLast = now;
+    const direction = event.deltaY > 0 ? 1 : -1;
+    const canTurn = direction > 0 ? current < lastStage : current > 0;
+    if (canTurn || !fresh) event.preventDefault();
+    if (fresh && canTurn) {
+      wheelTurn = now;
+      go(direction);
+    }
+  }, { passive: false });
   // Keep the document still while swiping cards on phones. A fresh swipe
-  // after the last card resumes native scrolling, including browser chrome.
+  // after the company introduction resumes native scrolling, including browser chrome.
   let touchStart: { x: number; y: number; index: number } | null = null;
   let consumed = false;
   hero?.addEventListener('touchstart', (event) => {
@@ -129,7 +209,7 @@ const chapters = [
     const dy = touchStart.y - event.touches[0].clientY;
     const dx = touchStart.x - event.touches[0].clientX;
     if (!consumed && Math.abs(dx) > Math.abs(dy)) return;
-    const canTurn = dy > 0 ? touchStart.index < cards.length - 1 : touchStart.index > 0;
+    const canTurn = dy > 0 ? touchStart.index < lastStage : touchStart.index > 0;
     if (!consumed && !canTurn) return;
     if (event.cancelable) event.preventDefault();
     if (!consumed && Math.abs(dy) >= 40) {

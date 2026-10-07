@@ -685,3 +685,15 @@
     transition-duration:.01ms!important;
   }
 }
+
+/* A compact, asymmetrical two-line menu inside a fine circular frame. */
+#menu-btn { gap:11px; }
+#menu-btn i { width:44px;height:44px;border:1px solid var(--line);border-radius:50%;transition:background .25s,border-color .25s,transform .3s; }
+#menu-btn i::before,#menu-btn i::after { content:'';position:absolute;height:1.5px;background:currentColor;left:11px;transition:width .25s,transform .25s; }
+#menu-btn i::before { top:17px;width:21px; }
+#menu-btn i::after { top:24px;width:14px; }
+#menu-btn:hover i,#menu-btn:focus-visible i { background:var(--paper);border-color:var(--blue);transform:rotate(-8deg); }
+#menu-btn:hover i::after,#menu-btn:focus-visible i::after { width:21px; }
+#menu-btn[aria-expanded='true'] i::before { top:21px;transform:rotate(45deg); }
+#menu-btn[aria-expanded='true'] i::after { top:21px;width:21px;transform:rotate(-45deg); }
+@media(prefers-reduced-motion:reduce) { #menu-btn i,#menu-btn i::before,#menu-btn i::after { transition:none; } }

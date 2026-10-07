@@ -36,15 +36,15 @@
 
 .story-stripes i {
   width:8px;
-  background:var(--blue);
+  background:#b94b50;
 }
 
 .story-stripes i:nth-child(2) {
-  background:var(--orange);
+  background:#315b83;
 }
 
 .story-stripes i:nth-child(3) {
-  background:#b7bdb0;
+  background:#a8a39a;
 }
 
 .story-side {
@@ -1131,4 +1131,106 @@
   .story-card[data-index="2"] .story-copy h2 { font-size: 15px; }
   .story-art svg { max-height: 65px; }
   .story-card[data-index="2"] .story-art svg { max-height: 45px; }
+}
+
+/* The last paper opens into the company introduction. */
+.story-hero { height:512svh; }
+.story-stack,.story-side { transition:opacity .55s ease,scale .9s cubic-bezier(.2,.7,.2,1); }
+.is-introducing :is(.story-stack,.story-side) { opacity:0;scale:1.15;pointer-events:none; }
+.story-fragments { position:absolute;inset:0;pointer-events:none;z-index:10;visibility:hidden; }
+.is-introducing .story-fragments { visibility:visible; }
+.story-fragment { position:absolute;transform-origin:center;background:var(--piece-color);clip-path:polygon(0 12%,85% 0,100% 78%,18% 100%); }
+.story-fragment.is-letter { clip-path:none;background:transparent;color:var(--piece-color);font-size:14px;font-weight:700;line-height:1; }
+.is-introducing .story-fragment { animation:paper-scatter 2.45s cubic-bezier(.25,.6,.3,1) var(--delay) both; }
+@keyframes paper-scatter {
+  0% { transform:scale(.3);opacity:0; }
+  10% { opacity:1; }
+  38% { transform:translate(var(--fly-x),var(--fly-y)) rotate(var(--spin)) scale(1.1);opacity:1; }
+  55% { opacity:.9; }
+  92% { transform:translate(var(--land-x),var(--land-y)) rotate(0deg) scale(.15);opacity:.8; }
+  100% { transform:translate(var(--land-x),var(--land-y)) scale(0);opacity:0; }
+}
+.story-introduction { position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 60px 70px;opacity:0;visibility:hidden;transform:none;transition:opacity .7s ease,transform 1s ease,visibility .7s; }
+.is-introducing .story-introduction { opacity:1;visibility:visible;transform:scale(1);transition-delay:1.1s; }
+.story-introduction-logo { width:min(470px,65vw);height:clamp(120px,27svh,260px);overflow:hidden;margin:12px 0; }
+.story-introduction-logo img { width:100%;height:100%;object-fit:cover; }
+.story-introduction h2 { font-size:clamp(28px,4vw,56px);font-weight:900;letter-spacing:.03em; }
+.story-introduction h2 span { color:var(--blue); }
+.story-introduction-copy { font-size:clamp(13px,1.4vw,18px);line-height:2.1;margin:22px 0;max-width:640px; }
+.story-introduction-scroll { display:flex;gap:20px;align-items:center;margin-top:30px;font-size:9px;letter-spacing:.18em; }
+.story-introduction-scroll span { font-size:22px; }
+.is-introducing .story-controls { z-index:12; }
+.is-introducing .story-controls b { font-size:10px; }
+.is-introducing .story-bottom { visibility:hidden; }
+@media(max-width:767px) {
+  .story-hero { height:100svh; }
+  .story-introduction { padding:90px 40px 50px; }
+  .story-introduction-logo { width:280px;max-width:100%;height:170px; }
+  .story-introduction .eyebrow { font-size:8px; }
+  .story-introduction-copy { margin:18px 0; }
+  .story-introduction-scroll { margin-top:24px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .story-fragments { display:none; }
+  .story-introduction,.story-stack,.story-side,.story-stripes,.story-grid { transition:none;transform:none;scale:1; }
+}
+.is-introducing .story-total,.is-introducing .story-progress { visibility:hidden; }
+
+/* Assemble the N first, reveal both O marks together, then the copy. */
+.story-logo-assembly { width:100%;height:100%;overflow:visible; }
+.story-n-trace { stroke-dasharray:1;stroke-dashoffset:1; }
+.story-logo-circles { opacity:0; }
+.is-introducing .story-introduction { transition:none;transform:none; }
+.story-introduction>:not(.story-introduction-logo) { opacity:0;transform:translateY(16px); }
+.is-introducing .story-n-trace { animation:draw-logo-n 1.5s linear 2.1s both; }
+.is-introducing .story-logo-circles { animation:reveal-logo-os .75s ease 4s both; }
+.is-introducing .story-introduction>:not(.story-introduction-logo) { animation:reveal-company-copy .85s ease 4.85s both; }
+.is-introducing .story-introduction-copy { animation-delay:5.05s; }
+.is-introducing .story-introduction>.text-link,.is-introducing .story-introduction-scroll { animation-delay:5.25s; }
+@keyframes draw-logo-n { to { stroke-dashoffset:0; } }
+@keyframes reveal-logo-os { from { opacity:0; } to { opacity:1; } }
+@keyframes reveal-company-copy { to { opacity:1;transform:translateY(0); } }
+@media(prefers-reduced-motion:reduce) {
+  .is-introducing .story-n-trace { animation:none;stroke-dashoffset:0; }
+  .is-introducing .story-logo-circles,.is-introducing .story-introduction>:not(.story-introduction-logo) { animation:none;opacity:1;transform:none; }
+}
+
+/* A larger mark with a luminous drawing stroke and paired O reveal. */
+.story-introduction-logo { position:relative;width:70vw;max-width:none;height:min(36vw,43svh);flex-shrink:0;overflow:visible; }
+.story-fragment.is-spark { border-radius:50%;clip-path:none;background:#d8bd7e;box-shadow:0 0 7px #ddbc73aa,0 0 18px #e8cf9755; }
+.story-fragment:nth-child(7n) { filter:blur(.7px); }
+.is-introducing .story-logo-assembly { animation:logo-arrival 5s cubic-bezier(.2,.65,.3,1) both; }
+.is-introducing .story-logo-circles { transform-box:fill-box;transform-origin:center;animation:reveal-logo-os 1.1s cubic-bezier(.16,1,.3,1) 4s both; }
+.is-introducing .story-introduction-logo::after { content:'';position:absolute;inset:8% 15%;border:1px solid #c1a26388;border-radius:50%;pointer-events:none;animation:logo-halo 1.3s ease-out 4s both; }
+@keyframes logo-arrival { 0%,30% { filter:drop-shadow(0 0 0 transparent); } 60% { filter:drop-shadow(0 0 12px #d9c8a4aa); } 85% { filter:drop-shadow(0 0 24px #e7d5b188); } 100% { filter:drop-shadow(0 0 0 transparent); } }
+@keyframes reveal-logo-os { 0% { opacity:0;transform:scale(.78);filter:blur(8px) brightness(1.6); } 65% { opacity:1;transform:scale(1.025);filter:blur(0) brightness(1.1); } 100% { opacity:1;transform:scale(1);filter:none; } }
+@keyframes logo-halo { 0% { opacity:0;transform:scale(.55); } 20% { opacity:.6; } 100% { opacity:0;transform:scale(1.65); } }
+.is-introducing .story-introduction>:not(.story-introduction-logo) { animation-delay:5.2s; }
+.is-introducing .story-introduction-copy { animation-delay:5.4s; }
+.is-introducing .story-introduction>.text-link,.is-introducing .story-introduction-scroll { animation-delay:5.6s; }
+@media(max-width:767px) {
+  .story-introduction { padding:90px 28px 45px; }
+  .story-introduction-logo { width:70vw;max-width:none;height:36vw;margin:24px 0; }
+  .story-introduction-copy { font-size:12px;line-height:2; }
+}
+@media(max-height:700px) and (min-width:768px) {
+  .story-introduction { padding-top:100px;padding-bottom:22px; }
+  .story-introduction-logo { height:32svh; }
+  .story-introduction-copy { margin:12px 0; }
+  .story-introduction-scroll { margin-top:14px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .is-introducing .story-logo-assembly,.is-introducing .story-logo-circles { animation:none;filter:none;transform:none; }
+  .is-introducing .story-introduction-logo::after { display:none; }
+}
+
+/* All input methods page through the same stationary scene. */
+.story-hero { height:100svh; }
+.story-scene { position:relative;min-height:0; }
+.story-introduction-logo { width:64vw;height:min(33vw,40svh);margin:34px 0 12px;left:-.7%; }
+@media(min-width:768px) {
+  .story-introduction-copy { max-width:none;white-space:nowrap;font-size:clamp(12px,1.35vw,18px); }
+}
+@media(max-width:767px) {
+  .story-introduction-logo { width:64vw;height:33vw;margin:34px 0 24px; }
 }

@@ -1055,6 +1055,21 @@
   }
 }
 
+@media (min-width:381px) and (max-width:767px) {
+  .story-card[data-index="3"] .story-copy h2 {
+    font-size:clamp(15px,3.65vw,22px);
+  }
+  .story-card[data-index="3"] .story-card-body {
+    gap:9px;
+  }
+  .story-card[data-index="3"] .story-number {
+    width:35px;
+  }
+  .story-card[data-index="3"] .story-number strong {
+    font-size:34px;
+  }
+}
+
 @media(max-height:700px) and (min-width:768px) {
   .story-stack {
     top:23%;

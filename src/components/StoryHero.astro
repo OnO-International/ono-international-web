@@ -1,11 +1,11 @@
 ---
 const base = import.meta.env.BASE_URL;
 const chapters = [
-  { num: '01', jp: ['小さなお店には', '関係ないと', '思われていました。'], en: "At first, we were told AI wasn't for small shops.", label: 'EVERY POSSIBILITY STARTS SMALL.' },
-  { num: '02', jp: ['それでも、', '「自分たちにできることは', '何か」を考え続けてきました。'], en: 'Still, we kept asking ourselves what we could do.', label: 'A QUESTION THAT MOVES US.' },
-  { num: '03', jp: ['小さな実店舗を、支えたい。', '小さい私たちだからできる、', 'まるごとのサポート。'], en: 'A small team, fully by your side. Complete support for local businesses.', detail: '小規模で実店舗を営む会社さんの力になりたい。その想いで、一店一店に向き合ってきました。', label: 'SMALL TEAM. FULL SUPPORT.' },
-  { num: '04', jp: ['私たちは、', 'どんなときも', 'この信念を貫いてきました。'], en: "Through it all, we've stayed true to this belief.", label: 'ALWAYS, BY YOUR SIDE.' },
-  { num: '05', jp: ['お店の常識を、', '一緒に', '塗り替えませんか。'], en: "Let's redefine what's possible for your business.", label: 'OUR NEXT CHAPTER, TOGETHER.' },
+  { num: '01', jp: ['小さな僕らが、', '大企業に勝てる。', 'そんな時代が、やってきた。'], en: 'Small players like us can now take on big companies — and win.', label: 'SMALL PLAYERS. BIG POSSIBILITIES.' },
+  { num: '02', jp: ['ひとつのアイデアが、', '世界に届き、', '誰かの心を動かす。'], en: "A single idea can reach the world and touch someone's heart.", label: 'ONE IDEA CAN REACH THE WORLD.' },
+  { num: '03', jp: ['AIを使いこなし、', '最新のテクノロジーを動かす。', 'あなたの事業を、成功へ導く。'], en: 'We harness AI and put the latest technology to work to help your business succeed.', label: 'TECHNOLOGY FOR YOUR SUCCESS.' },
+  { num: '04', jp: ['あなたの挑戦と、世界を結ぶ。', 'OとOをつなぐNに、', '僕らはなる。'], en: 'We connect your ambitions with the world. We will be the N that links O and O.', label: 'CONNECTING YOU WITH THE WORLD.' },
+  { num: '05', jp: ['さあ、小さな僕らで、', '大きな世界に、', '仕掛けよう。'], en: "Small as we are, let's take on the world together.", label: 'OUR NEXT CHAPTER, TOGETHER.' },
 ];
 ---
 
@@ -15,7 +15,7 @@ const chapters = [
     <div class="story-stripes" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="story-side">
       <p class="eyebrow">ONE &amp; ONLY PARTNER</p>
-      <p class="story-manifesto">小さなお店の、<br/>大きな可能性。</p>
+      <p class="story-manifesto">小さな僕らの、<br/>大きな可能性。</p>
       <div class="connection-mark" aria-hidden="true"><span>O</span><em>n</em><span>O</span></div>
       <p class="story-side-note">人と人。想いと未来。<br/>そのあいだに、OnO。</p>
     </div>
@@ -28,7 +28,6 @@ const chapters = [
             <div class="story-number"><span>BRAND STORY</span><strong>{chapter.num}<small>.</small></strong></div>
             <div class="story-copy">
               {i === 0 ? <h1>{chapter.jp.map(line => <span>{line}</span>)}</h1> : <h2>{chapter.jp.map(line => <span>{line}</span>)}</h2>}
-              {chapter.detail && <p class="story-detail">{chapter.detail}</p>}
               <p class="story-english">{chapter.en}</p>
             </div>
           </div>

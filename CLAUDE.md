@@ -3,7 +3,7 @@
 ## プロジェクト概要
 - **フレームワーク**: Astro v6 + Tailwind CSS v4
 - **本番URL**: https://ono-international.com
-- **デプロイ**: Vercel（mainブランチにpushで自動デプロイ）
+- **デプロイ**: GitHub Pages（mainブランチにpushで GitHub Actions が自動デプロイ。`.github/workflows/deploy.yml`）
 - **リポジトリ**: GitHub / OnO-International/ono-international-web
 
 ## 主要ファイル構成

@@ -57,7 +57,7 @@ const base = import.meta.env.BASE_URL;
       <div class="menu-top"><span class="eyebrow">OnO INTERNATIONAL</span><button id="fullmenu-close" aria-label="メニューを閉じる">CLOSE <span aria-hidden="true">×</span></button></div>
       <div class="menu-body"><p class="menu-message">人と人。<br/>想いと未来。<br/><span>そのあいだに、OnO。</span></p><nav aria-label="メインナビゲーション">
         {[
-          {href:base, en:'HOME', jp:'トップページ'}, {href:`${base}services`,en:'SERVICE',jp:'サービス'}, {href:`${base}about`,en:'ABOUT',jp:'会社概要'}, {href:`${base}news`,en:'NEWS',jp:'最新情報'}, {href:`${base}recruit`,en:'RECRUIT',jp:'採用情報'}, {href:`${base}contact`,en:'CONTACT',jp:'お問い合わせ'},
+          {href:base, en:'HOME', jp:'トップページ'}, {href:`${base}services`,en:'SERVICE',jp:'サービス'}, {href:`${base}about`,en:'ABOUT',jp:'会社概要'}, {href:`${base}news`,en:'NEWS',jp:'最新情報'}, {href:`${base}recruit`,en:'RECRUIT',jp:'採用情報'}, {href:`${base}contact`,en:'CONTACT',jp:'お問い合わせ'}, {href:`${base}card/`,en:'CARD',jp:'デジタル名刺'},
         ].map((item,i) => <a href={item.href}><small>0{i+1}</small><strong>{item.en}</strong><span>{item.jp}</span><span aria-hidden="true">↗</span></a>)}
       </nav></div><p class="menu-bottom">© 2011 OnO INTERNATIONAL. All rights reserved.</p>
     </dialog>
@@ -66,7 +66,7 @@ const base = import.meta.env.BASE_URL;
 
     <footer class="site-footer">
       <div class="footer-top"><a href={`${base}contact`} class="footer-hello">LET’S TALK<span>↗</span></a><p>お店の常識を、AIで塗り替える。</p></div>
-      <div class="footer-links"><a href={base} class="site-brand"><img src={`${base}logo.png`} alt=""/><span>OnO<small>INTERNATIONAL</small></span></a><div><p class="eyebrow">SERVICES</p><a href={`${base}services/restaurant-web`}>実店舗 Web集客支援</a><a href={`${base}services/ai`}>AI構築・コンサルティング</a><a href={`${base}services/video`}>動画制作</a><a href={`${base}services/drone`}>空中・水中ドローン撮影</a><a href={`${base}services/freediving`}>フリーダイビング講習</a></div><div><p class="eyebrow">INFORMATION</p><a href={`${base}about`}>会社概要</a><a href={`${base}news`}>News &amp; Blog</a><a href={`${base}recruit`}>採用情報</a><a href={`${base}contact`}>お問い合わせ</a></div></div>
+      <div class="footer-links"><a href={base} class="site-brand"><img src={`${base}logo.png`} alt=""/><span>OnO<small>INTERNATIONAL</small></span></a><div><p class="eyebrow">SERVICES</p><a href={`${base}services/restaurant-web`}>実店舗 Web集客支援</a><a href={`${base}services/ai`}>AI構築・コンサルティング</a><a href={`${base}services/video`}>動画制作</a><a href={`${base}services/drone`}>空中・水中ドローン撮影</a><a href={`${base}services/freediving`}>フリーダイビング講習</a></div><div><p class="eyebrow">INFORMATION</p><a href={`${base}about`}>会社概要</a><a href={`${base}card/`}>代表のデジタル名刺</a><a href={`${base}news`}>News &amp; Blog</a><a href={`${base}recruit`}>採用情報</a><a href={`${base}contact`}>お問い合わせ</a></div></div>
       <div class="footer-bottom"><span>© 2011 OnO INTERNATIONAL. All rights reserved.</span><a href="#main-content">BACK TO TOP ↑</a></div>
     </footer>
 

@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+N:小野;秀太;;;
+FN:小野 秀太
+X-PHONETIC-LAST-NAME:オノ
+X-PHONETIC-FIRST-NAME:シュウタ
+ORG:OnO International
+TITLE:代表
+TEL;TYPE=CELL:+818069943810
+EMAIL;TYPE=INTERNET:hibiki20240414@gmail.com
+URL:https://ono-international.com/
+item1.URL:https://line.me/ti/p/y_Ani_CfVR
+item1.X-ABLabel:LINE
+item2.URL:https://ono-international.com/card/contact/
+item2.X-ABLabel:デジタル名刺
+END:VCARD

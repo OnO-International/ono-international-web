@@ -55,7 +55,7 @@
         </section>
       </div>
       <section class="exchange" aria-label="名刺を渡す">
-        <button class="qr-preview" id="show-qr" aria-label="名刺のQRコードを拡大"><img src="../assets/card-qr.png" alt="この名刺ページを開くQRコード" width="152" height="152"><span>タップで拡大 <svg><use href="#i-qr"/></svg></span></button>
+        <button class="qr-preview" id="show-qr" aria-label="名刺のQRコードを拡大"><img src="../assets/card-qr.png?v=20261101-cosmic" alt="この名刺ページを開くQRコード" width="152" height="152"><span>タップで拡大 <svg><use href="#i-qr"/></svg></span></button>
         <div class="exchange-copy"><p class="eyebrow">LET’S CONNECT</p><h2>この名刺を、お手元に。</h2><p class="exchange-note">QRコードを読み取ると、<br>この名刺を開けます。</p><button class="share-button" id="share-card"><svg><use href="#i-share"/></svg>名刺を共有</button></div>
       </section>
       <footer class="card-footer"><span class="footer-mark"><i></i><i></i></span> OnO International</footer>
@@ -65,9 +65,9 @@
   <dialog id="qr-dialog" aria-labelledby="qr-title">
     <button class="close-dialog" id="close-qr" aria-label="閉じる"><svg><use href="#i-close"/></svg></button>
     <p class="eyebrow">DIGITAL BUSINESS CARD</p><h2 id="qr-title">小野 秀太</h2><p class="dialog-company">OnO International</p>
-    <img class="dialog-qr" src="../assets/card-qr.png" alt="名刺ページのQRコード" width="608" height="608">
+    <img class="dialog-qr" src="../assets/card-qr.png?v=20261101-cosmic" alt="名刺ページのQRコード" width="608" height="608">
     <p class="dialog-note">相手のスマホのカメラで読み取ってください。</p>
-    <a class="qr-download" href="../assets/card-qr.png" download="小野秀太_名刺QR.png"><svg><use href="#i-save"/></svg>QRコード画像を保存</a>
+    <a class="qr-download" href="../assets/card-qr.png?v=20261101-cosmic" download="小野秀太_名刺QR.png"><svg><use href="#i-save"/></svg>QRコード画像を保存</a>
     <label class="copy-label" for="card-url">名刺のURL</label><div class="copy-row"><input id="card-url" type="url" readonly value="https://ono-international.com/card/contact/"><button id="copy-link">コピー</button></div>
   </dialog>
   <div id="status" class="toast" role="status" aria-live="polite"></div>

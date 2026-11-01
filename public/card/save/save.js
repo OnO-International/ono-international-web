@@ -7,7 +7,7 @@ let cardFile;
 async function preparePhoto() {
   if (typeof navigator.share !== 'function' || typeof navigator.canShare !== 'function') return;
   try {
-    const response = await fetch('../assets/shuta-ono-card.png?v=20261101-cosmic');
+    const response = await fetch('../assets/shuta-ono-card.png?v=20261101-tagline');
     if (!response.ok) return;
     const blob = await response.blob();
     if (blob.type !== 'image/png') return;

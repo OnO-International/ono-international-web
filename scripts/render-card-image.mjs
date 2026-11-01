@@ -20,7 +20,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="2400" 
 <g fill="#06234b"><image href="${logo}" x="85" y="65" width="190" height="99.77"/>
 <g text-anchor="middle"><text x="180" y="193" font-family="Georgia,serif" font-size="27" letter-spacing="-.6">OnO International</text><text x="180" y="214" font-family="Hiragino Mincho ProN,serif" font-size="10" letter-spacing=".7">オーエヌオーインターナショナル</text>
 <path d="M31 230H329" stroke="#496487" stroke-opacity=".3" stroke-width=".7"/><rect x="144" y="229" width="72" height="3" rx="1.5" fill="url(#rule)"/>
-<g font-family="Georgia,serif" font-size="8.5" letter-spacing="1.7"><text x="180" y="251">CONNECTING PEOPLE</text><text x="180" y="267">CREATING A BRIGHTER TOMORROW</text></g>
+<text x="180" y="251" font-family="Georgia,serif" font-size="8.5" letter-spacing="1.7">ONE &amp; ONLY PARTNER</text><text x="180" y="267" font-family="Hiragino Mincho ProN,serif" font-size="10.5" letter-spacing=".4">OとOをつなぐNに、僕らはなる。</text>
 <text x="180" y="294" font-family="Hiragino Mincho ProN,serif" font-size="13" letter-spacing="3">代表</text><text x="183" y="335" font-family="Hiragino Mincho ProN,serif" font-size="36" letter-spacing="6">小野 秀太</text><text x="182" y="359" font-family="Georgia,serif" font-size="12" letter-spacing="5">SHUTA ONO</text></g>
 ${rows}
 <rect x="60" y="547" width="240" height="240" rx="13" fill="#fff" stroke="#9bb6d0" stroke-width=".8"/><image href="${qr}" x="60" y="547" width="240" height="240" clip-path="url(#qr-frame)"/></g></svg>`;

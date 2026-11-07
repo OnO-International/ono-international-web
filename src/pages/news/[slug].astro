@@ -15,7 +15,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout title={post.data.title} description={post.data.description} image={post.data.thumbnail}>
   <article class="pt-36 pb-24 px-6">
     <div class="max-w-3xl mx-auto">
       <!-- Back -->
@@ -38,8 +38,17 @@ const { Content } = await render(post);
         {post.data.title}
       </h1>
 
-      <!-- Divider -->
-      <div class="h-px bg-sand mb-10"></div>
+      {post.data.thumbnail ? (
+        <img
+          src={post.data.thumbnail}
+          alt={post.data.thumbnailAlt || ''}
+          width="1200"
+          height="630"
+          class="w-full h-auto rounded-2xl mb-10 border border-line"
+        />
+      ) : (
+        <div class="h-px bg-sand mb-10"></div>
+      )}
 
       <!-- Content -->
       <div class="prose prose-slate max-w-none

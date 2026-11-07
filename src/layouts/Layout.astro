@@ -4,9 +4,11 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = 'OnO INTERNATIONALは、動画制作・AI構築・フリーダイビング映像サービスで企業さまをコンサルティングする会社です。' } = Astro.props;
+const { title, description = 'OnO INTERNATIONALは、動画制作・AI構築・フリーダイビング映像サービスで企業さまをコンサルティングする会社です。', image } = Astro.props;
+const ogImage = image ? new URL(image, Astro.site).href : 'https://ono-international.com/logo%20ono.png';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const base = import.meta.env.BASE_URL;
 ---
@@ -23,14 +25,14 @@ const base = import.meta.env.BASE_URL;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://ono-international.com/logo%20ono.png" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content="OnO INTERNATIONAL" />
     <meta property="og:locale" content="ja_JP" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | OnO INTERNATIONAL`} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://ono-international.com/logo%20ono.png" />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/png" href={`${base}logo.png`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -1,6 +1,6 @@
 /** Enable only after the real-product sandbox is deployed and its entry flow is verified. */
 export const onoSuiteDemo: { oneUrl: string | null; compassUrl: string | null; release: string | null } = {
-  oneUrl: 'https://ono-one-demo.vercel.app/login',
+  oneUrl: 'https://ono-one-demo.vercel.app/experience',
   compassUrl: 'https://ono-compass-demo.vercel.app/auth/start',
   release: '2026.11.11.demo1',
 };

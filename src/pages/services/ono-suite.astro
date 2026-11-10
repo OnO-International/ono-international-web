@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { onoSuiteDemo, verifiedDemoUrl } from '../../data/ono-suite';
+const base = import.meta.env.BASE_URL;
+const contact = `${base}contact?service=ono-suite`;
+const oneDemo = verifiedDemoUrl(onoSuiteDemo.oneUrl);
+const compassDemo = verifiedDemoUrl(onoSuiteDemo.compassUrl);
+const steps = [
+  { number: '01', title: '注文を受ける', copy: 'テーブルごとの注文を確認。厨房での提供管理まで、現場の流れに沿って操作します。' },
+  { number: '02', title: '会計して、締める', copy: '注文から会計、日報へ。売上を何度も入力し直す負担を減らします。' },
+  { number: '03', title: '本部で見渡す', copy: '各店舗の売上や営業状況を確認。店舗の情報を、次の判断につなげます。' },
+];
+---
+<Layout title="OnO ONE・OnO COMPASS｜店舗運営から本部管理まで" description="店舗にはOnO ONE、本部にはOnO COMPASS。注文・会計・日々の店舗管理から、多店舗の経営管理まで。飲食店の運営に合わせた導入と製品体験をご相談ください。">
+  <article class="suite-page">
+    <section class="suite-hero suite-wrap">
+      <p class="suite-kicker">OnO RESTAURANT SOLUTIONS</p>
+      <div class="hero-grid">
+        <div>
+          <h1>お店が回る。<br/><span>ひとつで回る。</span></h1>
+          <p class="hero-copy">注文、会計、日々の店舗管理。<br/>お店の仕事をつなぎ、<br class="mobile-break"/>本部の判断まで支える。</p>
+          <div class="suite-actions"><a class="suite-button" href="#experience">製品の体験について <span aria-hidden="true">↓</span></a><a class="suite-textlink" href={contact}>導入を相談する ↗</a></div>
+        </div>
+        <div class="product-pair" aria-label="店舗用と本部用の製品構成">
+          <div class="product-wordmark one"><span class="product-role">店舗運営</span><p>OnO <strong>ONE</strong></p><span>お店の仕事を、ひとつに。</span></div>
+          <div class="pair-connection"><span></span><p>店舗の情報を、本部の判断へ。</p><span></span></div>
+          <div class="product-wordmark compass"><span class="product-role">本部管理</span><p>OnO <strong>COMPASS</strong></p><span>各店の今を、次の一手に。</span></div>
+        </div>
+      </div>
+      <div class="hero-bottom"><span>店舗にはONE。<br class="mobile-break"/>本部にはCOMPASS。</span><a href="#products">2つの製品を知る ↓</a></div>
+    </section>
+
+    <section id="products" class="suite-wrap suite-section">
+      <div class="suite-heading"><p class="suite-kicker">01 / TWO PRODUCTS, ONE FLOW</p><h2>現場と経営を、<br/>同じ流れにつなぐ。</h2><p>お店の一日と、本部の仕事。それぞれの役割に合わせた画面で、日々の運営を支えます。</p></div>
+      <div class="product-details">
+        <section class="detail-one"><p class="suite-kicker">FOR YOUR STORE</p><h3>OnO ONE</h3><p class="product-intro">レジを起点に、<br/>店舗運営をひとつへ。</p><p>予約・注文・会計から、勤怠や日報の確認まで。現場で使う仕事をまとめ、情報の行き来をスムーズにします。</p><ul><li>予約・顧客管理</li><li>注文・厨房の提供管理</li><li>POS会計・日報・売上確認</li><li>スタッフ・勤怠管理</li></ul></section>
+        <section class="detail-compass"><p class="suite-kicker">FOR YOUR HEADQUARTERS</p><h3>OnO COMPASS</h3><p class="product-intro">各店の今を、<br/>経営の次の一手へ。</p><p>店舗から届く情報を、本部で見渡す。売上の確認や店舗間の比較、現場との情報共有を支えます。</p><ul><li>店舗別の売上・営業状況の確認</li><li>日報・月次の数字の比較</li><li>スタッフ・勤怠情報の確認</li><li>本部と店舗の情報共有</li></ul></section>
+      </div>
+      <p class="suite-note">利用できる機能・連携範囲は、導入する版と店舗の運用に合わせてご案内します。</p>
+      <div class="product-screens">
+        <figure>
+          <a href={`${base}images/ono-suite/one-live.png`} target="_blank" rel="noopener noreferrer" aria-label="OnO ONEのテーブル管理画面を拡大して見る（新しいタブ）"><img src={`${base}images/ono-suite/one-live.png`} alt="OnO ONEのテーブル管理画面。架空の焼肉店の座席と予約状況を表示。" width="1341" height="692" loading="lazy" decoding="async" /></a>
+          <figcaption><strong>OnO ONE｜テーブル管理</strong><span>実アプリの画面例／架空データ・2026年11月10日確認</span><a href={`${base}images/ono-suite/one-live.png`} target="_blank" rel="noopener noreferrer">画面を拡大する ↗</a></figcaption>
+        </figure>
+        <figure>
+          <a href={`${base}images/ono-suite/compass-live.png`} target="_blank" rel="noopener noreferrer" aria-label="OnO COMPASSの売上ダッシュボードを拡大して見る（新しいタブ）"><img src={`${base}images/ono-suite/compass-live.png`} alt="OnO COMPASSのKPIダッシュボード。架空の焼肉店の売上と月内の推移を表示。" width="1346" height="639" loading="lazy" decoding="async" /></a>
+          <figcaption><strong>OnO COMPASS｜売上ダッシュボード</strong><span>実アプリの画面例／架空データ・2026年11月10日確認</span><a href={`${base}images/ono-suite/compass-live.png`} target="_blank" rel="noopener noreferrer">画面を拡大する ↗</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="flow-section"><div class="suite-wrap suite-section">
+      <div class="suite-heading"><p class="suite-kicker">02 / FROM THE FLOOR TO THE OFFICE</p><h2>一件の注文から、<br/>お店全体の動きまで。</h2></div>
+      <ol class="flow-list">{steps.map(step => <li><span class="step-number">{step.number}</span><div><h3>{step.title}</h3><p>{step.copy}</p></div></li>)}</ol>
+    </div></section>
+
+    <section id="experience" class="suite-wrap suite-section">
+      <div class="suite-heading"><p class="suite-kicker">03 / PRODUCT EXPERIENCE</p><h2>説明を聞くだけでなく、<br/>操作して、確かめる。</h2><p>製品と同じ画面・操作を、架空の店舗データで体験する環境をご用意します。商談では、普段のお店の流れに合わせてご案内します。</p></div>
+      <div class="experience-panel">
+        <div><span class="experience-label">架空の店舗・売上・スタッフデータ</span><h3>OnO ONE ＋ OnO COMPASS</h3><p>注文・会計から本部での確認まで。実際に操作しながら、店舗での使い方をご検討いただけます。</p></div>
+        <div class="experience-actions">
+          {oneDemo && <a class="suite-button" href={oneDemo} target="_blank" rel="noopener noreferrer">OnO ONEを体験する ↗</a>}
+          {compassDemo && <a class="suite-button secondary" href={compassDemo} target="_blank" rel="noopener noreferrer">OnO COMPASSを体験する ↗</a>}
+          {(!oneDemo || !compassDemo) && <><p class="availability">{oneDemo || compassDemo ? '公開準備中の製品は、個別にご案内します。' : 'オンライン体験環境は準備中です。製品体験をご希望の方はお問い合わせください。'}</p><a class="suite-button" href={`${contact}&intent=demo`}>製品体験を相談する ↗</a></>}
+          {onoSuiteDemo.release && (oneDemo || compassDemo) && <p class="suite-note">体験版：{onoSuiteDemo.release}</p>}
+        </div>
+      </div>
+      <p class="suite-note">体験用の数字は導入実績ではありません。実決済や外部への送信など、体験できない操作はご案内時・体験画面に表示します。</p>
+    </section>
+
+    <section class="suite-wrap suite-section introduction">
+      <div class="suite-heading"><p class="suite-kicker">04 / FIT TO YOUR OPERATION</p><h2>お店のやり方から、<br/>導入を考えます。</h2></div>
+      <div class="introduction-grid"><div><span>01 — HEARING</span><h3>現場の流れを伺う</h3><p>店舗数、注文の取り方、会計、日報、本部への報告。いまの運用と困りごとを整理します。</p></div><div><span>02 — EXPERIENCE</span><h3>実際の操作を確認する</h3><p>必要な機能を一緒に操作。端末・プリンター・既存サービスとの連携条件も確認します。</p></div><div><span>03 — PROPOSAL</span><h3>導入範囲をご提案する</h3><p>使う機能、設定、サポートの範囲に合わせてお見積り。導入の進め方を具体化します。</p></div></div>
+    </section>
+
+    <section class="suite-faq suite-wrap suite-section">
+      <p class="suite-kicker">QUESTIONS</p><h2>導入前に知っておきたいこと</h2>
+      <details><summary>いま使っているレジや端末を使えますか？</summary><p>端末の機種、ブラウザー、プリンター、決済サービスなどを確認し、利用できる構成をご案内します。既存機器への対応を一律にはお約束せず、導入前に確認します。</p></details>
+      <details><summary>料金はどのように決まりますか？</summary><p>店舗数、必要な機能、初期設定、連携・サポートの範囲を確認してお見積りします。まずは現在の運営状況をお聞かせください。</p></details>
+      <details><summary>体験用のデータは実際のお店のものですか？</summary><p>いいえ。体験には架空の店舗・売上・スタッフデータを使います。実際のお客様の情報や営業データを公開するものではありません。</p></details>
+    </section>
+
+    <section class="suite-cta"><div class="suite-wrap"><p class="suite-kicker">LET’S TALK ABOUT YOUR STORE</p><h2>あなたのお店なら、<br/>どう使えるだろう。</h2><p>一店舗から、本部での多店舗管理まで。<br/>まずは、いまの運営についてお聞かせください。</p><a class="suite-button" href={contact}>OnO ONE・COMPASSを相談する ↗</a></div></section>
+  </article>
+</Layout>
+<style>
+  .product-screens{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}.product-screens figure{min-width:0;margin:0}.product-screens figure>a{display:block;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--sand)}.product-screens img{display:block;width:100%;height:auto}.product-screens figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding-top:16px;line-height:1.7}.product-screens figcaption strong{font-size:14px}.product-screens figcaption span{font-size:11px;color:var(--muted)}.product-screens figcaption>a{font-size:12px;text-decoration:underline;text-underline-offset:4px;color:var(--blue)}
+  @media(max-width:700px){.product-screens{grid-template-columns:1fr;gap:32px}}
+
+  .suite-page{overflow:hidden}.suite-wrap{max-width:1160px;margin:auto;padding-left:32px;padding-right:32px}.suite-section{padding-top:100px;padding-bottom:100px}.suite-kicker{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--blue);margin-bottom:24px}.suite-hero{padding-top:160px}.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center}.suite-hero h1{font-size:clamp(40px,4.8vw,64px);font-weight:900;line-height:1.4;letter-spacing:-.055em}.suite-hero h1 span{color:var(--blue)}.hero-copy{margin-top:26px;font-size:18px;line-height:2;color:var(--muted)}.suite-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:32px}.suite-button{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;padding:18px 24px;border-radius:5px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:700;line-height:1.7;transition:background .2s}.suite-button:hover{background:var(--blue)}.suite-textlink{font-size:13px;font-weight:700}.product-pair{padding:20px 0}.product-wordmark{padding:32px;border:1px solid var(--line);background:var(--paper);border-radius:5px}.product-wordmark.one{border-top:4px solid var(--blue)}.product-wordmark.compass{background:var(--ink);color:var(--paper);border:0;border-top:4px solid var(--orange)}.product-role{font-size:11px;letter-spacing:.15em}.product-wordmark p{font-size:clamp(24px,3.2vw,42px);letter-spacing:-.04em;margin:12px 0}.product-wordmark strong{font-weight:700}.product-wordmark>span:last-child{font-size:13px;opacity:.8}.pair-connection{display:flex;align-items:center;justify-content:center;gap:12px;margin:20px 0}.pair-connection p{font-size:11px;color:var(--muted)}.pair-connection span{height:1px;width:24px;background:var(--line)}.hero-bottom{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:64px;padding:22px 0;font-size:13px}.hero-bottom>span{font-weight:700}.hero-bottom a{color:var(--muted)}.suite-heading{max-width:720px;margin-bottom:48px}.suite-heading h2,.suite-cta h2{font-size:clamp(29px,3.8vw,44px);font-weight:700;line-height:1.55}.suite-heading>p:last-child:not(.suite-kicker){max-width:600px;margin-top:24px;font-size:16px;color:var(--muted);line-height:2}.product-details{display:grid;grid-template-columns:1fr 1fr;gap:40px}.product-details>section{border-top:3px solid var(--blue);padding:32px;background:var(--paper)}.product-details .detail-compass{border-color:var(--orange)}.product-details h3{font-size:32px;font-weight:700;letter-spacing:-.04em}.product-intro{font-size:23px;font-weight:700;margin:24px 0;line-height:1.7}.product-details p:not(.suite-kicker):not(.product-intro){color:var(--muted);line-height:2;font-size:14px}.product-details ul{margin-top:28px}.product-details li{padding:13px 0;border-top:1px solid var(--line);font-size:14px}.product-details li:before{content:'＋';margin-right:12px;color:var(--blue)}.suite-note{font-size:12px;color:var(--muted);line-height:1.9;margin-top:20px}.flow-section{background:var(--sand)}.flow-list{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}.step-number{font-size:54px;letter-spacing:-.07em;font-weight:500;color:var(--blue);display:block;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:24px}.flow-list h3{font-size:22px;font-weight:700;margin-bottom:16px}.flow-list p,.introduction-grid p{font-size:14px;color:var(--muted);line-height:2}.experience-panel{border:1px solid var(--line);border-left:4px solid var(--blue);padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;background:var(--paper)}.experience-label{font-size:11px;color:var(--blue);font-weight:700}.experience-panel h3{font-size:25px;font-weight:700;margin:16px 0}.experience-panel p{line-height:2;font-size:14px;color:var(--muted)}.experience-actions{display:flex;flex-direction:column;gap:14px;justify-content:center}.experience-actions .suite-button{width:100%}.secondary{background:var(--blue)}.experience-actions .availability{font-size:13px}.introduction{border-top:1px solid var(--line)}.introduction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}.introduction-grid span{font-size:11px;color:var(--blue);font-weight:700;letter-spacing:.08em}.introduction-grid h3{font-size:20px;font-weight:700;margin:20px 0}.suite-faq{padding-top:20px}.suite-faq h2{font-size:26px;font-weight:700;margin-bottom:32px}.suite-faq details{border-top:1px solid var(--line);padding:24px 0}.suite-faq details:last-child{border-bottom:1px solid var(--line)}.suite-faq summary{font-size:16px;font-weight:500;line-height:1.8}.suite-faq details p{font-size:14px;line-height:2;color:var(--muted);max-width:800px;padding-top:20px}.suite-cta{background:var(--ink);color:var(--paper);padding:88px 0}.suite-cta .suite-kicker{color:#d6b48b}.suite-cta>div>p:not(.suite-kicker){color:#d4d4c9;line-height:2;margin:24px 0 32px}.suite-cta .suite-button{background:var(--paper);color:var(--ink)}.mobile-break{display:none}
+  @media(max-width:800px){.hero-grid{grid-template-columns:1fr;gap:24px}.suite-wrap{padding-left:24px;padding-right:24px}.suite-hero{padding-top:132px}.suite-hero h1{font-size:clamp(36px,7vw,54px)}.product-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}.product-wordmark{padding:20px}.product-wordmark p{font-size:25px}.pair-connection{display:none}.product-wordmark>span:last-child{font-size:11px}.hero-bottom{margin-top:32px}.suite-section{padding-top:64px;padding-bottom:64px}.product-details{gap:20px}.product-details>section{padding:24px}.flow-list,.introduction-grid{gap:24px}.experience-panel{grid-template-columns:1fr;padding:28px;gap:24px}.flow-list h3{font-size:18px}.introduction-grid h3{font-size:18px}}
+  @media(max-width:520px){.suite-wrap{padding-left:20px;padding-right:20px}.suite-hero h1{font-size:36px}.hero-copy{font-size:16px}.suite-actions{gap:20px}.suite-button{padding:16px 20px;font-size:13px}.product-pair{grid-template-columns:1fr}.product-wordmark{padding:20px 24px}.product-wordmark p{font-size:32px;margin:8px 0}.hero-bottom{font-size:12px;align-items:center}.mobile-break{display:block}.product-details{grid-template-columns:1fr;gap:28px}.product-details h3{font-size:30px}.suite-heading{margin-bottom:32px}.flow-list,.introduction-grid{grid-template-columns:1fr;gap:32px}.flow-list li{display:flex;gap:24px}.step-number{flex:0 0 48px;font-size:40px;border:0;margin:0;padding:0}.flow-list h3{font-size:20px}.experience-panel{padding:24px}.experience-panel h3{font-size:22px}.introduction-grid>div{border-top:1px solid var(--line);padding-top:24px}.suite-faq h2{font-size:23px}.suite-cta{padding:64px 0}.suite-cta .suite-button{width:100%;gap:10px}.suite-heading h2{font-size:29px}}
+  @media(prefers-reduced-motion:reduce){.suite-button{transition:none}}
+</style>

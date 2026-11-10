@@ -68,11 +68,11 @@ const base = import.meta.env.BASE_URL;
 
     <footer class="site-footer">
       <div class="footer-top"><a href={`${base}contact`} class="footer-hello">LET’S TALK<span>↗</span></a><p>お店の常識を、AIで塗り替える。</p></div>
-      <div class="footer-links"><a href={base} class="site-brand"><img src={`${base}logo.png`} alt=""/><span>OnO<small>INTERNATIONAL</small></span></a><div><p class="eyebrow">SERVICES</p><a href={`${base}services/restaurant-web`}>実店舗 Web集客支援</a><a href={`${base}services/ai`}>AI構築・コンサルティング</a><a href={`${base}services/video`}>動画制作</a><a href={`${base}services/drone`}>空中・水中ドローン撮影</a><a href={`${base}services/freediving`}>フリーダイビング講習</a></div><div><p class="eyebrow">INFORMATION</p><a href={`${base}about`}>会社概要</a><a href={`${base}card/`}>代表のデジタル名刺</a><a href={`${base}news`}>News &amp; Blog</a><a href={`${base}recruit`}>採用情報</a><a href={`${base}contact`}>お問い合わせ</a></div></div>
+      <div class="footer-links"><a href={base} class="site-brand"><img src={`${base}logo.png`} alt=""/><span>OnO<small>INTERNATIONAL</small></span></a><div><p class="eyebrow">SERVICES</p><a href={`${base}services/ono-suite`}>OnO ONE・OnO COMPASS</a><a href={`${base}services/restaurant-web`}>実店舗 Web集客支援</a><a href={`${base}services/ai`}>AI構築・コンサルティング</a><a href={`${base}services/video`}>動画制作</a><a href={`${base}services/drone`}>空中・水中ドローン撮影</a><a href={`${base}services/freediving`}>フリーダイビング講習</a></div><div><p class="eyebrow">INFORMATION</p><a href={`${base}about`}>会社概要</a><a href={`${base}card/`}>代表のデジタル名刺</a><a href={`${base}news`}>News &amp; Blog</a><a href={`${base}recruit`}>採用情報</a><a href={`${base}contact`}>お問い合わせ</a></div></div>
       <div class="footer-bottom"><span>© 2011 OnO INTERNATIONAL. All rights reserved.</span><a href="#main-content">BACK TO TOP ↑</a></div>
     </footer>
 
-    <aside id="restaurant-banner" class="restaurant-banner is-suppressed" hidden={Astro.url.pathname.replace(/\/$/, '').endsWith('/contact') || Astro.url.pathname.replace(/\/$/, '').endsWith('/services/restaurant-web')} aria-label="実店舗向けサービス">
+    <aside id="restaurant-banner" class="restaurant-banner is-suppressed" hidden={Astro.url.pathname.replace(/\/$/, '').endsWith('/contact') || Astro.url.pathname.replace(/\/$/, '').endsWith('/services/restaurant-web') || Astro.url.pathname.replace(/\/$/, '').endsWith('/services/ono-suite')} aria-label="実店舗向けサービス">
       <a href={`${base}services/restaurant-web`}><span class="banner-symbol" aria-hidden="true">↗</span><span><small>FOR LOCAL BUSINESSES</small><strong>実店舗を持つ全ての方へ</strong><span>Web集客支援・月額8万円・まるごとお任せ</span></span></a><button id="banner-close" aria-label="サービスの案内を閉じる">×</button>
     </aside>
 

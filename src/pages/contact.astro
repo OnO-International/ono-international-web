@@ -79,6 +79,7 @@ import Layout from '../layouts/Layout.astro';
               class="w-full bg-sand border border-line rounded-xl px-4 py-3 text-ink focus:outline-none focus:border-line transition-all text-sm appearance-none cursor-pointer"
             >
               <option value="" disabled selected class="bg-paper">選択してください</option>
+              <option value="OnO ONE・OnO COMPASS" class="bg-paper">OnO ONE・OnO COMPASS（店舗・本部システム）</option>
               <option value="動画制作" class="bg-paper">動画制作</option>
               <option value="AI構築・コンサルティング" class="bg-paper">AI構築・コンサルティング</option>
               <option value="フリーダイビング講習" class="bg-paper">フリーダイビング講習</option>
@@ -132,6 +133,16 @@ import Layout from '../layouts/Layout.astro';
   const form      = document.getElementById('contact-form') as HTMLFormElement;
   const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
   const statusDiv = document.getElementById('form-status') as HTMLDivElement;
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('service') === 'ono-suite') {
+    const select = document.getElementById('contact-service') as HTMLSelectElement;
+    if (select) select.value = 'OnO ONE・OnO COMPASS';
+    const message = document.getElementById('contact-message') as HTMLTextAreaElement;
+    if (message && !message.value && params.get('intent') === 'demo') {
+      message.value = 'OnO ONE・OnO COMPASSの製品体験を希望します。\n\n店舗数：\n現在のお困りごと：\nご希望の日時：';
+    }
+  }
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();

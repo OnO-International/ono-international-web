@@ -4,6 +4,17 @@ const base = import.meta.env.BASE_URL;
 
 const services = [
   {
+    id: 'ono-suite',
+    icon: '↗',
+    title: 'OnO ONE・OnO COMPASS',
+    color: 'from-sand to-sand',
+    tagColor: 'text-blue bg-sand',
+    lpHref: `${base}services/ono-suite`,
+    contactHref: `${base}contact?service=ono-suite`,
+    description: '店舗にはONE、本部にはCOMPASS。注文・会計・日々の店舗管理から、多店舗の経営管理まで。お店の運営に合わせた導入と製品体験をご相談ください。',
+    features: ['OnO ONE：店舗運営をひとつにつなぐ', 'OnO COMPASS：各店の情報を本部の判断へ', '店舗の運用・機器に合わせた導入相談'],
+  },
+  {
     id: 'ai',
     icon: '🤖',
     title: 'AI構築・コンサルティング',
@@ -145,7 +156,7 @@ const services = [
                 <a href={s.lpHref} class="inline-flex items-center gap-2 px-6 py-3 rounded-full ink-fill text-paper text-sm font-semibold hover:opacity-90 transition-all hover:scale-105">
                   詳しく見る →
                 </a>
-                <a href={`${base}contact`} class="inline-flex items-center gap-2 px-6 py-3 rounded-full paper-panel text-muted text-sm font-medium hover:text-ink transition-all border border-line hover:border-line">
+                <a href={s.contactHref ?? `${base}contact`} class="inline-flex items-center gap-2 px-6 py-3 rounded-full paper-panel text-muted text-sm font-medium hover:text-ink transition-all border border-line hover:border-line">
                   このサービスを相談する
                 </a>
               </div>

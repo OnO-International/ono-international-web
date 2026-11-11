@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="お客様の質問の吹き出しが、AIの手助けでホームページのよくある質問の一覧にまとまっていく様子">
+  <rect width="1200" height="630" fill="#f7f4ec"/>
+  <circle cx="1080" cy="80" r="180" fill="#ece8db"/>
+  <circle cx="110" cy="560" r="150" fill="#ece8db"/>
+  <path d="M0 480 C 260 430, 430 530, 700 480 S 1040 440, 1200 490 L1200 630 L0 630 Z" fill="#386377" opacity="0.08"/>
+  <!-- question bubbles -->
+  <g>
+    <rect x="90" y="110" width="250" height="120" rx="30" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <path d="M140 228 l-10 34 l40 -34 z" fill="#fffdf7" stroke="#cecec0" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="132" y="226" width="44" height="8" fill="#fffdf7"/>
+    <circle cx="160" cy="170" r="32" fill="#dd7c43"/>
+    <path d="M150 160 a10 10 0 1 1 14 9 c-4 2 -4 5 -4 9" fill="none" stroke="#fffdf7" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="160" cy="189" r="4" fill="#fffdf7"/>
+    <rect x="210" y="152" width="100" height="12" rx="6" fill="#cecec0"/>
+    <rect x="210" y="176" width="76" height="12" rx="6" fill="#cecec0"/>
+  </g>
+  <g>
+    <rect x="170" y="300" width="230" height="110" rx="28" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <path d="M360 408 l14 30 l-46 -30 z" fill="#fffdf7" stroke="#cecec0" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="326" y="404" width="40" height="8" fill="#fffdf7"/>
+    <circle cx="232" cy="355" r="30" fill="#386377"/>
+    <path d="M222 346 a10 10 0 1 1 14 9 c-4 2 -4 5 -4 9" fill="none" stroke="#fffdf7" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="232" cy="374" r="4" fill="#fffdf7"/>
+    <rect x="280" y="338" width="92" height="12" rx="6" fill="#cecec0"/>
+    <rect x="280" y="362" width="64" height="12" rx="6" fill="#cecec0"/>
+  </g>
+  <g>
+    <rect x="70" y="440" width="190" height="96" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <circle cx="124" cy="488" r="26" fill="#dd7c43"/>
+    <path d="M115 480 a9 9 0 1 1 12 8 c-3 2 -3 4 -3 8" fill="none" stroke="#fffdf7" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="124" cy="504" r="3.5" fill="#fffdf7"/>
+    <rect x="166" y="474" width="70" height="11" rx="5.5" fill="#cecec0"/>
+    <rect x="166" y="496" width="50" height="11" rx="5.5" fill="#cecec0"/>
+  </g>
+  <!-- AI sparkle + arrow -->
+  <circle cx="530" cy="300" r="46" fill="#386377"/>
+  <path d="M530 270 l8 20 l20 8 l-20 8 l-8 20 l-8 -20 l-20 -8 l20 -8 z" fill="#fffdf7"/>
+  <path d="M440 300 h30" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <path d="M590 300 h50" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16"/>
+  <path d="M630 282 l20 18 l-20 18" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- website window with FAQ accordion -->
+  <rect x="680" y="90" width="440" height="430" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+  <path d="M680 116 a26 26 0 0 1 26 -26 h388 a26 26 0 0 1 26 26 v26 h-440 z" fill="#ece8db"/>
+  <circle cx="712" cy="116" r="8" fill="#dd7c43"/>
+  <circle cx="738" cy="116" r="8" fill="#cecec0"/>
+  <circle cx="764" cy="116" r="8" fill="#cecec0"/>
+  <!-- row 1 expanded -->
+  <rect x="710" y="166" width="380" height="150" rx="16" fill="#f7f4ec" stroke="#386377" stroke-width="3"/>
+  <circle cx="742" cy="198" r="16" fill="#dd7c43"/>
+  <rect x="772" y="192" width="200" height="12" rx="6" fill="#272923" opacity="0.7"/>
+  <path d="M1058 192 l-10 10 l-10 -10" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 1048 197)"/>
+  <circle cx="742" cy="248" r="16" fill="#386377"/>
+  <rect x="772" y="236" width="280" height="11" rx="5.5" fill="#386377" opacity="0.45"/>
+  <rect x="772" y="258" width="240" height="11" rx="5.5" fill="#386377" opacity="0.45"/>
+  <rect x="772" y="280" width="180" height="11" rx="5.5" fill="#386377" opacity="0.45"/>
+  <!-- collapsed rows -->
+  <g>
+    <rect x="710" y="332" width="380" height="50" rx="14" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <circle cx="742" cy="357" r="14" fill="#dd7c43"/>
+    <rect x="768" y="351" width="190" height="12" rx="6" fill="#cecec0"/>
+    <path d="M1038 352 l10 10 l10 -10" fill="none" stroke="#64665d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <rect x="710" y="396" width="380" height="50" rx="14" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <circle cx="742" cy="421" r="14" fill="#dd7c43"/>
+    <rect x="768" y="415" width="160" height="12" rx="6" fill="#cecec0"/>
+    <path d="M1038 416 l10 10 l10 -10" fill="none" stroke="#64665d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <rect x="710" y="460" width="380" height="40" rx="14" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <circle cx="742" cy="480" r="12" fill="#dd7c43"/>
+    <rect x="768" y="474" width="210" height="12" rx="6" fill="#cecec0"/>
+  </g>
+  <!-- check badge -->
+  <circle cx="1110" cy="510" r="38" fill="#dd7c43"/>
+  <path d="M1092 510 l12 12 l22 -24" fill="none" stroke="#fffdf7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

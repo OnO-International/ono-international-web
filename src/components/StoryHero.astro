@@ -224,8 +224,14 @@ const chapters = [
   // One wheel gesture turns one card; ignore its momentum until it settles.
   let wheelLast = -Infinity;
   let wheelTurn = -Infinity;
-  hero?.addEventListener('wheel', (event) => {
-    if (event.ctrlKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(hero.getBoundingClientRect().top) > 2) return;
+  // Listen before inert/animated cards retarget the wheel transaction on macOS.
+  // Hit-test the stable scene instead of relying on the previous card's ancestry.
+  window.addEventListener('wheel', (event) => {
+    if (!hero || !scene) return;
+    const bounds = scene.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX >= bounds.right ||
+        event.clientY < bounds.top || event.clientY >= bounds.bottom) return;
+    if (event.deltaY === 0 || event.ctrlKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(hero.getBoundingClientRect().top) > 2) return;
     const now = performance.now();
     const fresh = now - wheelLast > 180 && now - wheelTurn > 450;
     wheelLast = now;
@@ -236,7 +242,7 @@ const chapters = [
       wheelTurn = now;
       go(direction);
     }
-  }, { passive: false });
+  }, { passive: false, capture: true });
   // Keep the document still while swiping cards on phones. A fresh swipe
   // after the company introduction resumes native scrolling, including browser chrome.
   let touchStart: { x: number; y: number; index: number } | null = null;

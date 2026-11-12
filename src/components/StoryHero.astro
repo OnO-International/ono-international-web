@@ -22,7 +22,7 @@ const chapters = [
 
     <div id="story-stack" class="story-stack" tabindex="0" role="region" aria-label="ブランドストーリー。上下左右の矢印キーでも操作できます。">
       {chapters.map((chapter, i) => (
-        <article class:list={['story-card', { 'is-active': i === 0 }]} data-index={i} aria-hidden={i !== 0} inert={i !== 0} style={`--offset: ${i}; z-index: ${chapters.length - i};`}>
+        <article class:list={['story-card', { 'is-active': i === 0 }]} data-index={i} aria-hidden={i !== 0} style={`--offset: ${i}; z-index: ${chapters.length - i};`}>
           <div class="story-card-top"><span>OnO INTERNATIONAL</span><span>OUR STORY / {chapter.num}</span></div>
           <div class="story-card-body">
             <div class="story-number"><span>BRAND STORY</span><strong>{chapter.num}<small>.</small></strong></div>
@@ -51,14 +51,14 @@ const chapters = [
             </svg>
             <span>{chapter.label}</span>
           </div>
-          {i === 4 && <div class="story-actions"><a class="button-primary" href={`${base}services`}>サービスを見る <span>↗</span></a><a class="text-link" href={`${base}contact`}>お問い合わせ ↗</a></div>}
+          {i === 4 && <div class="story-actions"><a tabindex="-1" class="button-primary" href={`${base}services`}>サービスを見る <span>↗</span></a><a tabindex="-1" class="text-link" href={`${base}contact`}>お問い合わせ ↗</a></div>}
           <div class="story-card-bottom"><span>IDEAS INTO EVERYDAY.</span><span>0{i + 1} — 05</span></div>
         </article>
       ))}
     </div>
 
     <div class="story-fragments" aria-hidden="true" inert></div>
-    <section class="story-introduction" aria-label="OnO INTERNATIONALについて" aria-hidden="true" inert>
+    <section class="story-introduction" aria-label="OnO INTERNATIONALについて" aria-hidden="true">
       <p class="eyebrow">ABOUT US / OnO INTERNATIONAL</p>
       <div class="story-introduction-logo">
         <svg class="story-logo-assembly" viewBox="130 470 1340 690" role="img" aria-label="OnO International">
@@ -74,8 +74,8 @@ const chapters = [
       </div>
       <h2>O<span>と</span>OをN<span>で</span>結ぶ</h2>
       <p class="story-introduction-copy">OnO INTERNATIONALは、人と人、国と国、価値と価値を<br class="md:hidden"/>つなぐことを使命とする企業です。</p>
-      <a class="text-link" href={`${base}about`}>私たちについて ↗</a>
-      <a class="story-introduction-scroll" href="#services">SCROLL TO EXPLORE <span>↓</span></a>
+      <a tabindex="-1" class="text-link" href={`${base}about`}>私たちについて ↗</a>
+      <a tabindex="-1" class="story-introduction-scroll" href="#services">SCROLL TO EXPLORE <span>↓</span></a>
     </section>
     <div class="story-controls">
       <span class="story-scroll-label">SCROLL</span>
@@ -193,10 +193,21 @@ const chapters = [
     if (index === current) return;
     if (index !== lastStage) cancelAnimationFrame(particleFrame);
     if (index === lastStage) createFragments();
+    const focused = document.activeElement;
+    if ((index !== lastStage && introduction?.contains(focused)) ||
+        cards.some((card, i) => i !== index && card.contains(focused))) {
+      // Move focus before hiding its previous card from assistive technology.
+      previous?.focus({ preventScroll: true });
+    }
     hero.classList.toggle('is-introducing', index === lastStage);
     introduction?.setAttribute('aria-hidden', String(index !== lastStage));
-    if (introduction) introduction.inert = index !== lastStage;
-    if (stack) stack.inert = index === lastStage;
+    // Keep wheel targets alive across transitions. Inert can suppress a macOS
+    // wheel transaction until the pointer moves; aria-hidden and tab stops
+    // keep inactive content out of navigation without disabling event delivery.
+    introduction?.querySelectorAll<HTMLElement>('a, button').forEach((control) => {
+      control.tabIndex = index === lastStage ? 0 : -1;
+    });
+    if (stack) stack.tabIndex = index === lastStage ? -1 : 0;
     current = index;
     cards.forEach((card, i) => {
       const offset = i - current;
@@ -205,7 +216,9 @@ const chapters = [
       card.style.setProperty('--offset', String(Math.max(0, offset)));
       card.style.zIndex = String(cards.length - i);
       card.setAttribute('aria-hidden', String(offset !== 0));
-      card.inert = offset !== 0;
+      card.querySelectorAll<HTMLElement>('a, button').forEach((control) => {
+        control.tabIndex = offset === 0 ? 0 : -1;
+      });
     });
     if (currentLabel) currentLabel.textContent = current === lastStage ? 'ABOUT' : String(current + 1).padStart(2, '0');
     const countSuffix = hero.querySelector<HTMLElement>('#story-current .sr-only');
@@ -280,3 +293,11 @@ const chapters = [
   window.addEventListener('resize', scheduleRender);
   render();
 </script>
+<style is:global>
+  /* A stationary pointer must hit the stable scene, not an animated card. */
+  #story-hero .story-scene * { pointer-events: none; }
+  #story-hero .story-scene .story-card.is-active a,
+  #story-hero.is-introducing .story-introduction a,
+  #story-hero .story-controls button,
+  #story-hero .story-bottom a { pointer-events: auto; }
+</style>

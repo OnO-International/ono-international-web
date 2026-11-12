@@ -9,16 +9,24 @@ const steps = [
   { number: '01', title: '注文を受ける', copy: 'テーブルごとの注文を確認。厨房での提供管理まで、現場の流れに沿って操作します。' },
   { number: '02', title: '会計して、締める', copy: '注文から会計、日報へ。売上を何度も入力し直す負担を減らします。' },
   { number: '03', title: '本部で見渡す', copy: '各店舗の売上や営業状況を確認。店舗の情報を、次の判断につなげます。' },
+ ];
+const peopleSteps = [
+  { number: '01', title: 'スタッフが入社情報を入力', copy: '本人がオンラインで必要事項を入力。本部の転記作業を減らす入口に。' },
+  { number: '02', title: '雇用契約を確認・締結', copy: '勤務条件の確認から契約書の保管まで、入社手続きとつなぎます。' },
+  { number: '03', title: '所属店舗へ登録', copy: '本部の確認を経て店舗へ配属。同じスタッフ情報を、その後の業務に引き継ぎます。' },
+  { number: '04', title: 'POSで勤怠を記録', copy: '現場での打刻・勤怠情報を、本部の確認へ。予定シフトと実際の勤務は分けて扱います。' },
+  { number: '05', title: 'Compassで給与明細を管理', copy: '確認した勤怠と支給内容をもとに、明細の管理まで一つの流れへ。' },
+  { number: '06', title: '弥生会計へ渡す準備', copy: '店舗と本部で整えた情報を、会計業務へ引き渡すところまで。対応形式と対象データは導入時に確認します。' },
 ];
 ---
-<Layout title="OnO ONE・OnO COMPASS｜店舗運営から本部管理まで" description="店舗にはOnO ONE、本部にはOnO COMPASS。注文・会計・日々の店舗管理から、多店舗の経営管理まで。飲食店の運営に合わせた導入と製品体験をご相談ください。">
+<Layout title="OnO ONE・OnO COMPASS｜これだけあればいい。" description="これだけあればいい。入社から契約、店舗登録、POS勤怠、給与明細、弥生会計へ渡す準備まで。OnO ONE・OnO COMPASSが目指す、一つにつながる店舗と本部の運営。">
   <article class="suite-page">
     <section class="suite-hero suite-wrap">
       <p class="suite-kicker">OnO RESTAURANT SOLUTIONS</p>
       <div class="hero-grid">
         <div>
-          <h1>お店が回る。<br/><span>ひとつで回る。</span></h1>
-          <p class="hero-copy">注文、会計、日々の店舗管理。<br/>お店の仕事をつなぎ、<br class="mobile-break"/>本部の判断まで支える。</p>
+          <h1>これだけ<br class="mobile-break"/>あればいい。</h1>
+          <p class="hero-copy">入社から、店舗運営、給与明細。<br/>弥生会計へ渡す準備まで。<br/>お店と本部の仕事を、ひとつの流れへ。</p><p class="suite-note">OnO ONE・OnO COMPASSの統合方針です。入社・契約・給与明細を含む一連の統合は準備中です。</p>
           <div class="suite-actions"><a class="suite-button" href="#experience">製品の体験について <span aria-hidden="true">↓</span></a><a class="suite-textlink" href={contact}>導入を相談する ↗</a></div>
         </div>
         <div class="product-pair" aria-label="店舗用と本部用の製品構成">
@@ -54,6 +62,14 @@ const steps = [
       <ol class="flow-list">{steps.map(step => <li><span class="step-number">{step.number}</span><div><h3>{step.title}</h3><p>{step.copy}</p></div></li>)}</ol>
     </div></section>
 
+    <section id="people-flow" class="suite-wrap suite-section people-section">
+      <div class="suite-heading"><p class="suite-kicker">PEOPLE / ONE CONNECTED FLOW</p><h2>入社したその日から、<br/>会計へ渡す準備まで。</h2><p>人の情報を、仕事のたびに登録し直さない。Atmos In Fileの入社手続きをCompassへ統合し、店舗と本部の業務をつなぐ計画です。</p></div>
+      <div class="integration-status"><strong>一連の統合は準備中</strong><p>現在の入社アプリを継続しながら、Compassへの統合・データ引継ぎ・権限・連携を順に確認します。以下は統合後に目指す業務の流れで、全工程の本番稼働を示すものではありません。</p></div>
+      <ol class="flow-list people-flow">{peopleSteps.map(step => <li><span class="step-number">{step.number}</span><div><h3>{step.title}</h3><p>{step.copy}</p></div></li>)}</ol>
+      <div class="people-access"><h3>本部の情報は、許可された担当者だけに。</h3><p>入社・雇用契約の管理はCompassの設定内へ。閲覧できる本部担当者を限定し、店舗や一般スタッフに不要な情報を見せない設計で進めます。</p></div>
+      <p class="suite-note">給与明細管理は、税・社会保険料の自動計算や振込までの対応を意味しません。弥生会計本体は対象外です。会計への受渡し方法・対応形式は検証のうえご案内します。</p>
+    </section>
+
     <section id="experience" class="suite-wrap suite-section">
       <div class="suite-heading"><p class="suite-kicker">03 / PRODUCT EXPERIENCE</p><h2>説明を聞くだけでなく、<br/>操作して、確かめる。</h2><p>製品と同じ画面・操作を、架空の店舗データで体験する環境をご用意します。商談では、普段のお店の流れに合わせてご案内します。</p></div>
       <div class="experience-panel">
@@ -76,6 +92,7 @@ const steps = [
     <section class="suite-faq suite-wrap suite-section">
       <p class="suite-kicker">QUESTIONS</p><h2>導入前に知っておきたいこと</h2>
       <details><summary>いま使っているレジや端末を使えますか？</summary><p>端末の機種、ブラウザー、プリンター、決済サービスなどを確認し、利用できる構成をご案内します。既存機器への対応を一律にはお約束せず、導入前に確認します。</p></details>
+      <details><summary>「これだけあればいい」は、どこまでを目指していますか？</summary><p>入社情報の入力、雇用契約、店舗登録、POS勤怠、給与明細管理から、弥生会計へ渡す準備までを一つにつなぐ方針です。一連の統合は準備中で、現時点で全工程が連携済みという意味ではありません。弥生会計そのものの置換や、税・社会保険料の全自動計算をお約束するものではなく、導入時に利用できる範囲を確認します。</p></details>
       <details><summary>料金はどのように決まりますか？</summary><p>店舗数、必要な機能、初期設定、連携・サポートの範囲を確認してお見積りします。まずは現在の運営状況をお聞かせください。</p></details>
       <details><summary>体験用のデータは実際のお店のものですか？</summary><p>いいえ。体験には架空の店舗・売上・スタッフデータを使います。実際のお客様の情報や営業データを公開するものではありません。</p></details>
     </section>
@@ -84,6 +101,8 @@ const steps = [
   </article>
 </Layout>
 <style>
+  .people-section{border-bottom:1px solid var(--line)}.integration-status{padding:24px 28px;background:var(--suite-peach);border-left:4px solid var(--orange);margin-bottom:40px}.integration-status strong{font-size:15px}.integration-status p,.people-access p{font-size:14px;line-height:2;color:var(--muted);margin-top:12px}.people-flow{row-gap:40px}.people-access{margin-top:44px;padding:28px;background:var(--paper);border:1px solid var(--line)}.people-access h3{font-size:20px;font-weight:700;line-height:1.7}
+
   .product-screens{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}.product-screens figure{min-width:0;margin:0}.product-screens figure>a{display:block;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--sand)}.product-screens img{display:block;width:100%;height:auto}.product-screens figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding-top:16px;line-height:1.7}.product-screens figcaption strong{font-size:14px}.product-screens figcaption span{font-size:11px;color:var(--muted)}.product-screens figcaption>a{font-size:12px;text-decoration:underline;text-underline-offset:4px;color:var(--blue)}
   @media(max-width:700px){.product-screens{grid-template-columns:1fr;gap:32px}}
 

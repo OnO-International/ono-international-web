@@ -234,11 +234,15 @@ const chapters = [
   }
   previous?.addEventListener('click', () => go(-1));
   next?.addEventListener('click', () => go(1));
-  // One wheel gesture turns one card; ignore its momentum until it settles.
+  // macOS momentum can bridge separate swipes with no idle gap. Re-arm on
+  // renewed force after a decayed tail, as well as on idle or reversal.
   let wheelLast = -Infinity;
   let wheelTurn = -Infinity;
-  // Listen before inert/animated cards retarget the wheel transaction on macOS.
-  // Hit-test the stable scene instead of relying on the previous card's ancestry.
+  let wheelDirection = 0;
+  let wheelAmount = 0;
+  let wheelArmed = true;
+  let wheelTrough = Infinity;
+  let wheelReleased = 0;
   window.addEventListener('wheel', (event) => {
     if (!hero || !scene) return;
     const bounds = scene.getBoundingClientRect();
@@ -246,14 +250,44 @@ const chapters = [
         event.clientY < bounds.top || event.clientY >= bounds.bottom) return;
     if (event.deltaY === 0 || event.ctrlKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(hero.getBoundingClientRect().top) > 2) return;
     const now = performance.now();
-    const fresh = now - wheelLast > 180 && now - wheelTurn > 450;
-    wheelLast = now;
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? bounds.height : 1;
+    const magnitude = Math.abs(event.deltaY) * unit;
     const direction = event.deltaY > 0 ? 1 : -1;
+    const idle = now - wheelLast > 180;
+    const reversed = direction !== wheelDirection && magnitude >= 8;
+    const cooled = now - wheelTurn >= 450;
+    if (idle || reversed) {
+      wheelArmed = true;
+      wheelAmount = 0;
+      wheelTrough = Infinity;
+      wheelReleased = 0;
+    }
+    wheelLast = now;
+    if (idle || magnitude >= 8) wheelDirection = direction;
+    // Do not interpret the initial acceleration of the consumed swipe as new.
+    if (!wheelArmed && cooled) {
+      wheelTrough = Math.min(wheelTrough, magnitude);
+      if (wheelTrough <= 8 && magnitude >= 12 && magnitude >= wheelTrough * 3) {
+        wheelArmed = true;
+        wheelAmount = 0;
+      }
+    }
+    if (wheelReleased === direction) return;
+    if (wheelArmed) wheelAmount += event.deltaY * unit;
+    const intent = wheelArmed && cooled && Math.abs(wheelAmount) >= 40;
     const canTurn = direction > 0 ? current < lastStage : current > 0;
-    if (canTurn || !fresh) event.preventDefault();
-    if (fresh && canTurn) {
-      wheelTurn = now;
-      go(direction);
+    if (canTurn || !intent) event.preventDefault();
+    if (intent) {
+      wheelArmed = false;
+      wheelAmount = 0;
+      wheelTrough = Infinity;
+      if (canTurn) {
+        wheelTurn = now;
+        go(direction);
+      } else {
+        // Release the whole outward gesture, not only its first wheel event.
+        wheelReleased = direction;
+      }
     }
   }, { passive: false, capture: true });
   // Keep the document still while swiping cards on phones. A fresh swipe

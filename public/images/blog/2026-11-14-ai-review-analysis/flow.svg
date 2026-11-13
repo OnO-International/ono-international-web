@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 800" role="img" aria-label="分かったことの使い道：強み（褒められている点）は、説明文・SNS・ホームページで発信する。改善点（不満・要望）は、スタッフと共有して1つ直す。1〜2か月後、次の口コミで変化を確かめる" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif"><rect width="720" height="800" rx="32" fill="#f7f4ec"/><text x="360" y="76" text-anchor="middle" font-size="38" font-weight="800" fill="#272923">分かったことの使い道</text>
+<rect x="40" y="112" width="640" height="84" rx="22" fill="#386377"/><text x="360" y="167" text-anchor="middle" font-size="35" font-weight="800" fill="#fffdf7">強み（褒められている点）</text>
+<path d="M360 204 v28 m-16 -14 l16 16 l16 -16" fill="none" stroke="#386377" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="244" width="640" height="84" rx="22" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/><text x="360" y="297" text-anchor="middle" font-size="30" font-weight="700" fill="#272923">説明文・SNS・ホームページで発信</text>
+<rect x="40" y="372" width="640" height="84" rx="22" fill="#dd7c43"/><text x="360" y="427" text-anchor="middle" font-size="35" font-weight="800" fill="#fffdf7">改善点（不満・要望）</text>
+<path d="M360 464 v28 m-16 -14 l16 16 l16 -16" fill="none" stroke="#dd7c43" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="504" width="640" height="84" rx="22" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/><text x="360" y="557" text-anchor="middle" font-size="30" font-weight="700" fill="#272923">スタッフと共有して、1つ直す</text>
+<path d="M360 598 v28 m-16 -14 l16 16 l16 -16" fill="none" stroke="#64665d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="638" width="640" height="122" rx="22" fill="#ece8db"/><text x="360" y="690" text-anchor="middle" font-size="30" font-weight="700" fill="#272923">1〜2か月後、次の口コミで</text><text x="360" y="734" text-anchor="middle" font-size="30" font-weight="700" fill="#272923">変化を確かめる</text>
+</svg>

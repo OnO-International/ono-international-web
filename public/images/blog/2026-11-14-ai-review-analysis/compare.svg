@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-label="よくある頼み方とおすすめの頼み方の比較。よくある例：「この口コミを分析して」だけだと、一般論が返ってきて、根拠の口コミが分からない。おすすめ例：「褒められている点と不満を最大5つずつ、口コミの番号つきで。書かれていないことは推測しないで」と頼むと、具体的になり、原文で確かめられる" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif"><rect width="720" height="900" rx="32" fill="#f7f4ec"/><text x="360" y="76" text-anchor="middle" font-size="38" font-weight="800" fill="#272923">AIへの頼み方を比べる</text>
+<rect x="40" y="112" width="640" height="280" rx="26" fill="#ece8db"/><rect x="72" y="136" width="210" height="48" rx="24" fill="#64665d"/><text x="177" y="170" text-anchor="middle" font-size="29" font-weight="800" fill="#fffdf7">よくある例</text>
+<rect x="72" y="204" width="576" height="76" rx="16" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/><text x="96" y="253" font-size="31" font-weight="700" fill="#272923">「この口コミを分析して」</text>
+<text x="80" y="330" font-size="29" fill="#64665d">× 一般論が返ってくる</text><text x="80" y="370" font-size="29" fill="#64665d">× どの口コミの話か分からない</text>
+<path d="M360 404 v30 m-18 -16 l18 18 l18 -18" fill="none" stroke="#dd7c43" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="450" width="640" height="410" rx="26" fill="#fffdf7" stroke="#386377" stroke-width="4"/><rect x="72" y="474" width="230" height="48" rx="24" fill="#386377"/><text x="187" y="508" text-anchor="middle" font-size="29" font-weight="800" fill="#fffdf7">おすすめ例</text>
+<rect x="72" y="542" width="576" height="206" rx="16" fill="#386377" fill-opacity="0.08"/>
+<text x="96" y="588" font-size="31" font-weight="700" fill="#272923">「褒められている点と不満を</text><text x="96" y="630" font-size="31" font-weight="700" fill="#272923">最大5つずつ、口コミの番号つきで。</text><text x="96" y="672" font-size="31" font-weight="700" fill="#272923">書かれていないことは</text><text x="96" y="714" font-size="31" font-weight="700" fill="#272923">推測しないで」</text>
+<text x="80" y="798" font-size="29" font-weight="700" fill="#386377">○ 答えが具体的になる</text><text x="80" y="838" font-size="29" font-weight="700" fill="#386377">○ 番号で原文を確かめられる</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="星のついた口コミの吹き出しが虫めがねを通り、強みと改善点の2つのカードに仕分けられていくイラスト">
+  <rect width="1200" height="630" fill="#f7f4ec"/>
+  <circle cx="1080" cy="80" r="180" fill="#ece8db"/>
+  <circle cx="110" cy="570" r="150" fill="#ece8db"/>
+  <path d="M0 480 C 260 430, 430 530, 700 480 S 1050 440, 1200 490 L1200 630 L0 630 Z" fill="#386377" opacity="0.08"/>
+  <defs>
+    <path id="st" d="M0 -11 L3.2 -3.2 L11.6 -3.2 L4.8 2.4 L7.2 11 L0 5.6 L-7.2 11 L-4.8 2.4 L-11.6 -3.2 L-3.2 -3.2 Z"/>
+  </defs>
+  <!-- review bubbles -->
+  <g>
+    <rect x="90" y="110" width="260" height="110" rx="22" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <path d="M130 218 l0 30 l30 -30 z" fill="#fffdf7" stroke="#cecec0" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="128" y="216" width="36" height="6" fill="#fffdf7"/>
+    <g fill="#dd7c43"><use href="#st" x="128" y="146"/><use href="#st" x="158" y="146"/><use href="#st" x="188" y="146"/><use href="#st" x="218" y="146"/><use href="#st" x="248" y="146"/></g>
+    <rect x="116" y="174" width="200" height="11" rx="5.5" fill="#cecec0"/>
+    <rect x="116" y="194" width="150" height="11" rx="5.5" fill="#cecec0"/>
+  </g>
+  <g>
+    <rect x="150" y="280" width="260" height="110" rx="22" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <path d="M190 388 l0 30 l30 -30 z" fill="#fffdf7" stroke="#cecec0" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="188" y="386" width="36" height="6" fill="#fffdf7"/>
+    <g fill="#dd7c43"><use href="#st" x="188" y="316"/><use href="#st" x="218" y="316"/><use href="#st" x="248" y="316"/></g>
+    <g fill="#cecec0"><use href="#st" x="278" y="316"/><use href="#st" x="308" y="316"/></g>
+    <rect x="176" y="344" width="200" height="11" rx="5.5" fill="#cecec0"/>
+    <rect x="176" y="364" width="170" height="11" rx="5.5" fill="#cecec0"/>
+  </g>
+  <g>
+    <rect x="80" y="450" width="230" height="96" rx="22" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+    <g fill="#dd7c43"><use href="#st" x="116" y="484"/><use href="#st" x="146" y="484"/><use href="#st" x="176" y="484"/><use href="#st" x="206" y="484"/></g>
+    <g fill="#cecec0"><use href="#st" x="236" y="484"/></g>
+    <rect x="106" y="510" width="170" height="11" rx="5.5" fill="#cecec0"/>
+  </g>
+  <!-- flow lines into magnifier -->
+  <path d="M370 170 C 450 180, 480 250, 520 290" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <path d="M430 335 L 505 325" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <path d="M330 495 C 420 480, 470 420, 520 370" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <!-- magnifier -->
+  <circle cx="610" cy="320" r="92" fill="#fffdf7" stroke="#272923" stroke-width="16"/>
+  <circle cx="610" cy="320" r="62" fill="#386377" opacity="0.14"/>
+  <path d="M610 282 l9 20 l20 9 l-20 9 l-9 20 l-9 -20 l-20 -9 l20 -9 z" fill="#386377"/>
+  <circle cx="648" cy="282" r="7" fill="#dd7c43"/>
+  <rect x="660" y="400" width="34" height="96" rx="17" transform="rotate(-45 677 448)" fill="#272923"/>
+  <!-- split arrows -->
+  <path d="M720 270 C 770 230, 800 200, 840 190" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round"/>
+  <path d="M824 176 L 846 189 L 828 206" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M720 370 C 770 410, 800 440, 840 450" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round"/>
+  <path d="M828 434 L 846 451 L 824 464" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- strengths card -->
+  <rect x="860" y="100" width="260" height="180" rx="26" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+  <circle cx="912" cy="152" r="28" fill="#386377"/>
+  <path d="M912 166 c-14 -10 -22 -17 -22 -26 c0 -7 5 -12 11 -12 c5 0 9 3 11 7 c2 -4 6 -7 11 -7 c6 0 11 5 11 12 c0 9 -8 16 -22 26 z" fill="#fffdf7"/>
+  <rect x="956" y="140" width="130" height="14" rx="7" fill="#386377" opacity="0.3"/>
+  <rect x="890" y="204" width="200" height="12" rx="6" fill="#cecec0"/>
+  <rect x="890" y="230" width="160" height="12" rx="6" fill="#cecec0"/>
+  <!-- improvements card -->
+  <rect x="860" y="360" width="260" height="180" rx="26" fill="#fffdf7" stroke="#dd7c43" stroke-width="4"/>
+  <circle cx="912" cy="412" r="28" fill="#dd7c43"/>
+  <path d="M898 426 l16 -16 m4 -12 a10 10 0 1 0 -6 6" fill="none" stroke="#fffdf7" stroke-width="6" stroke-linecap="round"/>
+  <rect x="956" y="400" width="130" height="14" rx="7" fill="#dd7c43" opacity="0.35"/>
+  <rect x="890" y="464" width="200" height="12" rx="6" fill="#cecec0"/>
+  <rect x="890" y="490" width="160" height="12" rx="6" fill="#cecec0"/>
+</svg>

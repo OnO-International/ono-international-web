@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1014" role="img" aria-label="スマホで5分セルフチェック：最初の画面で何の店か分かる、営業時間と定休日が最新、電話番号をタップで発信できる、住所から地図がすぐ開く、メニューと料金が拡大せず読める、予約ボタンがすぐ見つかる、表示が遅すぎない、Googleマップと情報が同じ" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif"><rect width="720" height="1014" rx="32" fill="#f7f4ec"/>
+<text x="360" y="76" text-anchor="middle" font-size="38" font-weight="800" fill="#272923">スマホで5分セルフチェック</text>
+<rect x="40" y="112" width="640" height="822" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<rect x="80" y="160" width="46" height="46" rx="10" fill="#fffdf7" stroke="#386377" stroke-width="4"/><path d="M91 183 l9 10 l18 -20" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="148" y="194" font-size="31" font-weight="700" fill="#272923">最初の画面で何の店か分かる</text>
+<line x1="80" y1="232" x2="640" y2="232" stroke="#ece8db" stroke-width="3"/>
+<rect x="80" y="258" width="46" height="46" rx="10" fill="#fffdf7" stroke="#386377" stroke-width="4"/><path d="M91 281 l9 10 l18 -20" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="148" y="292" font-size="31" font-weight="700" fill="#272923">営業時間と定休日が最新</text>
+<line x1="80" y1="330" x2="640" y2="330" stroke="#ece8db" stroke-width="3"/>
+<rect x="80" y="356" width="46" height="46" rx="10" fill="#fffdf7" stroke="#386377" stroke-width="4"/><path d="M91 379 l9 10 l18 -20" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="148" y="390" font-size="31" font-weight="700" fill="#272923">電話番号をタップで発信できる</text>
+<line x1="80" y1="428" x2="640" y2="428" stroke="#ece8db" stroke-width="3"/>
+<rect x="80" y="454" width="46" height="46" rx="10" fill="#fffdf7" stroke="#386377" stroke-width="4"/><path d="M91 477 l9 10 l18 -20" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="148" y="488" font-size="31" font-weight="700" fill="#272923">住所から地図がすぐ開く</text>
+<line x1="80" y1="526" x2="640" y2="526" stroke="#ece8db" stroke-width="3"/>
+<rect x="80" y="552" width="46" height="46" rx="10" fill="#fffdf7" stroke="#386377" stroke-width="4"/><path d="M91 575 l9 10 l18 -20" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="148" y="586" font-size="31" font-weight="700" fill="#272923">メニューと料金が拡大せず読める</text>
+<line x1="80" y1="624" x2="640" y2="624" stroke="#ece8db" stroke-width="3"/>
+<rect x="80" y="650" width="46" height="46" rx="10" fill="#fffdf7" stroke="#386377" stroke-width="4"/><path d="M91 673 l9 10 l18 -20" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="148" y="684" font-size="31" font-weight="700" fill="#272923">予約ボタンがすぐ見つかる</text>
+<line x1="80" y1="722" x2="640" y2="722" stroke="#ece8db" stroke-width="3"/>
+<rect x="80" y="748" width="46" height="46" rx="10" fill="#fffdf7" stroke="#386377" stroke-width="4"/><path d="M91 771 l9 10 l18 -20" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="148" y="782" font-size="31" font-weight="700" fill="#272923">表示が遅すぎない</text>
+<line x1="80" y1="820" x2="640" y2="820" stroke="#ece8db" stroke-width="3"/>
+<rect x="80" y="846" width="46" height="46" rx="10" fill="#fffdf7" stroke="#386377" stroke-width="4"/><path d="M91 869 l9 10 l18 -20" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="148" y="880" font-size="31" font-weight="700" fill="#272923">Googleマップと情報が同じ</text>
+</svg>

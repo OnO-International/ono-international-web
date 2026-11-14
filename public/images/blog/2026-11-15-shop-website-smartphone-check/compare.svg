@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-label="最初の一文の比較。よくある例：「ようこそ。心を込めておもてなしします」だけだと、何のお店か分からず、場所も時間も伝わらない。おすすめ例：「〇〇駅から徒歩3分、炭火焼き鳥と地酒の店。平日17時から営業」なら、場所・業態・時間が伝わり、行けるかどうかすぐ判断できる" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif"><rect width="720" height="900" rx="32" fill="#f7f4ec"/>
+<text x="360" y="76" text-anchor="middle" font-size="38" font-weight="800" fill="#272923">最初の一文を比べる</text>
+<rect x="40" y="112" width="640" height="320" rx="26" fill="#ece8db"/><rect x="72" y="136" width="210" height="48" rx="24" fill="#64665d"/><text x="177" y="170" text-anchor="middle" font-size="29" font-weight="800" fill="#fffdf7">よくある例</text>
+<rect x="72" y="204" width="576" height="118" rx="16" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/><text x="96" y="252" font-size="31" font-weight="700" fill="#272923">「ようこそ。心を込めて</text><text x="96" y="296" font-size="31" font-weight="700" fill="#272923">おもてなしします」</text>
+<text x="80" y="370" font-size="29" fill="#64665d">× 何のお店か分からない</text><text x="80" y="410" font-size="29" fill="#64665d">× 場所も時間も伝わらない</text>
+<path d="M360 444 v30 m-18 -16 l18 18 l18 -18" fill="none" stroke="#dd7c43" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="490" width="640" height="370" rx="26" fill="#fffdf7" stroke="#386377" stroke-width="4"/><rect x="72" y="514" width="230" height="48" rx="24" fill="#386377"/><text x="187" y="548" text-anchor="middle" font-size="29" font-weight="800" fill="#fffdf7">おすすめ例</text>
+<rect x="72" y="582" width="576" height="164" rx="16" fill="#386377" fill-opacity="0.08"/>
+<text x="96" y="628" font-size="31" font-weight="700" fill="#272923">「〇〇駅から徒歩3分、</text><text x="96" y="670" font-size="31" font-weight="700" fill="#272923">炭火焼き鳥と地酒の店。</text><text x="96" y="712" font-size="31" font-weight="700" fill="#272923">平日17時から営業」</text>
+<text x="80" y="796" font-size="29" font-weight="700" fill="#386377">○ 場所・業態・時間が伝わる</text><text x="80" y="836" font-size="29" font-weight="700" fill="#386377">○ 行けるかどうかすぐ分かる</text>
+</svg>

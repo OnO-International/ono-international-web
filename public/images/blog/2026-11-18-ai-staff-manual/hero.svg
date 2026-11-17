@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="店長の話した内容が、AIのきらめきを通って番号つきの手順カードにまとまり、新人スタッフに手渡されていくイラスト">
+  <rect width="1200" height="630" fill="#f7f4ec"/>
+  <circle cx="1090" cy="560" r="210" fill="#ece8db"/>
+  <circle cx="100" cy="70" r="150" fill="#ece8db"/>
+  <path d="M0 510 C 240 460, 470 550, 730 500 S 1060 460, 1200 505 L1200 630 L0 630 Z" fill="#386377" opacity="0.08"/>
+  <!-- speaker figure -->
+  <circle cx="190" cy="330" r="50" fill="#386377"/>
+  <path d="M100 520 a90 110 0 0 1 180 0 Z" fill="#386377"/>
+  <rect x="160" y="420" width="60" height="16" rx="8" fill="#fffdf7" opacity="0.5"/>
+  <!-- speech bubble with waveform -->
+  <path d="M120 120 h230 a24 24 0 0 1 24 24 v86 a24 24 0 0 1 -24 24 h-140 l-34 30 v-30 h-56 a24 24 0 0 1 -24 -24 v-86 a24 24 0 0 1 24 -24 z" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+  <g fill="#dd7c43">
+    <rect x="146" y="176" width="14" height="24" rx="7"/>
+    <rect x="172" y="160" width="14" height="56" rx="7"/>
+    <rect x="198" y="146" width="14" height="84" rx="7"/>
+    <rect x="224" y="166" width="14" height="44" rx="7"/>
+    <rect x="250" y="154" width="14" height="68" rx="7"/>
+    <rect x="276" y="170" width="14" height="36" rx="7"/>
+    <rect x="302" y="160" width="14" height="56" rx="7"/>
+    <rect x="328" y="178" width="14" height="20" rx="7"/>
+  </g>
+  <!-- dotted path to sparkle -->
+  <path d="M390 210 C 450 230, 470 280, 520 300" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16"/>
+  <!-- AI sparkle -->
+  <path d="M580 230 C 588 286, 604 302, 660 310 C 604 318, 588 334, 580 390 C 572 334, 556 318, 500 310 C 556 302, 572 286, 580 230 Z" fill="#dd7c43"/>
+  <path d="M650 200 C 653 222, 658 227, 680 230 C 658 233, 653 238, 650 260 C 647 238, 642 233, 620 230 C 642 227, 647 222, 650 200 Z" fill="#386377"/>
+  <path d="M520 400 C 522 414, 526 418, 540 420 C 526 422, 522 426, 520 440 C 518 426, 514 422, 500 420 C 514 418, 518 414, 520 400 Z" fill="#386377" opacity="0.6"/>
+  <!-- arrow to clipboard -->
+  <path d="M660 340 C 690 360, 710 360, 740 350" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16"/>
+  <path d="M724 334 L 746 348 L 728 368" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- clipboard -->
+  <rect x="780" y="90" width="300" height="420" rx="26" fill="#386377"/>
+  <rect x="800" y="120" width="260" height="370" rx="16" fill="#fffdf7"/>
+  <rect x="880" y="72" width="100" height="44" rx="14" fill="#272923"/>
+  <rect x="830" y="150" width="200" height="16" rx="8" fill="#272923" opacity="0.8"/>
+  <g>
+    <circle cx="846" cy="214" r="18" fill="#386377"/><rect x="878" y="206" width="150" height="16" rx="8" fill="#cecec0"/>
+    <circle cx="846" cy="274" r="18" fill="#386377"/><rect x="878" y="266" width="130" height="16" rx="8" fill="#cecec0"/>
+    <circle cx="846" cy="334" r="18" fill="#386377"/><rect x="878" y="326" width="140" height="16" rx="8" fill="#cecec0"/>
+    <circle cx="846" cy="394" r="18" fill="#dd7c43"/><rect x="878" y="386" width="110" height="16" rx="8" fill="#cecec0"/>
+  </g>
+  <path d="M836 214 l7 7 l12 -13" fill="none" stroke="#fffdf7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M836 274 l7 7 l12 -13" fill="none" stroke="#fffdf7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M836 334 l7 7 l12 -13" fill="none" stroke="#fffdf7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="830" y="436" width="200" height="30" rx="10" fill="#ece8db"/>
+  <!-- small card handed to new staff -->
+  <g transform="rotate(8 1080 460)">
+    <rect x="1010" y="380" width="150" height="190" rx="18" fill="#fffdf7" stroke="#dd7c43" stroke-width="4"/>
+    <rect x="1032" y="410" width="100" height="12" rx="6" fill="#272923" opacity="0.7"/>
+    <circle cx="1040" cy="452" r="10" fill="#dd7c43"/><rect x="1058" y="446" width="76" height="12" rx="6" fill="#cecec0"/>
+    <circle cx="1040" cy="490" r="10" fill="#dd7c43"/><rect x="1058" y="484" width="64" height="12" rx="6" fill="#cecec0"/>
+    <circle cx="1040" cy="528" r="10" fill="#dd7c43"/><rect x="1058" y="522" width="70" height="12" rx="6" fill="#cecec0"/>
+  </g>
+</svg>

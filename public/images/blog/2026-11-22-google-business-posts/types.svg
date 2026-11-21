@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 730" width="720" height="730" role="img" aria-label="投稿の3つの種類：最新情報はお店の今を伝える、特典はセールやサービスを伝える、イベントは日時の決まった催しを伝える" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif">
+<rect width="720" height="730" rx="32" fill="#f7f4ec"/>
+<text x="360" y="76" text-anchor="middle" font-size="40" font-weight="800" fill="#272923">投稿の3つの種類</text>
+<rect x="40" y="120" width="640" height="170" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="110" cy="205" r="44" fill="#386377"/>
+<path d="M86 186 h48 a6 6 0 0 1 6 6 v26 a6 6 0 0 1 -6 6 h-28 l-12 12 v-12 h-8 a6 6 0 0 1 -6 -6 v-26 a6 6 0 0 1 6 -6 z" fill="#fffdf7"/>
+<text x="180" y="178" font-size="35" font-weight="800" fill="#272923">最新情報</text>
+<text x="180" y="222" font-size="29" fill="#272923">お店の「今」を伝える</text>
+<text x="180" y="262" font-size="29" fill="#64665d">新メニュー・入荷・取り組み</text>
+<rect x="40" y="310" width="640" height="170" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="110" cy="395" r="44" fill="#dd7c43"/>
+<path d="M88 378 h26 l22 17 l-22 17 h-26 z" fill="#fffdf7"/>
+<circle cx="98" cy="395" r="5" fill="#dd7c43"/>
+<text x="180" y="368" font-size="35" font-weight="800" fill="#272923">特典</text>
+<text x="180" y="412" font-size="29" fill="#272923">セールやサービスを伝える</text>
+<text x="180" y="452" font-size="29" fill="#64665d">タイトルと期間が必要</text>
+<rect x="40" y="500" width="640" height="170" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="110" cy="585" r="44" fill="#386377"/>
+<rect x="88" y="566" width="44" height="40" rx="6" fill="#fffdf7"/>
+<rect x="88" y="566" width="44" height="12" rx="4" fill="#dd7c43"/>
+<rect x="104" y="586" width="12" height="12" rx="2" fill="#386377"/>
+<text x="180" y="558" font-size="35" font-weight="800" fill="#272923">イベント</text>
+<text x="180" y="602" font-size="29" fill="#272923">日時の決まった催しを伝える</text>
+<text x="180" y="642" font-size="29" fill="#64665d">開始と終了の日時を入れる</text>
+<text x="360" y="712" text-anchor="middle" font-size="29" fill="#64665d">※画面の表記は変わることがあります</text>
+</svg>

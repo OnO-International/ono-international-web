@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 820" width="720" height="820" role="img" aria-label="投稿を公開する前のチェックリスト：日付・曜日・値段がメモと同じ、本文に電話番号を書いていない、写真に写った人の了解をとった、特典やイベントは期間を入れた、大げさな表現や他店との比較がない。電話は本文ではなくボタンで案内する" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif">
+<rect width="720" height="820" rx="32" fill="#f7f4ec"/>
+<text x="360" y="76" text-anchor="middle" font-size="40" font-weight="800" fill="#272923">公開前チェックリスト</text>
+<rect x="40" y="116" width="640" height="88" rx="20" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<rect x="64" y="140" width="40" height="40" rx="8" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+<path d="M73 160 l8 9 l16 -18" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="170" font-size="29" fill="#272923">日付・曜日・値段がメモと同じ</text>
+<rect x="40" y="220" width="640" height="88" rx="20" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<rect x="64" y="244" width="40" height="40" rx="8" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+<path d="M73 264 l8 9 l16 -18" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="274" font-size="29" fill="#272923">本文に電話番号を書いていない</text>
+<rect x="40" y="324" width="640" height="88" rx="20" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<rect x="64" y="348" width="40" height="40" rx="8" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+<path d="M73 368 l8 9 l16 -18" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="378" font-size="29" fill="#272923">写真に写った人の了解をとった</text>
+<rect x="40" y="428" width="640" height="88" rx="20" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<rect x="64" y="452" width="40" height="40" rx="8" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+<path d="M73 472 l8 9 l16 -18" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="482" font-size="29" fill="#272923">特典・イベントは期間を入れた</text>
+<rect x="40" y="532" width="640" height="88" rx="20" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<rect x="64" y="556" width="40" height="40" rx="8" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+<path d="M73 576 l8 9 l16 -18" fill="none" stroke="#dd7c43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="586" font-size="29" fill="#272923">大げさな表現・他店比較がない</text>
+<rect x="40" y="652" width="640" height="128" rx="20" fill="#386377"/>
+<text x="360" y="704" text-anchor="middle" font-size="29" font-weight="800" fill="#fffdf7">電話は本文ではなく</text>
+<text x="360" y="748" text-anchor="middle" font-size="29" font-weight="800" fill="#fffdf7">「今すぐ電話」ボタンで案内する</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="地図のピンが立つお店のプロフィールに、写真付きのお知らせカードが次々と届いていく様子">
+  <rect width="1200" height="630" fill="#f7f4ec"/>
+  <circle cx="1080" cy="100" r="180" fill="#ece8db"/>
+  <circle cx="110" cy="560" r="150" fill="#ece8db"/>
+  <path d="M0 480 C 260 430, 430 530, 720 480 S 1060 440, 1200 490 L1200 630 L0 630 Z" fill="#386377" opacity="0.08"/>
+  <!-- phone with profile -->
+  <rect x="150" y="70" width="300" height="500" rx="38" fill="#272923"/>
+  <rect x="166" y="92" width="268" height="456" rx="26" fill="#fffdf7"/>
+  <rect x="255" y="102" width="90" height="10" rx="5" fill="#cecec0"/>
+  <rect x="182" y="126" width="236" height="130" rx="16" fill="#ece8db"/>
+  <path d="M182 220 l50 -40 l40 30 l40 -50 l106 80 v0 a16 16 0 0 1 -16 16 h-204 a16 16 0 0 1 -16 -16 z" fill="#386377" opacity="0.35"/>
+  <path d="M300 150 c-24 0 -42 18 -42 40 c0 30 42 68 42 68 s42 -38 42 -68 c0 -22 -18 -40 -42 -40 z" fill="#dd7c43"/>
+  <circle cx="300" cy="190" r="14" fill="#fffdf7"/>
+  <rect x="190" y="278" width="170" height="18" rx="9" fill="#272923" opacity="0.8"/>
+  <rect x="190" y="308" width="120" height="12" rx="6" fill="#cecec0"/>
+  <!-- tabs -->
+  <rect x="190" y="340" width="60" height="10" rx="5" fill="#cecec0"/>
+  <rect x="268" y="340" width="60" height="10" rx="5" fill="#386377"/>
+  <rect x="346" y="340" width="60" height="10" rx="5" fill="#cecec0"/>
+  <!-- post in phone -->
+  <rect x="190" y="370" width="220" height="160" rx="16" fill="#ece8db"/>
+  <rect x="206" y="386" width="80" height="64" rx="10" fill="#dd7c43" opacity="0.8"/>
+  <circle cx="246" cy="418" r="18" fill="#fffdf7" opacity="0.8"/>
+  <rect x="298" y="392" width="96" height="12" rx="6" fill="#386377" opacity="0.6"/>
+  <rect x="298" y="414" width="80" height="12" rx="6" fill="#cecec0"/>
+  <rect x="206" y="466" width="180" height="12" rx="6" fill="#cecec0"/>
+  <rect x="206" y="494" width="90" height="24" rx="12" fill="#386377"/>
+  <!-- arrows -->
+  <path d="M640 200 C 560 210, 520 250, 470 300" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16"/>
+  <path d="M640 440 C 570 440, 520 420, 470 390" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16"/>
+  <!-- card 1: update (photo) -->
+  <rect x="660" y="90" width="300" height="200" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+  <rect x="684" y="114" width="110" height="90" rx="14" fill="#ece8db"/>
+  <circle cx="720" cy="144" r="14" fill="#dd7c43"/>
+  <path d="M684 190 l40 -30 l30 22 l40 -30 v42 a14 14 0 0 1 -14 14 h-82 a14 14 0 0 1 -14 -14 z" fill="#386377" opacity="0.5"/>
+  <rect x="812" y="120" width="120" height="16" rx="8" fill="#386377" opacity="0.5"/>
+  <rect x="812" y="150" width="100" height="12" rx="6" fill="#cecec0"/>
+  <rect x="812" y="174" width="112" height="12" rx="6" fill="#cecec0"/>
+  <rect x="684" y="228" width="250" height="12" rx="6" fill="#cecec0"/>
+  <rect x="684" y="252" width="180" height="12" rx="6" fill="#cecec0"/>
+  <!-- card 2: offer (tag) -->
+  <rect x="1000" y="250" width="160" height="150" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+  <path d="M1036 290 h46 l38 38 l-38 38 h-46 z" fill="#dd7c43"/>
+  <circle cx="1052" cy="328" r="9" fill="#fffdf7"/>
+  <!-- card 3: event (calendar) -->
+  <rect x="660" y="340" width="300" height="200" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+  <rect x="690" y="372" width="120" height="130" rx="14" fill="#ece8db"/>
+  <rect x="690" y="372" width="120" height="34" rx="14" fill="#386377"/>
+  <rect x="690" y="392" width="120" height="14" fill="#386377"/>
+  <rect x="712" y="360" width="10" height="26" rx="5" fill="#272923"/>
+  <rect x="778" y="360" width="10" height="26" rx="5" fill="#272923"/>
+  <g fill="#cecec0"><rect x="704" y="422" width="20" height="18" rx="4"/><rect x="740" y="422" width="20" height="18" rx="4"/><rect x="776" y="422" width="20" height="18" rx="4"/><rect x="704" y="456" width="20" height="18" rx="4"/><rect x="776" y="456" width="20" height="18" rx="4"/></g>
+  <rect x="740" y="456" width="20" height="18" rx="4" fill="#dd7c43"/>
+  <rect x="832" y="384" width="104" height="16" rx="8" fill="#386377" opacity="0.5"/>
+  <rect x="832" y="414" width="90" height="12" rx="6" fill="#cecec0"/>
+  <rect x="832" y="438" width="100" height="12" rx="6" fill="#cecec0"/>
+  <rect x="832" y="474" width="90" height="28" rx="14" fill="#386377"/>
+  <!-- sparkle (AI) -->
+  <circle cx="1060" cy="150" r="40" fill="#386377"/>
+  <path d="M1060 122 l8 20 l20 8 l-20 8 l-8 20 l-8 -20 l-20 -8 l20 -8 z" fill="#fffdf7"/>
+  <path d="M1110 470 l5 12 l12 5 l-12 5 l-5 12 l-5 -12 l-12 -5 l12 -5 z" fill="#dd7c43"/>
+  <path d="M560 110 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4 z" fill="#dd7c43"/>
+</svg>

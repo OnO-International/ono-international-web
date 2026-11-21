@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" width="720" height="900" role="img" aria-label="よくある投稿とおすすめの投稿の比較。よくある例は「冬季限定メニュー始めました！ぜひお越しください！」で、何が・いつから・条件が分からない。おすすめ例は「12月1日から、冬限定の白菜鍋を始めます。2人前から、前日までのご予約制です。」で、中身・期間・条件が分かる" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif">
+<rect width="720" height="900" rx="32" fill="#f7f4ec"/>
+<text x="360" y="76" text-anchor="middle" font-size="38" font-weight="800" fill="#272923">よくある投稿とおすすめの投稿</text>
+<rect x="40" y="112" width="200" height="52" rx="26" fill="#ece8db"/>
+<text x="140" y="148" text-anchor="middle" font-size="29" font-weight="800" fill="#64665d">よくある例</text>
+<rect x="40" y="178" width="640" height="232" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<text x="84" y="234" font-size="29" fill="#272923">冬季限定メニュー</text>
+<text x="84" y="280" font-size="29" fill="#272923">始めました！</text>
+<text x="84" y="326" font-size="29" fill="#272923">ぜひお越しください！</text>
+<path d="M84 350 h552" stroke="#cecec0" stroke-width="3" stroke-dasharray="6 10"/>
+<text x="84" y="388" font-size="29" fill="#64665d">何が・いつから・条件が不明</text>
+<path d="M360 424 v30 m-18 -16 l18 18 l18 -18" fill="none" stroke="#dd7c43" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="474" width="200" height="52" rx="26" fill="#386377"/>
+<text x="140" y="510" text-anchor="middle" font-size="29" font-weight="800" fill="#fffdf7">おすすめ例</text>
+<rect x="40" y="540" width="640" height="320" rx="26" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+<text x="84" y="598" font-size="29" fill="#272923">12月1日から、冬限定の</text>
+<text x="84" y="644" font-size="29" fill="#272923">白菜鍋を始めます。</text>
+<text x="84" y="690" font-size="29" fill="#272923">2人前から、前日までの</text>
+<text x="84" y="736" font-size="29" fill="#272923">ご予約制です。</text>
+<path d="M84 762 h552" stroke="#cecec0" stroke-width="3" stroke-dasharray="6 10"/>
+<circle cx="98" cy="808" r="14" fill="#dd7c43"/>
+<path d="M91 808 l5 5 l9 -10" fill="none" stroke="#fffdf7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="818" font-size="29" font-weight="700" fill="#386377">中身・期間・条件が分かる</text>
+</svg>

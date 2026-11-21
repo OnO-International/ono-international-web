@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" width="720" height="720" role="img" aria-label="AIで投稿文を作る3ステップ：1 事実をメモする、2 AIに型と条件を伝える、3 確かめて写真とボタンを付けて公開する" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif">
+<rect width="720" height="720" rx="32" fill="#f7f4ec"/>
+<text x="360" y="76" text-anchor="middle" font-size="40" font-weight="800" fill="#272923">投稿文を作る3ステップ</text>
+<rect x="40" y="120" width="640" height="150" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="112" cy="195" r="40" fill="#386377"/><text x="112" y="210" text-anchor="middle" font-size="42" font-weight="800" fill="#fffdf7">1</text>
+<text x="180" y="188" font-size="35" font-weight="800" fill="#272923">事実をメモする</text>
+<text x="180" y="236" font-size="29" fill="#64665d">何を・いつ・値段・条件</text>
+<path d="M360 280 v26 m-16 -14 l16 16 l16 -16" fill="none" stroke="#dd7c43" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="320" width="640" height="150" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="112" cy="395" r="40" fill="#386377"/><text x="112" y="410" text-anchor="middle" font-size="42" font-weight="800" fill="#fffdf7">2</text>
+<text x="180" y="388" font-size="35" font-weight="800" fill="#272923">AIに型と条件を伝える</text>
+<text x="180" y="436" font-size="29" fill="#64665d">メモにないことは書かせない</text>
+<path d="M360 480 v26 m-16 -14 l16 16 l16 -16" fill="none" stroke="#dd7c43" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="520" width="640" height="150" rx="26" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+<circle cx="112" cy="595" r="40" fill="#dd7c43"/><text x="112" y="610" text-anchor="middle" font-size="42" font-weight="800" fill="#fffdf7">3</text>
+<text x="180" y="588" font-size="35" font-weight="800" fill="#272923">確かめて公開する</text>
+<text x="180" y="636" font-size="29" fill="#64665d">写真とボタンを付けて投稿</text>
+</svg>

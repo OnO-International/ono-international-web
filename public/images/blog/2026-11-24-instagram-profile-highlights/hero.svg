@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="スマートフォンに映ったお店のプロフィール画面と、その下に並ぶ丸いハイライト、地図のピンとお店へ向かう道のり">
+  <rect width="1200" height="630" fill="#f7f4ec"/>
+  <circle cx="1080" cy="100" r="190" fill="#ece8db"/>
+  <circle cx="110" cy="560" r="150" fill="#ece8db"/>
+  <path d="M0 480 C 260 430, 430 530, 700 480 S 1050 440, 1200 490 L1200 630 L0 630 Z" fill="#386377" opacity="0.08"/>
+  <!-- phone -->
+  <rect x="140" y="50" width="320" height="530" rx="40" fill="#272923"/>
+  <rect x="156" y="72" width="288" height="486" rx="28" fill="#fffdf7"/>
+  <rect x="255" y="82" width="90" height="10" rx="5" fill="#cecec0"/>
+  <!-- avatar -->
+  <circle cx="220" cy="150" r="40" fill="#386377"/>
+  <path d="M196 160 h48 v18 h-48 z M190 160 l10 -22 h40 l10 22 z" fill="#fffdf7"/>
+  <rect x="280" y="128" width="130" height="14" rx="7" fill="#272923"/>
+  <rect x="280" y="154" width="100" height="12" rx="6" fill="#cecec0"/>
+  <!-- bio lines -->
+  <rect x="182" y="208" width="230" height="12" rx="6" fill="#cecec0"/>
+  <rect x="182" y="230" width="200" height="12" rx="6" fill="#cecec0"/>
+  <rect x="182" y="252" width="216" height="12" rx="6" fill="#cecec0"/>
+  <rect x="182" y="274" width="150" height="12" rx="6" fill="#dd7c43" opacity="0.7"/>
+  <!-- highlights -->
+  <g stroke="#dd7c43" stroke-width="4" fill="#ece8db">
+    <circle cx="200" cy="330" r="24"/><circle cx="262" cy="330" r="24"/><circle cx="324" cy="330" r="24"/><circle cx="386" cy="330" r="24"/>
+  </g>
+  <g fill="#386377">
+    <rect x="190" y="320" width="20" height="20" rx="3"/>
+    <path d="M262 316 c-9 0 -15 6 -15 14 c0 10 15 22 15 22 s15 -12 15 -22 c0 -8 -6 -14 -15 -14 z"/>
+    <rect x="312" y="320" width="24" height="20" rx="3"/>
+    <circle cx="386" cy="330" r="10"/>
+  </g>
+  <!-- post grid -->
+  <g fill="#ece8db">
+    <rect x="166" y="378" width="88" height="80"/><rect x="258" y="378" width="88" height="80"/><rect x="350" y="378" width="84" height="80"/>
+    <rect x="166" y="462" width="88" height="80"/><rect x="258" y="462" width="88" height="80"/><rect x="350" y="462" width="84" height="80"/>
+  </g>
+  <circle cx="210" cy="418" r="22" fill="#dd7c43" opacity="0.6"/>
+  <rect x="280" y="400" width="44" height="36" rx="6" fill="#386377" opacity="0.5"/>
+  <circle cx="302" cy="502" r="20" fill="#dd7c43" opacity="0.45"/>
+  <!-- magnifier on highlights -->
+  <circle cx="520" cy="300" r="46" fill="none" stroke="#386377" stroke-width="10"/>
+  <path d="M553 333 L 590 370" stroke="#386377" stroke-width="14" stroke-linecap="round"/>
+  <!-- dotted path -->
+  <path d="M600 400 C 660 500, 760 500, 830 430" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16"/>
+  <path d="M812 428 L 834 426 L 834 450" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- map pin -->
+  <path d="M720 150 c-34 0 -60 26 -60 58 c0 44 60 100 60 100 s60 -56 60 -100 c0 -32 -26 -58 -60 -58 z" fill="#dd7c43"/>
+  <circle cx="720" cy="208" r="20" fill="#fffdf7"/>
+  <!-- shop -->
+  <rect x="860" y="250" width="250" height="210" rx="10" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+  <path d="M840 250 L 1130 250 L 1110 190 L 860 190 Z" fill="#386377"/>
+  <g fill="#fffdf7" opacity="0.5"><rect x="880" y="190" width="28" height="60"/><rect x="936" y="190" width="28" height="60"/><rect x="992" y="190" width="28" height="60"/><rect x="1048" y="190" width="28" height="60"/></g>
+  <path d="M840 250 q 18 22 36 0 q 18 22 36 0 q 18 22 36 0 q 18 22 36 0 q 18 22 36 0 q 18 22 36 0 q 18 22 36 0 q 18 22 38 0" fill="#386377"/>
+  <rect x="890" y="300" width="100" height="160" rx="6" fill="#dd7c43"/>
+  <circle cx="972" cy="384" r="6" fill="#fffdf7"/>
+  <rect x="1010" y="300" width="76" height="80" rx="6" fill="#ece8db"/>
+  <!-- sparkles -->
+  <path d="M640 90 l5 11 l11 5 l-11 5 l-5 11 l-5 -11 l-11 -5 l11 -5 z" fill="#dd7c43"/>
+  <path d="M1150 330 l4 9 l9 4 l-9 4 l-4 9 l-4 -9 l-9 -4 l9 -4 z" fill="#386377"/>
+</svg>

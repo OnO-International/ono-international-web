@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1000" role="img" aria-label="業務の棚卸し4ステップ：1 仕事を1行ずつメモ（1週間、思い出せた分だけ）、2 回数・時間・手間に印（印が2つ以上なら候補）、3 AIに仕分けてもらう（名前などは入れない）、4 1つ選んで2週間試す（続けるかを話して決める）" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif"><rect width="720" height="1000" rx="32" fill="#f7f4ec"/>
+<text x="360" y="78" text-anchor="middle" font-size="40" font-weight="800" fill="#272923">1週間で棚卸しする4ステップ</text>
+<rect x="40" y="124" width="640" height="170" rx="24" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="110" cy="209" r="40" fill="#386377"/><text x="110" y="224" text-anchor="middle" font-size="40" font-weight="800" fill="#fffdf7">1</text>
+<text x="180" y="200" font-size="35" font-weight="800" fill="#272923">仕事を1行ずつメモ</text>
+<text x="180" y="248" font-size="29" fill="#64665d">1週間、思い出せた分だけ</text>
+<path d="M360 304 l0 24 m-14 -12 l14 14 l14 -14" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="338" width="640" height="170" rx="24" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="110" cy="423" r="40" fill="#386377"/><text x="110" y="438" text-anchor="middle" font-size="40" font-weight="800" fill="#fffdf7">2</text>
+<text x="180" y="414" font-size="35" font-weight="800" fill="#272923">回数・時間・手間に印</text>
+<text x="180" y="462" font-size="29" fill="#64665d">印が2つ以上なら候補</text>
+<path d="M360 518 l0 24 m-14 -12 l14 14 l14 -14" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="552" width="640" height="170" rx="24" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="110" cy="637" r="40" fill="#386377"/><text x="110" y="652" text-anchor="middle" font-size="40" font-weight="800" fill="#fffdf7">3</text>
+<text x="180" y="628" font-size="35" font-weight="800" fill="#272923">AIに仕分けてもらう</text>
+<text x="180" y="676" font-size="29" fill="#64665d">名前などは入れない</text>
+<path d="M360 732 l0 24 m-14 -12 l14 14 l14 -14" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="766" width="640" height="170" rx="24" fill="#fffdf7" stroke="#dd7c43" stroke-width="4"/>
+<circle cx="110" cy="851" r="40" fill="#dd7c43"/><text x="110" y="866" text-anchor="middle" font-size="40" font-weight="800" fill="#fffdf7">4</text>
+<text x="180" y="842" font-size="35" font-weight="800" fill="#272923">1つ選んで2週間試す</text>
+<text x="180" y="890" font-size="29" fill="#64665d">続けるかを話して決める</text>
+</svg>

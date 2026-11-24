@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1010" role="img" aria-label="お店の仕事の3つの仕分け：AIに任せやすい仕事（メモの清書・要約、表への整理、アイデア出し）、AIは下書きまでの仕事（お客様へのメッセージ、SNS投稿・お知らせの文章）、人がやる仕事（接客・苦情への対応、お金・安全に関わる判断）。迷ったら、間違えたら誰が困るかで考える" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif"><rect width="720" height="1010" rx="32" fill="#f7f4ec"/>
+<text x="360" y="78" text-anchor="middle" font-size="40" font-weight="800" fill="#272923">お店の仕事を3つに仕分ける</text>
+<rect x="40" y="120" width="640" height="236" rx="24" fill="#fffdf7" stroke="#386377" stroke-width="4"/>
+<circle cx="96" cy="184" r="32" fill="#386377"/><path d="M96 164 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 z" fill="#fffdf7"/>
+<text x="148" y="197" font-size="36" font-weight="800" fill="#386377">AIに任せやすい</text>
+<line x1="72" y1="238" x2="648" y2="238" stroke="#cecec0" stroke-width="2"/>
+<circle cx="84" cy="276" r="6" fill="#386377"/><text x="104" y="286" font-size="29" fill="#272923">メモの清書・要約</text>
+<circle cx="84" cy="322" r="6" fill="#386377"/><text x="104" y="332" font-size="29" fill="#272923">表への整理、アイデア出し</text>
+<rect x="40" y="376" width="640" height="236" rx="24" fill="#fffdf7" stroke="#64665d" stroke-width="4"/>
+<circle cx="96" cy="440" r="32" fill="#ece8db"/><path d="M82 454 l5 -17 l22 -22 l12 12 l-22 22 z" fill="#64665d"/>
+<text x="148" y="453" font-size="36" font-weight="800" fill="#272923">AIは下書きまで</text>
+<line x1="72" y1="494" x2="648" y2="494" stroke="#cecec0" stroke-width="2"/>
+<circle cx="84" cy="532" r="6" fill="#64665d"/><text x="104" y="542" font-size="29" fill="#272923">お客様へのメッセージ</text>
+<circle cx="84" cy="578" r="6" fill="#64665d"/><text x="104" y="588" font-size="29" fill="#272923">SNS投稿・お知らせの文章</text>
+<rect x="40" y="632" width="640" height="236" rx="24" fill="#fffdf7" stroke="#dd7c43" stroke-width="4"/>
+<circle cx="96" cy="696" r="32" fill="#dd7c43"/><circle cx="96" cy="687" r="10" fill="#fffdf7"/><path d="M78 715 a18 15 0 0 1 36 0 z" fill="#fffdf7"/>
+<text x="148" y="709" font-size="36" font-weight="800" fill="#dd7c43">人がやる</text>
+<line x1="72" y1="750" x2="648" y2="750" stroke="#cecec0" stroke-width="2"/>
+<circle cx="84" cy="788" r="6" fill="#dd7c43"/><text x="104" y="798" font-size="29" fill="#272923">接客・苦情への対応</text>
+<circle cx="84" cy="834" r="6" fill="#dd7c43"/><text x="104" y="844" font-size="29" fill="#272923">お金・安全に関わる判断</text>
+<rect x="40" y="892" width="640" height="84" rx="20" fill="#386377"/><text x="360" y="944" text-anchor="middle" font-size="30" font-weight="700" fill="#fffdf7">迷ったら「間違えたら誰が困る？」</text>
+</svg>

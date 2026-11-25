@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="お店の前に立てた募集の看板と、AIのきらめきから届いた求人原稿のカード、スマートフォンで原稿を読む様子">
+  <rect width="1200" height="630" fill="#f7f4ec"/>
+  <circle cx="1080" cy="100" r="190" fill="#ece8db"/>
+  <circle cx="110" cy="560" r="150" fill="#ece8db"/>
+  <path d="M0 500 C 250 450, 420 540, 700 500 S 1050 460, 1200 505 L1200 630 L0 630 Z" fill="#386377" opacity="0.08"/>
+  <!-- storefront -->
+  <rect x="90" y="190" width="360" height="330" rx="10" fill="#fffdf7" stroke="#cecec0" stroke-width="4"/>
+  <path d="M70 150 h400 l-14 70 h-372 z" fill="#386377"/>
+  <path d="M84 220 q31 30 62 0 q31 30 62 0 q31 30 62 0 q31 30 62 0 q31 30 62 0 q31 30 62 0" fill="#386377"/>
+  <path d="M151 150 l-10 70 M218 150 l-6 70 M285 150 v70 M352 150 l6 70 M419 150 l10 70" stroke="#fffdf7" stroke-width="4" opacity="0.35"/>
+  <rect x="120" y="280" width="150" height="120" rx="8" fill="#ece8db"/>
+  <path d="M195 280 v120 M120 340 h150" stroke="#cecec0" stroke-width="4"/>
+  <rect x="300" y="290" width="120" height="230" rx="8" fill="#ece8db"/>
+  <circle cx="400" cy="410" r="7" fill="#64665d"/>
+  <!-- A-frame sign -->
+  <path d="M470 560 l40 -200 h140 l40 200" fill="none" stroke="#64665d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="484" y="330" width="192" height="180" rx="16" fill="#272923"/>
+  <circle cx="580" cy="390" r="26" fill="#fffdf7"/>
+  <path d="M536 470 c0 -36 20 -52 44 -52 s44 16 44 52 z" fill="#fffdf7"/>
+  <circle cx="640" cy="356" r="20" fill="#dd7c43"/>
+  <path d="M640 346 v20 M630 356 h20" stroke="#fffdf7" stroke-width="5" stroke-linecap="round"/>
+  <!-- AI sparkle and arrow -->
+  <circle cx="770" cy="200" r="40" fill="#386377"/>
+  <path d="M770 174 l8 18 l18 8 l-18 8 l-8 18 l-8 -18 l-18 -8 l18 -8 z" fill="#fffdf7"/>
+  <path d="M700 300 C 720 250, 735 235, 740 232" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16"/>
+  <path d="M812 214 C 850 230, 870 250, 880 270" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 16"/>
+  <path d="M866 262 l16 14 l4 -22" fill="none" stroke="#386377" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- job posting card -->
+  <rect x="820" y="290" width="300" height="250" rx="26" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+  <rect x="852" y="320" width="140" height="20" rx="10" fill="#386377" opacity="0.3"/>
+  <rect x="852" y="362" width="236" height="12" rx="6" fill="#cecec0"/>
+  <rect x="852" y="386" width="210" height="12" rx="6" fill="#cecec0"/>
+  <circle cx="860" cy="426" r="8" fill="#dd7c43"/><rect x="878" y="420" width="170" height="12" rx="6" fill="#cecec0"/>
+  <circle cx="860" cy="454" r="8" fill="#dd7c43"/><rect x="878" y="448" width="150" height="12" rx="6" fill="#cecec0"/>
+  <circle cx="860" cy="482" r="8" fill="#dd7c43"/><rect x="878" y="476" width="186" height="12" rx="6" fill="#cecec0"/>
+  <!-- clock & calendar badges -->
+  <circle cx="1105" cy="300" r="34" fill="#fffdf7" stroke="#386377" stroke-width="5"/>
+  <path d="M1105 282 v18 l12 8" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round"/>
+  <!-- phone -->
+  <rect x="930" y="400" width="140" height="210" rx="22" fill="#272923" transform="rotate(8 1000 505)"/>
+  <rect x="942" y="416" width="116" height="176" rx="14" fill="#fffdf7" transform="rotate(8 1000 505)"/>
+  <g transform="rotate(8 1000 505)">
+    <rect x="956" y="436" width="70" height="12" rx="6" fill="#386377" opacity="0.5"/>
+    <rect x="956" y="462" width="88" height="10" rx="5" fill="#cecec0"/>
+    <rect x="956" y="482" width="80" height="10" rx="5" fill="#cecec0"/>
+    <rect x="956" y="502" width="86" height="10" rx="5" fill="#cecec0"/>
+    <rect x="956" y="544" width="88" height="32" rx="16" fill="#dd7c43"/>
+  </g>
+</svg>

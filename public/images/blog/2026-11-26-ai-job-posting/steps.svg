@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 800" width="720" role="img" aria-label="AIで求人原稿を作る3ステップ：1 お店の事実を書き出す（大変なところも1つ書く）、2 AIに下書きを頼む（ない待遇は〔要確認〕に）、3 スタッフと確かめる（条件と表現は人が確認）" font-family="'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif"><rect width="720" height="800" rx="32" fill="#f7f4ec"/>
+<text x="360" y="78" text-anchor="middle" font-size="40" font-weight="800" fill="#272923">求人原稿を作る3ステップ</text>
+<rect x="40" y="124" width="640" height="170" rx="24" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="110" cy="209" r="40" fill="#386377"/><text x="110" y="224" text-anchor="middle" font-size="40" font-weight="800" fill="#fffdf7">1</text>
+<text x="180" y="200" font-size="35" font-weight="800" fill="#272923">お店の事実を書き出す</text>
+<text x="180" y="248" font-size="29" fill="#64665d">大変なところも1つ書く</text>
+<path d="M360 304 l0 24 m-14 -12 l14 14 l14 -14" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="338" width="640" height="170" rx="24" fill="#fffdf7" stroke="#cecec0" stroke-width="3"/>
+<circle cx="110" cy="423" r="40" fill="#386377"/><text x="110" y="438" text-anchor="middle" font-size="40" font-weight="800" fill="#fffdf7">2</text>
+<text x="180" y="414" font-size="35" font-weight="800" fill="#272923">AIに下書きを頼む</text>
+<text x="180" y="462" font-size="29" fill="#64665d">ない待遇は〔要確認〕に</text>
+<path d="M360 518 l0 24 m-14 -12 l14 14 l14 -14" fill="none" stroke="#386377" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="552" width="640" height="170" rx="24" fill="#fffdf7" stroke="#dd7c43" stroke-width="4"/>
+<circle cx="110" cy="637" r="40" fill="#dd7c43"/><text x="110" y="652" text-anchor="middle" font-size="40" font-weight="800" fill="#fffdf7">3</text>
+<text x="180" y="628" font-size="35" font-weight="800" fill="#272923">スタッフと確かめる</text>
+<text x="180" y="676" font-size="29" fill="#64665d">条件と表現は人が確認</text>
+<text x="360" y="768" text-anchor="middle" font-size="29" font-weight="700" fill="#386377">材料はお店、文章はAI</text>
+</svg>
